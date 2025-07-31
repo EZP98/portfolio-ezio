@@ -70,6 +70,7 @@
   transition: all 0.2s;
   border-bottom: 0.5px solid var(--border-color);
   position: relative;
+  background: transparent;
 }
 
 .stack-item:nth-child(odd) {
@@ -81,7 +82,11 @@
 }
 
 .stack-item:hover {
-  background: var(--bg-secondary);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+:root.dark-mode .stack-item:hover {
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .stack-item:hover .external-icon {
