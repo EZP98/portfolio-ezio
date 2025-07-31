@@ -59,12 +59,20 @@ body {
 @media (max-width: 768px) {
   .main-content {
     padding: 0 20px;
+    overflow-x: hidden;
   }
 }
 
 @media (max-width: 480px) {
   .main-content {
     padding: 0 16px;
+    overflow-x: hidden;
+  }
+  
+  /* Force all sections to respect container width */
+  .main-content > * {
+    max-width: 100%;
+    overflow-x: hidden;
   }
 }
 

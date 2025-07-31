@@ -127,6 +127,10 @@
   background: var(--bg-tertiary);
   border: 1px solid var(--border-color);
   border-radius: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
   font-size: 13px;
   font-weight: 500;
   color: var(--text-secondary);

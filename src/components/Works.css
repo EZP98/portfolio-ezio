@@ -44,12 +44,39 @@
     margin-bottom: 60px;
   }
   
+  .section-header {
+    margin-bottom: 24px;
+  }
+  
   .section-title {
     font-size: 16px;
   }
   
+  .section-arrow {
+    font-size: 16px;
+  }
+  
+  .work-card {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .work-image-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .work-meta {
+    padding: 0 4px;
+  }
+  
   .work-name {
-    font-size: 14px;
+    font-size: 13px;
+  }
+  
+  .work-tag {
+    font-size: 9px;
+    padding: 3px 8px;
   }
 }
 
@@ -84,12 +111,19 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 8px;
+  gap: 8px;
+  min-width: 0;
 }
 
 .work-name {
   font-size: 14px;
   font-weight: 500;
   color: var(--text-primary);
+  flex: 1;
+  min-width: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .work-tag {
@@ -102,6 +136,7 @@
   border-radius: 6px;
   font-size: 10px;
   font-weight: 500;
+  flex-shrink: 0;
   color: var(--text-secondary);
 }
 
