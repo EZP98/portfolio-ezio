@@ -123,13 +123,68 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .footer {
+    margin-top: 100px;
+    padding: 40px 0 30px;
+  }
+  
+  .footer-container {
+    padding: 0 20px;
+  }
+  
   .footer-content {
     grid-template-columns: 1fr;
     gap: 40px;
+    margin-bottom: 40px;
   }
   
   .footer-meta {
     font-size: 12px;
     gap: 12px;
+  }
+  
+  .footer-newsletter h3,
+  .footer-links h3 {
+    font-size: 16px;
+  }
+  
+  .footer-newsletter p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    margin-top: 80px;
+    padding: 32px 0 24px;
+  }
+  
+  .footer-container {
+    padding: 0 16px;
+  }
+  
+  .footer-content {
+    gap: 32px;
+  }
+  
+  .newsletter-input {
+    font-size: 13px;
+    padding: 10px 100px 10px 14px;
+  }
+  
+  .newsletter-button {
+    font-size: 12px;
+    padding: 0 16px;
+  }
+  
+  .footer-link-list a {
+    font-size: 13px;
+  }
+  
+  .footer-meta {
+    font-size: 11px;
+    gap: 8px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

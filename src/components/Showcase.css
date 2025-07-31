@@ -197,5 +197,59 @@
   .showcase-section {
     grid-template-columns: 1fr;
     gap: 32px;
+    padding: 60px 0;
+  }
+  
+  .image-carousel {
+    height: 300px;
+  }
+  
+  .content-title {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  
+  .content-subtitle {
+    font-size: 18px;
+  }
+  
+  .newsletter-form {
+    max-width: 100%;
+  }
+  
+  .showcase-story p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .showcase-section {
+    padding: 40px 0;
+  }
+  
+  .image-carousel {
+    height: 240px;
+  }
+  
+  .content-title {
+    font-size: 28px;
+  }
+  
+  .content-subtitle {
+    font-size: 16px;
+  }
+  
+  .newsletter-button {
+    padding: 0 16px;
+    font-size: 12px;
+  }
+  
+  .blog-links {
+    gap: 12px;
+  }
+  
+  .blog-link {
+    font-size: 14px;
+    padding: 14px 16px;
   }
 }

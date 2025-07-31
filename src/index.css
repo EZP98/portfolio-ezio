@@ -36,6 +36,11 @@
   box-sizing: border-box;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: var(--bg-primary);
@@ -44,6 +49,8 @@ body {
   min-height: 100vh;
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
+  min-width: 320px;
+  overflow-x: hidden;
 }
 
 /* Update all backgrounds */

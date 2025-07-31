@@ -55,6 +55,19 @@ body {
   flex: 1;
 }
 
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 0 16px;
+  }
+}
+
 /* Temporary styles for placeholder sections */
 #works {
   min-height: 100vh;

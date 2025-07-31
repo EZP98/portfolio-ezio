@@ -6,6 +6,51 @@
   margin-bottom: 120px;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 80px;
+  }
+  
+  .experience-title {
+    font-size: 20px;
+  }
+  
+  .experience-description {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-grid {
+    margin-bottom: 60px;
+    gap: 16px;
+  }
+  
+  .experience-header {
+    padding: 10px;
+  }
+  
+  .experience-icon {
+    font-size: 18px;
+  }
+  
+  .experience-title {
+    font-size: 18px;
+  }
+  
+  .experience-content {
+    padding: 16px;
+  }
+  
+  .experience-company,
+  .experience-period {
+    font-size: 13px;
+  }
+}
+
 .experience-card {
   text-decoration: none;
   display: block;
