@@ -61,8 +61,8 @@
   border: 1px solid var(--border-light);
   background-color: var(--bg-secondary);
   border-radius: 12px;
-  max-width: 100%;
-  width: 100%;
+  flex: 1;
+  min-width: 0;
   height: fit-content;
   min-height: auto;
   opacity: 1;
@@ -101,6 +101,8 @@
   flex-shrink: 0;
   transform: none;
   opacity: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .card-title {
@@ -123,6 +125,8 @@
   flex-shrink: 0;
   transform: none;
   opacity: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .card-dots {
@@ -171,6 +175,10 @@
 }
 
 @media (max-width: 480px) {
+  .hero-section {
+    padding: 32px 0;
+  }
+  
   .hero-title {
     font-size: 28px;
   }
@@ -181,5 +189,22 @@
   }
   
   .link-cards {
+    gap: 12px;
+  }
+  
+  .link-card {
+    padding: 20px;
+  }
+  
+  .card-label {
+    font-size: 11px;
+  }
+  
+  .card-title {
+    font-size: 15px;
+  }
+  
+  .card-description {
+    font-size: 12px;
   }
 }
