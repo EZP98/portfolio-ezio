@@ -6,6 +6,7 @@ const Header: React.FC = () => {
   const [emailCopied, setEmailCopied] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const copyEmail = () => {
     const email = 'ezio.pappalardo@albicchiere.com';
@@ -35,11 +36,16 @@ const Header: React.FC = () => {
             <a href="#products" className="nav-link">{t('products')}</a>
           </nav>
           
-          <div className="menu-dots">
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-          </div>
+          {/* Hamburger Menu Button */}
+          <button 
+            className="hamburger-menu"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
+            <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
+            <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
+          </button>
           
           {/* Dark Mode Toggle */}
           <button 
@@ -83,6 +89,27 @@ const Header: React.FC = () => {
             <span>{emailCopied ? t('copied') : t('email')}</span>
           </button>
         </div>
+      </div>
+      
+      {/* Mobile Menu Overlay */}
+      <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
+        <nav className="mobile-nav">
+          <a href="#works" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+            {t('works')}
+          </a>
+          <a href="#services" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+            {t('services')}
+          </a>
+          <a href="#products" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+            {t('products')}
+          </a>
+          <a href="#about" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+            {t('about')}
+          </a>
+          <a href="#contact" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+            {t('contact')}
+          </a>
+        </nav>
       </div>
     </header>
   );
