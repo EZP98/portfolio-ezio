@@ -4,6 +4,7 @@
   background-color: var(--bg-primary);
   width: 100%;
   opacity: 1;
+  overflow: hidden;
 }
 
 .hero-inner {
@@ -13,12 +14,15 @@
   justify-content: center;
   align-items: flex-start;
   opacity: 1;
+  width: 100%;
+  max-width: 100%;
 }
 
 .hero-heading {
   opacity: 1;  
   margin-bottom: 48px;
   width: 100%;
+  max-width: 100%;
 }
 
 .hero-title {
@@ -29,10 +33,13 @@
   color: var(--text-primary);
   margin: 0;
   width: 100%;
+  max-width: 100%;
   outline: none;
   display: block;
   transform: none;
   opacity: 1;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .word-wrapper {
@@ -180,7 +187,18 @@
   }
   
   .hero-title {
-    font-size: 28px;
+    font-size: 24px;
+    word-break: break-word;
+  }
+  
+  /* Force word wrapping on mobile */
+  .word-wrapper {
+    white-space: normal !important;
+    display: inline !important;
+  }
+  
+  .char-animation {
+    display: inline !important;
   }
   
   .hero-button {
@@ -193,15 +211,19 @@
   }
   
   .link-card {
-    padding: 20px;
+    padding: 16px;
+  }
+  
+  .card-eyebrow p {
+    font-size: 12px;
+  }
+  
+  .card-title p {
+    font-size: 14px;
   }
   
   .card-label {
     font-size: 11px;
-  }
-  
-  .card-title {
-    font-size: 15px;
   }
   
   .card-description {
