@@ -1,0 +1,161 @@
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  width: 100%;
+  opacity: 1;
+}
+
+.hero-inner {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  opacity: 1;
+}
+
+.hero-heading {
+  opacity: 1;  
+  margin-bottom: 48px;
+  width: 100%;
+}
+
+.hero-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin: 0;
+  width: 100%;
+  outline: none;
+  display: block;
+  transform: none;
+  opacity: 1;
+}
+
+.word-wrapper {
+  white-space: nowrap;
+}
+
+.char-animation {
+  display: inline-block;
+  opacity: 1;
+  transform: none;
+  will-change: transform;
+}
+
+/* Link Cards */
+.link-cards {
+  display: flex;
+  gap: 16px;
+  opacity: 1;
+  will-change: transform;
+  transform: none;
+  width: 100%;
+  max-width: 100%;
+}
+
+.link-card {
+  border: 1px solid var(--border-light);
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  max-width: 100%;
+  width: 100%;
+  height: fit-content;
+  min-height: auto;
+  opacity: 1;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  position: relative;
+  transition: all 0.2s ease;
+  will-change: transform;
+  transform: none;
+}
+
+.link-card:hover {
+  background-color: var(--bg-tertiary);
+  transform: translateY(-2px);
+}
+
+.card-eyebrow {
+  opacity: 1;
+  margin-bottom: 4px;
+}
+
+.card-eyebrow p {
+  font-family: "Inter", "Inter Placeholder", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 20px;
+  color: var(--text-secondary);
+  margin: 0;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  transform: none;
+  opacity: 1;
+}
+
+.card-title {
+  opacity: 1;
+  margin-bottom: 0;
+}
+
+.card-title p {
+  font-family: "Inter", "Inter Placeholder", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 20px;
+  color: var(--text-primary);
+  margin: 0;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  transform: none;
+  opacity: 1;
+}
+
+.card-dots {
+  display: inline-flex;
+  gap: 3px;
+  margin-left: auto;
+  opacity: 1;
+}
+
+.card-dot {
+  background-color: var(--text-secondary);
+  border-radius: 2px;
+  opacity: 0.4;
+  will-change: transform;
+  transform: none;
+  transform-origin: 50% 50% 0px;
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+  margin-right: 3px;
+}
+
+.card-dot:last-child {
+  margin-right: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 36px;
+  }
+  
+  .link-cards {
+    flex-direction: column;
+  }
+}

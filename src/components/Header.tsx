@@ -1,0 +1,91 @@
+import React, { useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import './Header.css';
+
+const Header: React.FC = () => {
+  const [emailCopied, setEmailCopied] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const copyEmail = () => {
+    const email = 'ezio.pappalardo@albicchiere.com';
+    navigator.clipboard.writeText(email).then(() => {
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 2000);
+    });
+  };
+
+  return (
+    <header className="header">
+      <div className="header-container">
+        {/* Logo */}
+        <a href="/" className="logo-link">
+          <img 
+            src="https://framerusercontent.com/images/AUWaY8BzdSrZTEmGcQvEissyc1E.jpeg" 
+            alt="Logo" 
+            className="logo-image"
+          />
+        </a>
+        
+        {/* Navigation */}
+        <div className="nav-wrapper">
+          <nav className="nav-items">
+            <a href="#works" className="nav-link">{t('works')}</a>
+            <a href="#services" className="nav-link">{t('services')}</a>
+            <a href="#products" className="nav-link">{t('products')}</a>
+          </nav>
+          
+          <div className="menu-dots">
+            <span className="dot"></span>
+            <span className="dot"></span>
+            <span className="dot"></span>
+          </div>
+          
+          {/* Dark Mode Toggle */}
+          <button 
+            className="dark-mode-toggle" 
+            onClick={() => {
+              setIsDarkMode(!isDarkMode);
+              document.documentElement.classList.toggle('dark-mode');
+            }}
+            title="Toggle dark mode"
+          >
+            {isDarkMode ? '☀️' : '🌙'}
+          </button>
+          
+          {/* Language Toggle */}
+          <button 
+            className="language-toggle" 
+            onClick={() => setLanguage(language === 'it' ? 'en' : 'it')}
+            title="Switch language"
+          >
+            {language === 'it' ? 'EN' : 'IT'}
+          </button>
+          
+          {/* Email Button */}
+          <button className="email-button" onClick={copyEmail}>
+            <svg className="email-icon" viewBox="0 0 16 16">
+              <path 
+                d="M 5.5 6 L 5.5 10.5 L 2.5 10.5 L 2.5 2.5 L 10.5 2.5 L 10.5 5.5 L 6 5.5 C 5.724 5.5 5.5 5.724 5.5 6 Z" 
+                fill="transparent" 
+                stroke="currentColor" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              />
+              <path 
+                d="M 5.5 13.5 L 5.5 5.5 L 13.5 5.5 L 13.5 13.5 Z" 
+                fill="transparent" 
+                stroke="currentColor" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              />
+            </svg>
+            <span>{emailCopied ? t('copied') : t('email')}</span>
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;

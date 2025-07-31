@@ -1,0 +1,240 @@
+/* CSS Variables for Theme */
+:root {
+  /* Light mode variables */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F7F7F7;
+  --bg-tertiary: #F0F0F0;
+  --text-primary: #0D0D0D;
+  --text-secondary: #7A7A7A;
+  --border-color: #E0E0E0;
+  --border-light: #F0F0F0;
+  --accent-yellow: #FFD93D;
+  --accent-yellow-dark: #0D0D0D;
+  --link-bg: #EDEDED;
+  --link-bg-hover: #E5E5E5;
+}
+
+/* Dark mode */
+:root.dark-mode {
+  --bg-primary: #0D0D0D;
+  --bg-secondary: #1A1A1A;
+  --bg-tertiary: #2D2D2D;
+  --text-primary: #FFFFFF;
+  --text-secondary: #808080;
+  --border-color: #3D3D3D;
+  --border-light: #2D2D2D;
+  --accent-yellow: #FFD93D;
+  --accent-yellow-dark: #0D0D0D;
+  --link-bg: #2D2D2D;
+  --link-bg-hover: #3D3D3D;
+}
+
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Update all backgrounds */
+.header {
+  background: var(--bg-primary);
+  border-bottom-color: var(--border-light);
+}
+
+.hero-section,
+.stack-section {
+  background: var(--bg-primary);
+  border-color: var(--border-color);
+}
+
+.about-section,
+.experience-card,
+.project-card {
+  background: var(--bg-primary);
+  border-color: var(--border-color);
+}
+
+:root.dark-mode .about-section,
+:root.dark-mode .project-card {
+  background: #1A1A1A;
+  border-color: var(--border-color);
+}
+
+:root.dark-mode .experience-header {
+  background: #1A1A1A;
+  border-color: var(--border-color);
+}
+
+/* Stack grid now uses transparent background */
+
+/* Update text colors */
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.hero-title,
+.hero-subtitle,
+.experience-title,
+.project-title,
+.work-name,
+.stack-name {
+  color: var(--text-primary);
+}
+
+.section-subtitle,
+.nav-link,
+.experience-company,
+.experience-period,
+.experience-description,
+.project-description,
+.content-subtitle,
+.showcase-story p,
+.stack-description,
+.blog-label {
+  color: var(--text-secondary);
+}
+
+/* Update link styles */
+.inline-link,
+.link-card,
+.blog-link {
+  background: var(--link-bg);
+}
+
+.inline-link:hover,
+.link-card:hover,
+.blog-link:hover {
+  background: var(--link-bg-hover);
+}
+
+.inline-text {
+  color: var(--text-primary);
+}
+
+/* Update button styles */
+.email-button {
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+.email-button:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--text-secondary);
+}
+
+.dark-mode-toggle {
+  border-color: var(--border-color);
+}
+
+.dark-mode-toggle:hover {
+  background: var(--bg-tertiary);
+}
+
+/* Update form elements */
+.newsletter-input {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.newsletter-input:focus {
+  background: var(--link-bg);
+}
+
+.newsletter-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.newsletter-button {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+/* Update cards */
+.work-card,
+.stack-item {
+  background: var(--bg-primary);
+  border-color: var(--border-color);
+}
+
+.work-card:hover,
+.stack-item:hover,
+.project-card:hover {
+  border-color: var(--text-secondary);
+}
+
+/* Update badges and tags */
+.work-tag {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+.project-badge {
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+.experience-type {
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+/* Keep accent colors consistent */
+.upcoming-badge {
+  background: var(--accent-yellow);
+  color: var(--accent-yellow-dark);
+}
+
+.tech-tag {
+  background: var(--accent-yellow);
+  color: var(--accent-yellow-dark);
+}
+
+
+/* Dark mode specific adjustments */
+:root.dark-mode .header::before {
+  opacity: 0.9;
+}
+
+:root.dark-mode .social-icon {
+  background: var(--bg-tertiary);
+  border-color: var(--border-color);
+}
+
+:root.dark-mode .work-image-wrapper {
+  opacity: 0.9;
+}
+
+:root.dark-mode .work-image-wrapper:hover {
+  opacity: 1;
+}
+
+:root.dark-mode .external-icon svg path {
+  stroke: var(--text-primary);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-primary);
+}
