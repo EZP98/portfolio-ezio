@@ -155,6 +155,11 @@ const translations = {
     ctaTitle: 'Lo scatto perfetto è solo una conversazione di distanza',
     ctaSubtitle: 'Pronto a creare qualcosa di unico insieme? Contattami per discutere del tuo prossimo progetto.',
     getInTouch: 'Contattami',
+
+    // Introduction Section
+    introBadge: 'Filosofia',
+    introText: 'Credo nel potere delle storie autentiche. Ogni progetto è un\'opportunità per trasformare idee in esperienze memorabili, unendo creatività, strategia e tecnologia per creare connessioni significative tra brand e persone.',
+    introCopyright: '© 2024 Ezio Pappalardo',
   },
   en: {
     // Navigation
@@ -301,6 +306,11 @@ const translations = {
     ctaTitle: 'The perfect shot is just a conversation away',
     ctaSubtitle: 'Ready to create something unique together? Get in touch to discuss your next project.',
     getInTouch: 'Get in touch',
+
+    // Introduction Section
+    introBadge: 'Philosophy',
+    introText: 'I believe in the power of authentic stories. Every project is an opportunity to transform ideas into memorable experiences, combining creativity, strategy and technology to create meaningful connections between brands and people.',
+    introCopyright: '© 2024 Ezio Pappalardo',
   }
 };
 

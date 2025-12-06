@@ -1,5 +1,6 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
+import Introduction from './components/Introduction';
 import Showcase from './components/Showcase';
 import Works from './components/Works';
 import Projects from './components/Projects';
@@ -18,6 +19,7 @@ function App() {
       
       <main className="main-content">
         <Hero />
+        <Introduction />
         <Showcase />
         <Works />
         <Projects />
