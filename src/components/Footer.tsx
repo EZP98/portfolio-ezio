@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
             <div className="footer-link-list">
               <a href="https://www.linkedin.com/in/ezio-pappalardo/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               <a href="https://www.albicchiere.com" target="_blank" rel="noopener noreferrer">Albicchiere</a>
-              <a href="mailto:ezio.pappalardo@albicchiere.com">Email</a>
+              <a href="mailto:eziopappalardo98@gmail.com">Email</a>
               <a href="#cv">{t('contact')}</a>
             </div>
           </div>

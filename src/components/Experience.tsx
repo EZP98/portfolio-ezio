@@ -13,7 +13,7 @@ const Experience: React.FC = () => {
       </div>
       
       <div className="experience-grid">
-        <div className="experience-card">
+        <div className="experience-card experience-card-featured">
           <div className="experience-header">
             <div className="experience-icon">🚀</div>
             <span className="experience-type">{t('currentPosition')}</span>
@@ -24,16 +24,16 @@ const Experience: React.FC = () => {
           </div>
           <div className="experience-content">
             <h3 className="experience-title">{t('chiefMarketingOfficer')}</h3>
-            <p className="experience-company">Albicchiere</p>
+            <p className="experience-company">
+              <a href="https://www.albicchiere.com" target="_blank" rel="noopener noreferrer">Albicchiere</a>
+            </p>
             <p className="experience-period">Nov 2022 - Present</p>
+            <div className="experience-metrics">
+              <span className="metric-badge">{t('kickstarterStats')}</span>
+              <span className="metric-badge highlight">{t('cesAward')}</span>
+            </div>
             <p className="experience-description">
-              Leading comprehensive marketing strategy and product development. Designed UI/UX for 
-              dashboard and backoffice systems. Managing app development as project manager, overseeing 
-              Figma designs and quality assurance. Created packaging designs including innovative 
-              Braille packaging. Managing e-commerce platform and institutional communications. 
-              Writing and managing Kickstarter campaign updates. Coordinating TIP (Taiwan Internship 
-              Program) with Taiwanese students. Overseeing illustration development and created the 
-              company's brand manual.
+              {t('albicchiereDesc')}
             </p>
           </div>
         </div>
@@ -193,11 +193,11 @@ const Experience: React.FC = () => {
             </div>
           </div>
           <div className="experience-content">
-            <h3 className="experience-title">{t('b2EnglishCert')}</h3>
+            <h3 className="experience-title">{t('c1EnglishCert')}</h3>
             <p className="experience-company">Centro Linguistico Ateneo - UniPG</p>
             <p className="experience-period">Mar 2020</p>
             <p className="experience-description">
-              Obtained B2 level English certification, demonstrating advanced proficiency 
+              Obtained C1 level English certification, demonstrating advanced proficiency
               in business and academic English communication.
             </p>
           </div>

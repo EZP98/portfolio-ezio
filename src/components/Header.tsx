@@ -7,6 +7,7 @@ const Header: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
 
   const copyEmail = () => {
     const email = 'ezio.pappalardo@albicchiere.com';
@@ -20,13 +21,17 @@ const Header: React.FC = () => {
     <header className="header">
       <div className="header-container">
         {/* Logo */}
-        <a href="/" className="logo-link">
-          <img 
-            src="https://framerusercontent.com/images/AUWaY8BzdSrZTEmGcQvEissyc1E.jpeg" 
-            alt="Logo" 
+        <button
+          className="logo-button"
+          onClick={() => setIsPhotoModalOpen(true)}
+          aria-label="View profile photo"
+        >
+          <img
+            src="/profile.jpg"
+            alt="Ezio Pappalardo"
             className="logo-image"
           />
-        </a>
+        </button>
         
         {/* Navigation */}
         <div className="nav-wrapper">
@@ -110,6 +115,30 @@ const Header: React.FC = () => {
             {t('contact')}
           </a>
         </nav>
+      </div>
+
+      {/* Photo Modal */}
+      <div
+        className={`photo-modal-overlay ${isPhotoModalOpen ? 'open' : ''}`}
+        onClick={() => setIsPhotoModalOpen(false)}
+      >
+        <div
+          className="photo-modal-content"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button
+            className="photo-modal-close"
+            onClick={() => setIsPhotoModalOpen(false)}
+            aria-label="Close"
+          >
+            ×
+          </button>
+          <img
+            src="/profile.jpg"
+            alt="Ezio Pappalardo"
+            className="photo-modal-image"
+          />
+        </div>
       </div>
     </header>
   );

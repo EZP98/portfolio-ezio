@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import About from './components/About';
 import Experience from './components/Experience';
 import Stack from './components/Stack';
+import CTA from './components/CTA';
 import Footer from './components/Footer';
 import BlurController from './components/BlurController';
 import './App.css';
@@ -23,8 +24,9 @@ function App() {
         <About />
         <Experience />
         <Stack />
+        <CTA />
       </main>
-      
+
       <Footer />
       
       {/* Dynamic Layered Blur Effect at Bottom */}

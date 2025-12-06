@@ -59,16 +59,33 @@ const translations = {
     // Projects
     cocktailAI: 'Cocktail AI',
     aiDBSearch: 'Ricerca DB AI',
+    adeleLoFeudo: 'Adele Lo Feudo Art',
+    arcadeAlbicchiere: 'Arcade Albicchiere',
     chatbot: 'Chatbot',
     database: 'Database',
-    cocktailAIDesc: 'Sistema di raccomandazioni avanzato che combina AI conversazionale con database scientifico di mixology. Analizza HomeBar dell\'utente, profilo comportamentale (5 tipologie), e chimica degli ingredienti per suggerimenti iper-personalizzati. Include molecular mixology, controllo pH, gestione dilution e tecniche bartending professionali con supporto multilingue.',
+    cms: 'CMS',
+    portfolio: 'Portfolio',
+    marketing: 'Marketing',
+    gameDesign: 'Game Design',
+    cocktailAIDesc: 'Piattaforma full-stack con 57,737 righe di codice. AI conversazionale con database scientifico di mixology, HomeBar manager, mappe 3D, multi-workspace (Personal, Bar B2B, Distillery). Tech: React 18, TypeScript, Supabase, Claude SDK, Three.js.',
     aiDBSearchDesc: 'Architettura RAG ibrida con retrieval intelligente di metadati strutturati e sample data reali. Sistema di eager loading completo (tabelle, relazioni, patterns), context-aware AI decision making, e full-text search analyzer. Gestisce query conversazionali, operazioni CRUD sicure e business intelligence con pattern recognition per dati italiani.',
-    openAIAPI: 'API OpenAI + DALL-E 3',
-    nlp: 'Context-Aware AI Processing',
-    recommendationEngine: 'Multi-Dimensional Profiling',
-    ragArchitecture: 'Hybrid RAG + Eager Loading',
-    vectorDatabase: 'Structured Metadata Cache',
-    semanticSearch: 'Pattern Recognition + Full-Text',
+    adeleLoFeudoDesc: 'CMS completo per artista contemporanea con gestione portfolio, mostre e collezioni. Backoffice con editor WYSIWYG, ottimizzazione immagini automatica, sistema multilingue (9 lingue), campagne Meta Ads integrate e analytics.',
+    arcadeAlbicchiereDesc: 'Easter egg page con mini-giochi arcade a tema vino. Design retro pixel art, animazioni CSS pure, responsive design. Sviluppo completo: concept, design, coding.',
+    claudeSDK: 'Claude SDK',
+    openAI: 'OpenAI API',
+    threeJS: 'Three.js',
+    react18: 'React 18',
+    typescript: 'TypeScript',
+    supabase: 'Supabase',
+    cloudflare: 'Cloudflare',
+    tailwind: 'Tailwind CSS',
+    vite: 'Vite',
+    figma: 'Figma',
+    metaAds: 'Meta Ads',
+    htmlCss: 'HTML/CSS',
+    javascript: 'JavaScript',
+    viewProject: 'Vedi Progetto',
+    linesOfCode: 'righe di codice',
     
     // About
     aboutIntro: 'Sono',
@@ -97,7 +114,10 @@ const translations = {
     pgPanteneWinner: 'Vincitore Business Case P&G Pantene',
     masterclassAnnie: 'Masterclass con Annie Leibovitz',
     masterclassMartin: 'Masterclass con Martin Scorsese',
-    b2EnglishCert: 'Certificazione Inglese B2',
+    c1EnglishCert: 'Certificazione Inglese C1',
+    albicchiereDesc: 'Ruolo ibrido in startup IoT wine-tech (team di 6). Responsabilit\u00e0 multiple: Product Management (sprint planning, 150+ test cases QA), UI/UX Design (100+ screens Figma per app, backoffice, dashboard B2B), Frontend Development (landing pages, arcade page), Business Development (pitch deck, funding applications, Vinitaly 2025). Gestione Taiwan Internship Program (6 studenti in 3 anni). Brand manual 80 pagine + packaging innovativo con Braille.',
+    kickstarterStats: '\u20ac370K raccolti | 1,300 backer | 61 paesi',
+    cesAward: 'CES Innovation Award 2020',
     
     // Stack
     uiuxDesign: 'Design UI/UX',
@@ -130,6 +150,11 @@ const translations = {
     // Misc
     email: 'E-Mail',
     copied: 'Copiato!',
+
+    // CTA Section
+    ctaTitle: 'Lo scatto perfetto è solo una conversazione di distanza',
+    ctaSubtitle: 'Pronto a creare qualcosa di unico insieme? Contattami per discutere del tuo prossimo progetto.',
+    getInTouch: 'Contattami',
   },
   en: {
     // Navigation
@@ -180,16 +205,33 @@ const translations = {
     // Projects
     cocktailAI: 'Cocktail AI',
     aiDBSearch: 'AI DB Search',
+    adeleLoFeudo: 'Adele Lo Feudo Art',
+    arcadeAlbicchiere: 'Arcade Albicchiere',
     chatbot: 'Chatbot',
     database: 'Database',
-    cocktailAIDesc: 'Advanced recommendation system combining conversational AI with scientific mixology database. Analyzes user HomeBar, behavioral profiling (5 user types), and ingredient chemistry for hyper-personalized suggestions. Features molecular mixology, pH control, dilution management, and professional bartending techniques with multilingual support.',
+    cms: 'CMS',
+    portfolio: 'Portfolio',
+    marketing: 'Marketing',
+    gameDesign: 'Game Design',
+    cocktailAIDesc: 'Full-stack platform with 57,737 lines of code. Conversational AI with scientific mixology database, HomeBar manager, 3D maps, multi-workspace (Personal, Bar B2B, Distillery). Tech: React 18, TypeScript, Supabase, Claude SDK, Three.js.',
     aiDBSearchDesc: 'Hybrid RAG architecture with intelligent retrieval of structured metadata and real sample data. Complete eager loading system (tables, relationships, patterns), context-aware AI decision making, and full-text search analyzer. Handles conversational queries, secure CRUD operations, and business intelligence with pattern recognition for Italian data formats.',
-    openAIAPI: 'OpenAI API + DALL-E 3',
-    nlp: 'Context-Aware AI Processing',
-    recommendationEngine: 'Multi-Dimensional Profiling',
-    ragArchitecture: 'Hybrid RAG + Eager Loading',
-    vectorDatabase: 'Structured Metadata Cache',
-    semanticSearch: 'Pattern Recognition + Full-Text',
+    adeleLoFeudoDesc: 'Complete CMS for contemporary artist with portfolio, exhibitions and collections management. Backoffice with WYSIWYG editor, automatic image optimization, multilingual system (9 languages), integrated Meta Ads campaigns and analytics.',
+    arcadeAlbicchiereDesc: 'Easter egg page with wine-themed arcade mini-games. Retro pixel art design, pure CSS animations, responsive design. Full development: concept, design, coding.',
+    claudeSDK: 'Claude SDK',
+    openAI: 'OpenAI API',
+    threeJS: 'Three.js',
+    react18: 'React 18',
+    typescript: 'TypeScript',
+    supabase: 'Supabase',
+    cloudflare: 'Cloudflare',
+    tailwind: 'Tailwind CSS',
+    vite: 'Vite',
+    figma: 'Figma',
+    metaAds: 'Meta Ads',
+    htmlCss: 'HTML/CSS',
+    javascript: 'JavaScript',
+    viewProject: 'View Project',
+    linesOfCode: 'lines of code',
     
     // About
     aboutIntro: "I'm",
@@ -218,7 +260,10 @@ const translations = {
     pgPanteneWinner: 'P&G Pantene Business Case Winner',
     masterclassAnnie: 'Masterclass with Annie Leibovitz',
     masterclassMartin: 'Masterclass with Martin Scorsese',
-    b2EnglishCert: 'B2 English Certification',
+    c1EnglishCert: 'C1 English Certification',
+    albicchiereDesc: 'Hybrid role in IoT wine-tech startup (team of 6). Multiple responsibilities: Product Management (sprint planning, 150+ QA test cases), UI/UX Design (100+ Figma screens for app, backoffice, B2B dashboard), Frontend Development (landing pages, arcade page), Business Development (pitch deck, funding applications, Vinitaly 2025). Managing Taiwan Internship Program (6 students in 3 years). 80-page brand manual + innovative Braille packaging.',
+    kickstarterStats: '\u20ac370K raised | 1,300 backers | 61 countries',
+    cesAward: 'CES Innovation Award 2020',
     
     // Stack
     uiuxDesign: 'UI/UX Design',
@@ -251,6 +296,11 @@ const translations = {
     // Misc
     email: 'E-Mail',
     copied: 'Copied!',
+
+    // CTA Section
+    ctaTitle: 'The perfect shot is just a conversation away',
+    ctaSubtitle: 'Ready to create something unique together? Get in touch to discuss your next project.',
+    getInTouch: 'Get in touch',
   }
 };
 
