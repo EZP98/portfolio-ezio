@@ -67,7 +67,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 0;
   transform: perspective(1200px);
   transform-style: preserve-3d;
 }
@@ -94,7 +94,8 @@
 
 /* 3D Transforms */
 .cta-card-left {
-  transform: translateZ(-300px) rotate(-10deg) rotateY(40deg);
+  transform: translateX(60px) translateZ(-300px) rotate(-10deg) rotateY(40deg);
+  margin-right: -80px;
 }
 
 .cta-card-center {
@@ -103,7 +104,8 @@
 }
 
 .cta-card-right {
-  transform: translateZ(-300px) rotate(10deg) rotateY(-40deg);
+  transform: translateX(-60px) translateZ(-300px) rotate(10deg) rotateY(-40deg);
+  margin-left: -80px;
 }
 
 /* Corner Brackets */
@@ -186,7 +188,7 @@
 /* Responsive */
 @media (max-width: 900px) {
   .cta-gallery-perspective {
-    gap: 16px;
+    gap: 0;
   }
 
   .cta-card {
@@ -195,11 +197,13 @@
   }
 
   .cta-card-left {
-    transform: translateZ(-200px) rotate(-8deg) rotateY(35deg);
+    transform: translateX(40px) translateZ(-200px) rotate(-8deg) rotateY(35deg);
+    margin-right: -60px;
   }
 
   .cta-card-right {
-    transform: translateZ(-200px) rotate(8deg) rotateY(-35deg);
+    transform: translateX(-40px) translateZ(-200px) rotate(8deg) rotateY(-35deg);
+    margin-left: -60px;
   }
 }
 
@@ -242,6 +246,7 @@
   .cta-card-center,
   .cta-card-right {
     transform: none;
+    margin: 0;
   }
 
   .cta-social {
