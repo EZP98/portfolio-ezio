@@ -2,6 +2,65 @@
 .cta-section {
   padding: 120px 0;
   background: var(--bg-primary);
+  overflow: hidden;
+}
+
+/* Entrance Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes cardEnterLeft {
+  from {
+    opacity: 0;
+    transform: translateX(100px) translateZ(-400px) rotate(-15deg) rotateY(50deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(60px) translateZ(-300px) rotate(-10deg) rotateY(40deg);
+  }
+}
+
+@keyframes cardEnterCenter {
+  from {
+    opacity: 0;
+    transform: translateZ(-100px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0) scale(1);
+  }
+}
+
+@keyframes cardEnterRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100px) translateZ(-400px) rotate(15deg) rotateY(-50deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-60px) translateZ(-300px) rotate(10deg) rotateY(-40deg);
+  }
 }
 
 .cta-container {
@@ -17,6 +76,8 @@
 /* Text Content */
 .cta-content {
   margin-bottom: 80px;
+  will-change: transform;
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .cta-title {
@@ -61,6 +122,8 @@
   width: 100%;
   max-width: 900px;
   margin-bottom: 80px;
+  will-change: transform;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .cta-gallery-perspective {
@@ -75,8 +138,8 @@
 /* Cards */
 .cta-card {
   position: relative;
-  width: 280px;
-  height: 360px;
+  width: 300px;
+  height: 448px;
   border-radius: 20px;
   overflow: visible;
   transition: transform 0.5s ease;
@@ -96,22 +159,25 @@
 .cta-card-left {
   transform: translateX(60px) translateZ(-300px) rotate(-10deg) rotateY(40deg);
   margin-right: -80px;
+  animation: cardEnterLeft 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
 }
 
 .cta-card-center {
   transform: translateZ(0);
   z-index: 10;
+  animation: cardEnterCenter 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
 }
 
 .cta-card-right {
   transform: translateX(-60px) translateZ(-300px) rotate(10deg) rotateY(-40deg);
   margin-left: -80px;
+  animation: cardEnterRight 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
 }
 
 /* Corner Brackets */
 .cta-card-brackets {
   position: absolute;
-  inset: 0;
+  inset: 16px;
   pointer-events: none;
   z-index: 20;
 }
@@ -120,41 +186,37 @@
   position: absolute;
   width: 16px;
   height: 16px;
-  border-color: rgb(255, 255, 255);
+  border-color: rgba(255, 255, 255, 0.9);
   border-style: solid;
   border-width: 0;
 }
 
 .bracket-tl {
-  top: 16px;
-  left: 16px;
+  top: 0;
+  left: 0;
   border-top-width: 2px;
   border-left-width: 2px;
-  border-top-left-radius: 4px;
 }
 
 .bracket-tr {
-  top: 16px;
-  right: 16px;
+  top: 0;
+  right: 0;
   border-top-width: 2px;
   border-right-width: 2px;
-  border-top-right-radius: 4px;
 }
 
 .bracket-bl {
-  bottom: 16px;
-  left: 16px;
+  bottom: 0;
+  left: 0;
   border-bottom-width: 2px;
   border-left-width: 2px;
-  border-bottom-left-radius: 4px;
 }
 
 .bracket-br {
-  bottom: 16px;
-  right: 16px;
+  bottom: 0;
+  right: 0;
   border-bottom-width: 2px;
   border-right-width: 2px;
-  border-bottom-right-radius: 4px;
 }
 
 /* Social Links */
@@ -162,6 +224,7 @@
   display: flex;
   gap: 48px;
   justify-content: center;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
 }
 
 .cta-social-link {
