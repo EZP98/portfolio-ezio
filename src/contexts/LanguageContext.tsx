@@ -22,11 +22,11 @@ const translations = {
     viewLinkedIn: 'Vedi il mio LinkedIn',
     startup: 'Startup',
     discoverAlbicchiere: 'Scopri Albicchiere',
-    creative: 'Creativo',
-    myVideoProjects: 'I miei progetti video',
+    creative: 'Content',
+    myVideoProjects: 'Il mio portfolio visivo',
     
     // Sections
-    videoWorks: 'Lavori Video',
+    videoWorks: 'Content Marketing',
     aiProjects: 'Progetti AI',
     toolsSkills: 'Strumenti e Competenze',
     experienceEducation: 'Esperienza e Formazione',
@@ -67,9 +67,9 @@ const translations = {
     portfolio: 'Portfolio',
     marketing: 'Marketing',
     gameDesign: 'Game Design',
-    cocktailAIDesc: 'Piattaforma full-stack con 57,737 righe di codice. AI conversazionale con database scientifico di mixology, HomeBar manager, mappe 3D, multi-workspace (Personal, Bar B2B, Distillery). Tech: React 18, TypeScript, Supabase, Claude SDK, Three.js.',
+    cocktailAIDesc: 'Piattaforma AI full-stack (80,009 righe di codice) che rivoluziona il mondo del cocktail. PERSONAL: il tuo bartender AI personale - assistente conversazionale con database scientifico di mixology, gestione HomeBar con inventory tracking, creazione ricette su misura dai tuoi ingredienti. BAR B2B: strumenti professionali per locali - menu designer, analisi costi/margini, gestione inventory e team. Architettura multi-workspace con mappe 3D interattive (Three.js), Claude SDK per AI, Supabase real-time, Stripe payments.',
     aiDBSearchDesc: 'Architettura RAG ibrida con retrieval intelligente di metadati strutturati e sample data reali. Sistema di eager loading completo (tabelle, relazioni, patterns), context-aware AI decision making, e full-text search analyzer. Gestisce query conversazionali, operazioni CRUD sicure e business intelligence con pattern recognition per dati italiani.',
-    adeleLoFeudoDesc: 'CMS completo per artista contemporanea con gestione portfolio, mostre e collezioni. Backoffice con editor WYSIWYG, ottimizzazione immagini automatica, sistema multilingue (9 lingue), campagne Meta Ads integrate e analytics.',
+    adeleLoFeudoDesc: 'Progetto completo per Adele Lo Feudo, pittrice contemporanea italiana. SVILUPPO: sito web pubblico con animazioni GSAP, CMS headless con Cloudflare Workers/D1/R2, backoffice completo (page builder mostre, gestione collezioni drag&drop, media storage), sistema multilingue 9 lingue con AI translation, e-commerce Stripe. MARKETING: shooting fotografico delle opere, campagne Meta Ads con Open Graph dinamico per ottimizzazione conversioni. Sito live: adelelofeudo.com',
     arcadeAlbicchiereDesc: 'Easter egg page con mini-giochi arcade a tema vino. Design retro pixel art, animazioni CSS pure, responsive design. Sviluppo completo: concept, design, coding.',
     claudeSDK: 'Claude SDK',
     openAI: 'OpenAI API',
@@ -152,8 +152,8 @@ const translations = {
     copied: 'Copiato!',
 
     // CTA Section
-    ctaTitle: 'Lo scatto perfetto è solo una conversazione di distanza',
-    ctaSubtitle: 'Pronto a creare qualcosa di unico insieme? Contattami per discutere del tuo prossimo progetto.',
+    ctaTitle: 'Il prossimo prodotto digitale è solo una conversazione di distanza',
+    ctaSubtitle: 'Pronto a trasformare la tua idea in un prodotto digitale di successo? Contattami per discutere della tua strategia.',
     getInTouch: 'Contattami',
 
     // Introduction Section
@@ -173,11 +173,11 @@ const translations = {
     viewLinkedIn: 'View my LinkedIn',
     startup: 'Startup',
     discoverAlbicchiere: 'Discover Albicchiere',
-    creative: 'Creative',
-    myVideoProjects: 'My video projects',
+    creative: 'Content',
+    myVideoProjects: 'My visual portfolio',
     
     // Sections
-    videoWorks: 'Video Works',
+    videoWorks: 'Content Marketing',
     aiProjects: 'AI Projects',
     toolsSkills: 'Tools & Skills',
     experienceEducation: 'Experience & Education',
@@ -218,9 +218,9 @@ const translations = {
     portfolio: 'Portfolio',
     marketing: 'Marketing',
     gameDesign: 'Game Design',
-    cocktailAIDesc: 'Full-stack platform with 57,737 lines of code. Conversational AI with scientific mixology database, HomeBar manager, 3D maps, multi-workspace (Personal, Bar B2B, Distillery). Tech: React 18, TypeScript, Supabase, Claude SDK, Three.js.',
+    cocktailAIDesc: 'Full-stack AI platform (80,009 lines of code) revolutionizing the cocktail world. PERSONAL: your AI bartender - conversational assistant with scientific mixology database, HomeBar management with inventory tracking, custom recipe creation from your ingredients. BAR B2B: professional tools for venues - menu designer, cost/margin analysis, inventory and team management. Multi-workspace architecture with interactive 3D maps (Three.js), Claude SDK for AI, Supabase real-time, Stripe payments.',
     aiDBSearchDesc: 'Hybrid RAG architecture with intelligent retrieval of structured metadata and real sample data. Complete eager loading system (tables, relationships, patterns), context-aware AI decision making, and full-text search analyzer. Handles conversational queries, secure CRUD operations, and business intelligence with pattern recognition for Italian data formats.',
-    adeleLoFeudoDesc: 'Complete CMS for contemporary artist with portfolio, exhibitions and collections management. Backoffice with WYSIWYG editor, automatic image optimization, multilingual system (9 languages), integrated Meta Ads campaigns and analytics.',
+    adeleLoFeudoDesc: 'Full project for Adele Lo Feudo, Italian contemporary painter. DEVELOPMENT: public website with GSAP animations, headless CMS with Cloudflare Workers/D1/R2, complete backoffice (exhibition page builder, drag&drop collection management, media storage), 9-language multilingual system with AI translation, Stripe e-commerce. MARKETING: artwork photo shooting, Meta Ads campaigns with dynamic Open Graph for conversion optimization. Live site: adelelofeudo.com',
     arcadeAlbicchiereDesc: 'Easter egg page with wine-themed arcade mini-games. Retro pixel art design, pure CSS animations, responsive design. Full development: concept, design, coding.',
     claudeSDK: 'Claude SDK',
     openAI: 'OpenAI API',
@@ -303,8 +303,8 @@ const translations = {
     copied: 'Copied!',
 
     // CTA Section
-    ctaTitle: 'The perfect shot is just a conversation away',
-    ctaSubtitle: 'Ready to create something unique together? Get in touch to discuss your next project.',
+    ctaTitle: 'Your next digital product is just a conversation away',
+    ctaSubtitle: 'Ready to transform your idea into a successful digital product? Get in touch to discuss your strategy.',
     getInTouch: 'Get in touch',
 
     // Introduction Section

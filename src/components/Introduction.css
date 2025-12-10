@@ -2,7 +2,7 @@
 .intro-section {
   position: relative;
   background: var(--bg-primary);
-  min-height: 300vh; /* Tall enough for scroll effect + images */
+  min-height: 400vh; /* Taller for more scroll space before images */
 }
 
 /* Text container - FIXED position so it stays in place */
@@ -83,12 +83,12 @@
 /* Images section - positioned after the text reveal area */
 .intro-images {
   position: absolute;
-  top: 100vh; /* Start after one viewport height (text reveal area) */
+  top: 130vh; /* Start earlier - after 1.3 viewport heights */
   left: 0;
   right: 0;
   z-index: 2;
   background: transparent;
-  padding: 0 64px 100px;
+  padding: 0 64px 300px; /* More bottom padding for space before next section */
 }
 
 /* Bento/Masonry style grid */

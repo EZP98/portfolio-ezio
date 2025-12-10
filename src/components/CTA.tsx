@@ -33,7 +33,7 @@ const CTA: React.FC = () => {
                 <span className="bracket bracket-br"></span>
               </div>
               <img
-                src="/cta-1.jpg"
+                src="/cta-1.webp"
                 alt="Work sample 1"
                 className="cta-card-image"
               />
@@ -48,7 +48,7 @@ const CTA: React.FC = () => {
                 <span className="bracket bracket-br"></span>
               </div>
               <img
-                src="/cta-2.jpg"
+                src="/cta-2.webp"
                 alt="Work sample 2"
                 className="cta-card-image"
               />
@@ -63,7 +63,7 @@ const CTA: React.FC = () => {
                 <span className="bracket bracket-br"></span>
               </div>
               <img
-                src="/cta-3.jpg"
+                src="/cta-3.webp"
                 alt="Work sample 3"
                 className="cta-card-image"
               />

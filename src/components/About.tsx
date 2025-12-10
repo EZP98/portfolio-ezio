@@ -11,7 +11,7 @@ const About: React.FC = () => {
         {t('aboutIntro')} 
         <a href="/about" className="inline-link">
           <img
-            src="/profile.jpg"
+            src="/profile.webp"
             alt="Ezio"
             className="inline-avatar"
           />
