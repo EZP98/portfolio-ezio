@@ -2,6 +2,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Introduction from './components/Introduction';
 import Showcase from './components/Showcase';
+import WorksTicker from './components/WorksTicker';
 import Works from './components/Works';
 import Projects from './components/Projects';
 import About from './components/About';
@@ -21,6 +22,7 @@ function App() {
         <Hero />
         <Introduction />
         <Showcase />
+        <WorksTicker />
         <Works />
         <Projects />
         <About />
