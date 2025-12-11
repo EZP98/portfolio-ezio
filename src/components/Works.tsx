@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import ScrollReveal from './ScrollReveal';
 import './Works.css';
 import type { WorkItem } from '../types';
 
@@ -53,32 +54,36 @@ const Works: React.FC = () => {
 
   return (
     <section id="videomaking">
-      <div className="section-header">
-        <h2 className="section-title">{t('videoWorks')}</h2>
-        <span className="section-arrow">→</span>
-      </div>
-      
+      <ScrollReveal>
+        <div className="section-header">
+          <h2 className="section-title">{t('videoWorks')}</h2>
+          <span className="section-arrow">→</span>
+        </div>
+      </ScrollReveal>
+
       <div className="works-grid">
-        {works.map((work) => (
-          <a key={work.id} href={work.link} className="work-card">
-            <div className="work-image-wrapper">
-              <img 
-                src={work.image} 
-                alt={work.title} 
-                className="work-image"
-              />
-            </div>
-            <div className="work-meta">
-              <div className="work-tag">
-                <div className="tag-dots">
-                  <span className="tag-dot"></span>
-                  <span className="tag-dot"></span>
-                </div>
-                <span>{work.category}</span>
+        {works.map((work, index) => (
+          <ScrollReveal key={work.id} delay={index * 100}>
+            <a href={work.link} className="work-card">
+              <div className="work-image-wrapper">
+                <img
+                  src={work.image}
+                  alt={work.title}
+                  className="work-image"
+                />
               </div>
-              <span className="work-name">{work.title}</span>
-            </div>
-          </a>
+              <div className="work-meta">
+                <div className="work-tag">
+                  <div className="tag-dots">
+                    <span className="tag-dot"></span>
+                    <span className="tag-dot"></span>
+                  </div>
+                  <span>{work.category}</span>
+                </div>
+                <span className="work-name">{work.title}</span>
+              </div>
+            </a>
+          </ScrollReveal>
         ))}
       </div>
     </section>

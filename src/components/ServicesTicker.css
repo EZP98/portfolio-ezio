@@ -1,0 +1,117 @@
+/* Services Ticker - Adaptive Light/Dark Style */
+.services-ticker-section {
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.services-ticker-container {
+  background: var(--bg-secondary);
+  border: 0.5px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 16px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Fade effect on edges */
+.services-ticker-container::before,
+.services-ticker-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.services-ticker-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-secondary) 0%, transparent 100%);
+}
+
+.services-ticker-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-secondary) 0%, transparent 100%);
+}
+
+.services-ticker-track {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 48px;
+  align-items: center;
+  will-change: transform;
+}
+
+.services-ticker-item {
+  flex-shrink: 0;
+}
+
+.services-ticker-service {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.services-ticker-text {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 24px;
+  color: var(--text-primary);
+  white-space: nowrap;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-ticker-section {
+    margin-bottom: 60px;
+  }
+
+  .services-ticker-container {
+    padding: 14px 0;
+    border-radius: 10px;
+  }
+
+  .services-ticker-track {
+    gap: 32px;
+  }
+
+  .services-ticker-text {
+    font-size: 14px;
+  }
+
+  .services-ticker-container::before,
+  .services-ticker-container::after {
+    width: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-ticker-section {
+    margin-bottom: 40px;
+  }
+
+  .services-ticker-container {
+    padding: 12px 0;
+    border-radius: 8px;
+  }
+
+  .services-ticker-track {
+    gap: 24px;
+  }
+
+  .services-ticker-text {
+    font-size: 13px;
+  }
+
+  .services-ticker-container::before,
+  .services-ticker-container::after {
+    width: 30px;
+  }
+}

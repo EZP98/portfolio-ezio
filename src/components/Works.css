@@ -28,10 +28,12 @@
 @media (max-width: 768px) {
   .works-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 16px;
     margin-bottom: 80px;
+    max-width: 100%;
+    overflow: hidden;
   }
-  
+
   .section-header {
     margin-bottom: 30px;
   }
@@ -153,9 +155,3 @@
   opacity: 0.4;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .works-grid {
-    grid-template-columns: 1fr;
-  }
-}

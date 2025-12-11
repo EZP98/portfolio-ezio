@@ -1,208 +1,165 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import ScrollReveal from './ScrollReveal';
 import './Experience.css';
+
+interface ExperienceItem {
+  id: string;
+  type: 'work' | 'education' | 'achievement' | 'certification';
+  title: string;
+  company: string;
+  companyLink?: string;
+  period: string;
+  description: string;
+  metrics?: string[];
+  featured?: boolean;
+}
 
 const Experience: React.FC = () => {
   const { t } = useLanguage();
-  
+  const [expandedId, setExpandedId] = useState<string | null>('1'); // Albicchiere expanded by default
+
+  const experiences: ExperienceItem[] = [
+    {
+      id: '1',
+      type: 'work',
+      title: t('chiefMarketingOfficer'),
+      company: 'Albicchiere',
+      companyLink: 'https://www.albicchiere.com',
+      period: 'Nov 2022 - Dec 2025',
+      description: t('albicchiereDesc'),
+      metrics: [t('kickstarterStats'), t('cesAward')],
+      featured: false
+    },
+    {
+      id: '3',
+      type: 'education',
+      title: t('masterMovieDistribution'),
+      company: '24ORE Business School',
+      period: 'Oct 2021 - Apr 2022',
+      description: t('masterMovieDistDesc')
+    },
+    {
+      id: '5',
+      type: 'education',
+      title: t('businessManagement'),
+      company: 'Università degli Studi di Perugia',
+      period: 'Sep 2017 - Oct 2021',
+      description: t('businessManagementDesc')
+    },
+    {
+      id: '6',
+      type: 'achievement',
+      title: t('pgPanteneWinner'),
+      company: 'Università degli Studi di Perugia',
+      period: 'Sep - Dec 2019',
+      description: t('pgPanteneDesc')
+    },
+    {
+      id: '7',
+      type: 'education',
+      title: t('masterclassAnnie'),
+      company: 'MasterClass',
+      period: 'Feb 2022 - Mar 2022',
+      description: t('annieMasterclassDesc')
+    },
+    {
+      id: '8',
+      type: 'education',
+      title: t('masterclassMartin'),
+      company: 'MasterClass',
+      period: 'Dec 2021 - Jan 2022',
+      description: t('martinMasterclassDesc')
+    },
+    {
+      id: '9',
+      type: 'certification',
+      title: t('c1EnglishCert'),
+      company: 'Centro Linguistico Ateneo - UniPG',
+      period: 'Mar 2020',
+      description: t('c1EnglishDesc')
+    }
+  ];
+
+  const getTypeLabel = (type: ExperienceItem['type']) => {
+    switch (type) {
+      case 'work': return t('work');
+      case 'education': return t('education');
+      case 'achievement': return t('achievement');
+      case 'certification': return t('certification');
+      default: return '';
+    }
+  };
+
+  const toggleExpand = (id: string) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
   return (
-    <section id="experience">
-      <div className="section-header">
-        <h2 className="section-title">{t('experienceEducation')}</h2>
-        <span className="section-arrow">→</span>
-      </div>
-      
-      <div className="experience-grid">
-        <div className="experience-card experience-card-featured">
-          <div className="experience-header">
-            <div className="experience-icon">🚀</div>
-            <span className="experience-type">{t('currentPosition')}</span>
-            <div className="experience-dots">
-              <span className="experience-dot"></span>
-              <span className="experience-dot"></span>
-            </div>
-          </div>
-          <div className="experience-content">
-            <h3 className="experience-title">{t('chiefMarketingOfficer')}</h3>
-            <p className="experience-company">
-              <a href="https://www.albicchiere.com" target="_blank" rel="noopener noreferrer">Albicchiere</a>
-            </p>
-            <p className="experience-period">Nov 2022 - Present</p>
-            <div className="experience-metrics">
-              <span className="metric-badge">{t('kickstarterStats')}</span>
-              <span className="metric-badge highlight">{t('cesAward')}</span>
-            </div>
-            <p className="experience-description">
-              {t('albicchiereDesc')}
-            </p>
-          </div>
+    <section id="experience" className="experience-section">
+      <ScrollReveal>
+        <div className="section-header">
+          <h2 className="section-title">{t('experienceEducation')}</h2>
+          <span className="section-arrow">→</span>
         </div>
-        
-        <div className="experience-card">
-          <div className="experience-header">
-            <div className="experience-icon">🎬</div>
-            <span className="experience-type">{t('creativeWork')}</span>
-            <div className="experience-dots">
-              <span className="experience-dot"></span>
-              <span className="experience-dot"></span>
+      </ScrollReveal>
+
+      <ScrollReveal delay={100}>
+        <div className="experience-container">
+          {experiences.map((item) => (
+            <div
+              key={item.id}
+              className={`experience-row ${expandedId === item.id ? 'expanded' : ''} ${item.featured ? 'featured' : ''}`}
+            >
+              <button
+                className="experience-header-btn"
+                onClick={() => toggleExpand(item.id)}
+                aria-expanded={expandedId === item.id}
+              >
+                <div className="experience-main">
+                  <span className="experience-type-badge">{getTypeLabel(item.type)}</span>
+                  <span className="experience-title">{item.title}</span>
+                </div>
+                <div className="experience-meta">
+                  <span className="experience-company">
+                    {item.companyLink ? (
+                      <a
+                        href={item.companyLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {item.company}
+                      </a>
+                    ) : item.company}
+                  </span>
+                  <span className="experience-period">{item.period}</span>
+                </div>
+                <div className="experience-chevron">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="6,9 12,15 18,9" />
+                  </svg>
+                </div>
+              </button>
+
+              <div className="experience-content">
+                <div className="experience-content-inner">
+                  {item.metrics && item.metrics.length > 0 && (
+                    <div className="experience-metrics">
+                      {item.metrics.map((metric, idx) => (
+                        <span key={idx} className={`metric-badge ${idx === 1 ? 'highlight' : ''}`}>
+                          {metric}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  <p className="experience-description">{item.description}</p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="experience-content">
-            <h3 className="experience-title">{t('poetryVideomaker')}</h3>
-            <p className="experience-company">{t('freelance')}</p>
-            <p className="experience-period">2020 - Oct 2022</p>
-            <p className="experience-description">
-              Created short films for international poet Prof. Donato Loscalzo 
-              and art films for painter Adele Lo Feudo. Professional photography 
-              work focusing on art documentation and creative projects.
-            </p>
-          </div>
+          ))}
         </div>
-        
-        <div className="experience-card">
-          <div className="experience-header">
-            <div className="experience-icon">🎓</div>
-            <span className="experience-type">{t('education')}</span>
-            <div className="experience-dots">
-              <span className="experience-dot"></span>
-              <span className="experience-dot"></span>
-            </div>
-          </div>
-          <div className="experience-content">
-            <h3 className="experience-title">{t('masterMovieDistribution')}</h3>
-            <p className="experience-company">24ORE Business School</p>
-            <p className="experience-period">Oct 2021 - Apr 2022</p>
-            <p className="experience-description">
-              Specialized in audiovisual distribution strategies, marketing, 
-              and new business models. Final project with The Space Cinema.
-            </p>
-          </div>
-        </div>
-        
-        <div className="experience-card">
-          <div className="experience-header">
-            <div className="experience-icon">🍷</div>
-            <span className="experience-type">Education</span>
-            <div className="experience-dots">
-              <span className="experience-dot"></span>
-              <span className="experience-dot"></span>
-            </div>
-          </div>
-          <div className="experience-content">
-            <h3 className="experience-title">{t('masterWineExport')}</h3>
-            <p className="experience-company">24ORE Business School</p>
-            <p className="experience-period">Mar 2023 - Oct 2023</p>
-            <p className="experience-description">
-              Specialized in wine export strategies, international markets, and 
-              wine business management. Enhanced expertise in the wine industry 
-              aligning with role at Albicchiere.
-            </p>
-          </div>
-        </div>
-        
-        <div className="experience-card">
-          <div className="experience-header">
-            <div className="experience-icon">📚</div>
-            <span className="experience-type">Education</span>
-            <div className="experience-dots">
-              <span className="experience-dot"></span>
-              <span className="experience-dot"></span>
-            </div>
-          </div>
-          <div className="experience-content">
-            <h3 className="experience-title">{t('businessManagement')}</h3>
-            <p className="experience-company">Università degli Studi di Perugia</p>
-            <p className="experience-period">Sep 2017 - Oct 2021</p>
-            <p className="experience-description">
-              Bachelor's degree with honors (110 e Lode) in Business Economics and Management.
-              Focus on business analysis, economics, and statistics.
-            </p>
-          </div>
-        </div>
-        
-        <div className="experience-card">
-          <div className="experience-header">
-            <div className="experience-icon">🏆</div>
-            <span className="experience-type">{t('achievement')}</span>
-            <div className="experience-dots">
-              <span className="experience-dot"></span>
-              <span className="experience-dot"></span>
-            </div>
-          </div>
-          <div className="experience-content">
-            <h3 className="experience-title">{t('pgPanteneWinner')}</h3>
-            <p className="experience-company">Università degli Studi di Perugia</p>
-            <p className="experience-period">Dec 2019</p>
-            <p className="experience-description">
-              Won university business case competition for Pantene brand relaunch strategy. 
-              Project evaluated by Alessandro Zito (Trade Director Manager at Gillette Italia) 
-              and Marina Gigliotti (Assistant Professor at UniPG). Focus on 4Ps marketing strategy.
-            </p>
-          </div>
-        </div>
-        
-        <div className="experience-card">
-          <div className="experience-header">
-            <div className="experience-icon">📸</div>
-            <span className="experience-type">Education</span>
-            <div className="experience-dots">
-              <span className="experience-dot"></span>
-              <span className="experience-dot"></span>
-            </div>
-          </div>
-          <div className="experience-content">
-            <h3 className="experience-title">{t('masterclassAnnie')}</h3>
-            <p className="experience-company">MasterClass</p>
-            <p className="experience-period">Feb 2022 - Mar 2022</p>
-            <p className="experience-description">
-              Studied portrait photography with legendary photographer Annie Leibovitz. 
-              Learned storytelling through photography, working with natural light, and 
-              developing conceptual approaches to visual narratives.
-            </p>
-          </div>
-        </div>
-        
-        <div className="experience-card">
-          <div className="experience-header">
-            <div className="experience-icon">🎬</div>
-            <span className="experience-type">Education</span>
-            <div className="experience-dots">
-              <span className="experience-dot"></span>
-              <span className="experience-dot"></span>
-            </div>
-          </div>
-          <div className="experience-content">
-            <h3 className="experience-title">{t('masterclassMartin')}</h3>
-            <p className="experience-company">MasterClass</p>
-            <p className="experience-period">Dec 2021 - Jan 2022</p>
-            <p className="experience-description">
-              Studied filmmaking with Oscar-winning director Martin Scorsese. Explored 
-              storytelling techniques, editing approaches, and working with actors through 
-              analysis of cinematic masterpieces.
-            </p>
-          </div>
-        </div>
-        
-        <div className="experience-card">
-          <div className="experience-header">
-            <div className="experience-icon">🌍</div>
-            <span className="experience-type">{t('certification')}</span>
-            <div className="experience-dots">
-              <span className="experience-dot"></span>
-              <span className="experience-dot"></span>
-            </div>
-          </div>
-          <div className="experience-content">
-            <h3 className="experience-title">{t('c1EnglishCert')}</h3>
-            <p className="experience-company">Centro Linguistico Ateneo - UniPG</p>
-            <p className="experience-period">Mar 2020</p>
-            <p className="experience-description">
-              Obtained C1 level English certification, demonstrating advanced proficiency
-              in business and academic English communication.
-            </p>
-          </div>
-        </div>
-      </div>
+      </ScrollReveal>
     </section>
   );
 };

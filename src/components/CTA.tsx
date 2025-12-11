@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import ScrollReveal from './ScrollReveal';
 import './CTA.css';
 
 const CTA: React.FC = () => {
@@ -13,13 +14,15 @@ const CTA: React.FC = () => {
     <section className="cta-section">
       <div className="cta-container">
         {/* Text Content */}
-        <div className="cta-content">
-          <h2 className="cta-title">{t('ctaTitle')}</h2>
-          <p className="cta-subtitle">{t('ctaSubtitle')}</p>
-          <button className="cta-button" onClick={copyEmail}>
-            {t('getInTouch')}
-          </button>
-        </div>
+        <ScrollReveal>
+          <div className="cta-content">
+            <h2 className="cta-title">{t('ctaTitle')}</h2>
+            <p className="cta-subtitle">{t('ctaSubtitle')}</p>
+            <button className="cta-button" onClick={copyEmail}>
+              {t('getInTouch')}
+            </button>
+          </div>
+        </ScrollReveal>
 
         {/* 3D Cards Gallery */}
         <div className="cta-gallery">

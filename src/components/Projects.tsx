@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import ScrollReveal from './ScrollReveal';
 import './Projects.css';
 
 const Projects: React.FC = () => {
@@ -46,45 +47,48 @@ const Projects: React.FC = () => {
 
   return (
     <section id="projects">
-      <div className="section-header">
-        <h2 className="section-title">{t('aiProjects')}</h2>
-        <span className="section-arrow">→</span>
-      </div>
+      <ScrollReveal>
+        <div className="section-header">
+          <h2 className="section-title">{t('aiProjects')}</h2>
+          <span className="section-arrow">→</span>
+        </div>
+      </ScrollReveal>
 
       <div className="projects-grid">
         {projects.map((project, index) => (
-          <a
-            key={index}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-card project-card-link"
-          >
-            <div className="project-header">
-              <div className="project-icon-container">
-                <div className="project-icon">{project.icon}</div>
-                {project.stats && (
-                  <span className="project-stats">{project.stats}</span>
-                )}
+          <ScrollReveal key={index} delay={index * 100}>
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-card project-card-link"
+            >
+              <div className="project-header">
+                <div className="project-icon-container">
+                  <div className="project-icon">{project.icon}</div>
+                  {project.stats && (
+                    <span className="project-stats">{project.stats}</span>
+                  )}
+                </div>
+                <div className="project-badges">
+                  {project.badges.map((badge, i) => (
+                    <span key={i} className="project-badge">{badge}</span>
+                  ))}
+                </div>
               </div>
-              <div className="project-badges">
-                {project.badges.map((badge, i) => (
-                  <span key={i} className="project-badge">{badge}</span>
+              <h3 className="project-title">{project.title}</h3>
+              <p className="project-description">{project.description}</p>
+              <div className="project-tech">
+                {project.tech.map((tech, i) => (
+                  <span key={i} className="tech-tag">{tech}</span>
                 ))}
               </div>
-            </div>
-            <h3 className="project-title">{project.title}</h3>
-            <p className="project-description">{project.description}</p>
-            <div className="project-tech">
-              {project.tech.map((tech, i) => (
-                <span key={i} className="tech-tag">{tech}</span>
-              ))}
-            </div>
-            <div className="project-link-indicator">
-              <span>{t('viewProject')}</span>
-              <span className="link-arrow">↗</span>
-            </div>
-          </a>
+              <div className="project-link-indicator">
+                <span>{t('viewProject')}</span>
+                <span className="link-arrow">↗</span>
+              </div>
+            </a>
+          </ScrollReveal>
         ))}
       </div>
     </section>

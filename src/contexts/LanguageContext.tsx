@@ -17,7 +17,7 @@ const translations = {
     products: 'Prodotti',
     
     // Hero
-    heroTitle: 'Chief Marketing Officer\nConiugando Innovazione e Tradizione',
+    heroTitle: 'Digital Marketing Manager\nTrasformo idee in prodotti che convertono',
     connect: 'Connetti',
     viewLinkedIn: 'Vedi il mio LinkedIn',
     startup: 'Startup',
@@ -93,14 +93,15 @@ const translations = {
     innovation: 'Innovazione',
     and: 'e',
     creativeStorytelling: 'Storytelling Creativo',
-    aboutText2: '. Attualmente CMO presso',
-    aboutText3: 'da novembre 2022, dove guido la strategia di marketing, design UI/UX e sviluppo prodotto.',
+    aboutText2: '. Ho lavorato come CMO presso',
+    aboutText3: 'da novembre 2022 a dicembre 2025, dove ho guidato la strategia di marketing, design UI/UX e sviluppo prodotto.',
     aboutBio: 'Nato in Umbria nel 1998 con radici meridionali. Sono appassionato di cinema e ciclismo, attività fortemente caratterizzate da creatività e spirito di squadra: proprio come il marketing. Lavorare in team e affrontare problemi diversi utilizzando non solo regole fisse ma anche principi mutevoli è ciò che apprezzo di più. Ho sempre ammirato la felicità e la meraviglia create dai prodotti: spero di diventare non solo un fruitore ma un creatore di tale magia.',
     findMeOn: 'Mi trovi su',
     whereIShare: 'dove condivido intuizioni su marketing, tecnologia del vino e progetti creativi.',
     
     // Experience
     currentPosition: 'Posizione Attuale',
+    work: 'Lavoro',
     creativeWork: 'Lavoro Creativo',
     education: 'Formazione',
     achievement: 'Risultato',
@@ -115,9 +116,15 @@ const translations = {
     masterclassAnnie: 'Masterclass con Annie Leibovitz',
     masterclassMartin: 'Masterclass con Martin Scorsese',
     c1EnglishCert: 'Certificazione Inglese C1',
-    albicchiereDesc: 'Ruolo ibrido in startup IoT wine-tech (team di 6). Responsabilit\u00e0 multiple: Product Management (sprint planning, 150+ test cases QA), UI/UX Design (100+ screens Figma per app, backoffice, dashboard B2B), Frontend Development (landing pages, arcade page), Business Development (pitch deck, funding applications, Vinitaly 2025). Gestione Taiwan Internship Program (6 studenti in 3 anni). Brand manual 80 pagine + packaging innovativo con Braille.',
+    albicchiereDesc: 'Ho guidato marketing e prodotto in una startup IoT wine-tech con un team di 6 persone. Product Management con sprint planning e 150+ test cases QA. UI/UX Design di 100+ schermate Figma per app mobile, backoffice e dashboard B2B. Frontend Development di landing pages e pagine creative. Business Development con pitch deck e candidature a finanziamenti. Coordinamento del Taiwan Internship Program con 6 studenti in 3 anni. Creazione di un brand manual di 80 pagine e packaging innovativo con Braille.',
     kickstarterStats: '\u20ac370K raccolti | 1,300 backer | 61 paesi',
     cesAward: 'CES Innovation Award 2020',
+    masterMovieDistDesc: 'Formazione specialistica in distribuzione audiovisiva, con focus su strategie di marketing cinematografico, nuovi modelli di business e piattaforme digitali. Il programma ha incluso analisi di case study reali e project work finale realizzato in collaborazione con The Space Cinema, sviluppando competenze pratiche nella pianificazione di release cinematografiche e strategie di audience development.',
+    businessManagementDesc: 'Laurea triennale con lode (110 e Lode) in Economia Aziendale. Percorso formativo incentrato su analisi di bilancio, economia aziendale e statistica applicata. Ho sviluppato solide competenze in pianificazione strategica, controllo di gestione e analisi dei dati, applicando metodologie quantitative a casi aziendali reali.',
+    pgPanteneDesc: 'Vincitore della Business Case Competition P&G presso UniPG, dove ho sviluppato una strategia completa di rilancio del brand Pantene. Ho presentato un\'analisi approfondita del marketing mix (Prodotto, Prezzo, Distribuzione, Comunicazione) a una giuria composta da Alessandro Zito (Trade Director Manager, Gillette Italia) e Prof.ssa Marina Gigliotti (UniPG). La proposta includeva strategie innovative di posizionamento e ottimizzazione della distribuzione retail per il mercato italiano.',
+    annieMasterclassDesc: 'Studio approfondito di fotografia ritrattistica con la leggendaria Annie Leibovitz. Ho acquisito tecniche di storytelling visivo, gestione della luce naturale e approcci concettuali alla narrazione fotografica. Il corso ha fornito una prospettiva unica sulla creazione di immagini iconiche e sulla costruzione di una visione artistica personale.',
+    martinMasterclassDesc: 'Formazione cinematografica con il premio Oscar Martin Scorsese. Ho esplorato tecniche di storytelling, approcci al montaggio e direzione degli attori attraverso l\'analisi di capolavori del cinema. Il corso ha approfondito il processo creativo di uno dei più grandi registi della storia, dalla pre-produzione alla post-produzione.',
+    c1EnglishDesc: 'Certificazione di livello C1 in lingua inglese, attestante competenze avanzate nella comunicazione professionale e accademica. La certificazione dimostra padronanza nella comprensione di testi complessi, espressione fluente e capacità di utilizzare la lingua in contesti lavorativi internazionali.',
     
     // Stack
     uiuxDesign: 'Design UI/UX',
@@ -158,8 +165,18 @@ const translations = {
 
     // Introduction Section
     introBadge: 'Filosofia',
-    introText: 'Credo nel potere delle storie autentiche. Ogni progetto è un\'opportunità per trasformare idee in esperienze memorabili, unendo creatività, strategia e tecnologia per creare connessioni significative tra brand e persone.',
+    introText: 'Creo prodotti digitali e strategie di marketing che convertono. Dall\'ideazione al lancio, unisco AI, branding e performance marketing per trasformare idee in risultati concreti.',
     introCopyright: '© 2024 Ezio Pappalardo',
+
+    // Testimonials Section
+    testimonials: 'Testimonianze',
+    testimonialsTitle: 'Cosa dicono di me',
+    testimonialsDescription: 'Ho avuto il privilegio di collaborare con professionisti e aziende che hanno creduto nella mia visione. Ecco cosa pensano del nostro lavoro insieme.',
+    contactMe: 'Contattami',
+    testimonial1Text: 'Ezio ha trasformato completamente la nostra strategia di marketing digitale. La sua capacità di unire creatività e analisi dei dati ha portato risultati eccezionali.',
+    testimonial2Text: 'Un professionista che sa ascoltare e tradurre le esigenze in soluzioni concrete. Il progetto è stato consegnato nei tempi e ha superato le aspettative.',
+    testimonial3Text: 'La collaborazione con Ezio è stata fondamentale per il lancio del nostro brand. Visione strategica e attenzione ai dettagli lo contraddistinguono.',
+    testimonial4Text: 'Competenza tecnica e sensibilità creativa raramente si trovano nella stessa persona. Ezio è uno di quei rari professionisti che eccelle in entrambe.',
   },
   en: {
     // Navigation
@@ -168,7 +185,7 @@ const translations = {
     products: 'Products',
     
     // Hero
-    heroTitle: 'Chief Marketing Officer\nBlending Innovation With Tradition',
+    heroTitle: 'Digital Marketing Manager\nTurning Ideas Into Products That Convert',
     connect: 'Connect',
     viewLinkedIn: 'View my LinkedIn',
     startup: 'Startup',
@@ -244,14 +261,15 @@ const translations = {
     innovation: 'Innovation',
     and: 'and',
     creativeStorytelling: 'Creative Storytelling',
-    aboutText2: '. Currently serving as CMO at',
-    aboutText3: 'since November 2022, where I lead marketing strategy, UI/UX design, and product development.',
+    aboutText2: '. I worked as CMO at',
+    aboutText3: 'from November 2022 to December 2025, where I led marketing strategy, UI/UX design, and product development.',
     aboutBio: 'Born in Umbria 1998 with Southern roots. I am passionate about cinema and cycling, activities strongly characterized by creativity and team spirit: just like marketing. Working in teams and tackling different problems using not only fixed rules but also changing principles is what I appreciate most. I\'ve always admired the happiness and wonder created by products: I hope to become not just a recipient but a creator of such magic.',
     findMeOn: 'You can find me on',
     whereIShare: 'where I share insights about marketing, wine technology, and creative projects.',
     
     // Experience
     currentPosition: 'Current Position',
+    work: 'Work',
     creativeWork: 'Creative Work',
     education: 'Education',
     achievement: 'Achievement',
@@ -266,9 +284,15 @@ const translations = {
     masterclassAnnie: 'Masterclass with Annie Leibovitz',
     masterclassMartin: 'Masterclass with Martin Scorsese',
     c1EnglishCert: 'C1 English Certification',
-    albicchiereDesc: 'Hybrid role in IoT wine-tech startup (team of 6). Multiple responsibilities: Product Management (sprint planning, 150+ QA test cases), UI/UX Design (100+ Figma screens for app, backoffice, B2B dashboard), Frontend Development (landing pages, arcade page), Business Development (pitch deck, funding applications, Vinitaly 2025). Managing Taiwan Internship Program (6 students in 3 years). 80-page brand manual + innovative Braille packaging.',
+    albicchiereDesc: 'Led marketing and product in an IoT wine-tech startup with a team of 6. Product Management with sprint planning and 150+ QA test cases. UI/UX Design of 100+ Figma screens for mobile app, backoffice, and B2B dashboard. Frontend Development of landing pages and creative pages. Business Development with pitch decks and funding applications. Coordination of the Taiwan Internship Program with 6 students over 3 years. Created an 80-page brand manual and innovative Braille packaging.',
     kickstarterStats: '\u20ac370K raised | 1,300 backers | 61 countries',
     cesAward: 'CES Innovation Award 2020',
+    masterMovieDistDesc: 'Specialized training in audiovisual distribution, focusing on film marketing strategies, new business models, and digital platforms. The program included real case study analysis and a final project developed in collaboration with The Space Cinema, building practical skills in theatrical release planning and audience development strategies.',
+    businessManagementDesc: 'Bachelor\'s degree with honors (110 e Lode) in Business Economics and Management. Educational path focused on financial analysis, business economics, and applied statistics. Developed solid skills in strategic planning, management control, and data analysis, applying quantitative methodologies to real business cases.',
+    pgPanteneDesc: 'Winner of the P&G Business Case Competition at UniPG, where I developed a comprehensive brand relaunch strategy for Pantene. Presented an in-depth marketing mix analysis (Product, Price, Place, Promotion) to a jury including Alessandro Zito (Trade Director Manager, Gillette Italia) and Prof. Marina Gigliotti (UniPG). The proposal included innovative positioning strategies and retail distribution optimization for the Italian market.',
+    annieMasterclassDesc: 'In-depth study of portrait photography with legendary photographer Annie Leibovitz. Acquired techniques for visual storytelling, natural light management, and conceptual approaches to photographic narratives. The course provided a unique perspective on creating iconic images and building a personal artistic vision.',
+    martinMasterclassDesc: 'Filmmaking training with Oscar-winner Martin Scorsese. Explored storytelling techniques, editing approaches, and working with actors through analysis of cinema masterpieces. The course delved into the creative process of one of history\'s greatest directors, from pre-production to post-production.',
+    c1EnglishDesc: 'C1 level English certification, demonstrating advanced proficiency in professional and academic communication. The certification attests mastery in understanding complex texts, fluent expression, and ability to use the language in international work contexts.',
     
     // Stack
     uiuxDesign: 'UI/UX Design',
@@ -309,8 +333,18 @@ const translations = {
 
     // Introduction Section
     introBadge: 'Philosophy',
-    introText: 'I believe in the power of authentic stories. Every project is an opportunity to transform ideas into memorable experiences, combining creativity, strategy and technology to create meaningful connections between brands and people.',
+    introText: 'I create digital products and marketing strategies that convert. From ideation to launch, I combine AI, branding and performance marketing to turn ideas into concrete results.',
     introCopyright: '© 2024 Ezio Pappalardo',
+
+    // Testimonials Section
+    testimonials: 'Testimonials',
+    testimonialsTitle: 'What others say about me',
+    testimonialsDescription: 'I have had the privilege of collaborating with professionals and companies who believed in my vision. Here is what they think of our work together.',
+    contactMe: 'Contact me',
+    testimonial1Text: 'Ezio completely transformed our digital marketing strategy. His ability to combine creativity with data analysis has brought exceptional results.',
+    testimonial2Text: 'A professional who knows how to listen and translate needs into concrete solutions. The project was delivered on time and exceeded expectations.',
+    testimonial3Text: 'Collaboration with Ezio was crucial for the launch of our brand. Strategic vision and attention to detail set him apart.',
+    testimonial4Text: 'Technical competence and creative sensitivity are rarely found in the same person. Ezio is one of those rare professionals who excels in both.',
   }
 };
 

@@ -67,10 +67,15 @@
   gap: 16px;
   padding: 20px 16px;
   text-decoration: none;
-  transition: all 0.2s;
   border-bottom: 0.5px solid var(--border-color);
   position: relative;
   background: transparent;
+  cursor: default;
+}
+
+.stack-item:hover {
+  background: transparent;
+  border-color: var(--border-color);
 }
 
 .stack-item:nth-child(odd) {
@@ -81,17 +86,6 @@
   border-bottom: none;
 }
 
-.stack-item:hover {
-  background: rgba(0, 0, 0, 0.02);
-}
-
-:root.dark-mode .stack-item:hover {
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.stack-item:hover .external-icon {
-  opacity: 1;
-}
 
 .stack-logo {
   width: 36px;
@@ -131,17 +125,7 @@
 }
 
 .external-icon {
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-
-.external-icon svg {
-  width: 14px;
-  height: 14px;
+  display: none;
 }
 
 /* Responsive */

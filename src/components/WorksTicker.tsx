@@ -11,7 +11,7 @@ interface WorkItem {
 const WorksTicker: React.FC = () => {
   const trackRef = useRef<HTMLUListElement>(null);
   const [offset, setOffset] = useState(0);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
   const speed = 0.5; // pixels per frame
 
   const works: WorkItem[] = [

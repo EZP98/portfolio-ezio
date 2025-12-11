@@ -8,6 +8,7 @@ const Introduction: React.FC = () => {
   const [wordProgress, setWordProgress] = useState<number[]>([]);
   const [isVisible, setIsVisible] = useState(false);
   const [scrollOutOffset, setScrollOutOffset] = useState(0);
+  const [fadeOutOpacity, setFadeOutOpacity] = useState(1);
 
   const text = t('introText');
   const words = text.split(' ');
@@ -70,6 +71,19 @@ const Introduction: React.FC = () => {
       } else {
         setScrollOutOffset(0);
       }
+
+      // Fade out when scrolling UP (section going above viewport)
+      // When sectionTop is negative and getting more negative, we're scrolling down past the section
+      // When sectionTop is positive (section below viewport), we're at the top
+      // Fade out when the top of the section is still visible but we're scrolling back up
+      const fadeOutStart = viewportHeight * 0.15; // Start fading when section top is at 15% from top
+      if (sectionTop > fadeOutStart) {
+        // Section is being scrolled back up, start fading out
+        const fadeProgress = (sectionTop - fadeOutStart) / (viewportHeight * 0.3);
+        setFadeOutOpacity(Math.max(0, 1 - fadeProgress));
+      } else {
+        setFadeOutOpacity(1);
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -84,9 +98,10 @@ const Introduction: React.FC = () => {
       <div
         className="intro-content"
         style={{
-          opacity: isVisible ? 1 : 0,
-          visibility: isVisible ? 'visible' : 'hidden',
-          transform: `translateY(-${scrollOutOffset}px)`
+          opacity: isVisible ? fadeOutOpacity : 0,
+          visibility: isVisible || fadeOutOpacity > 0 ? 'visible' : 'hidden',
+          transform: `translateY(-${scrollOutOffset}px)`,
+          transition: 'opacity 0.15s ease-out'
         }}
       >
         <div className="intro-container">
