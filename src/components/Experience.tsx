@@ -32,7 +32,23 @@ const Experience: React.FC = () => {
       featured: false
     },
     {
+      id: '2',
+      type: 'education',
+      title: t('masterclassAnnie'),
+      company: 'MasterClass',
+      period: 'Feb 2022 - Mar 2022',
+      description: t('annieMasterclassDesc')
+    },
+    {
       id: '3',
+      type: 'education',
+      title: t('masterclassMartin'),
+      company: 'MasterClass',
+      period: 'Dec 2021 - Jan 2022',
+      description: t('martinMasterclassDesc')
+    },
+    {
+      id: '4',
       type: 'education',
       title: t('masterMovieDistribution'),
       company: '24ORE Business School',
@@ -41,11 +57,11 @@ const Experience: React.FC = () => {
     },
     {
       id: '5',
-      type: 'education',
-      title: t('businessManagement'),
-      company: 'Università degli Studi di Perugia',
-      period: 'Sep 2017 - Oct 2021',
-      description: t('businessManagementDesc')
+      type: 'certification',
+      title: t('c1EnglishCert'),
+      company: 'Centro Linguistico Ateneo - UniPG',
+      period: 'Mar 2020',
+      description: t('c1EnglishDesc')
     },
     {
       id: '6',
@@ -58,26 +74,10 @@ const Experience: React.FC = () => {
     {
       id: '7',
       type: 'education',
-      title: t('masterclassAnnie'),
-      company: 'MasterClass',
-      period: 'Feb 2022 - Mar 2022',
-      description: t('annieMasterclassDesc')
-    },
-    {
-      id: '8',
-      type: 'education',
-      title: t('masterclassMartin'),
-      company: 'MasterClass',
-      period: 'Dec 2021 - Jan 2022',
-      description: t('martinMasterclassDesc')
-    },
-    {
-      id: '9',
-      type: 'certification',
-      title: t('c1EnglishCert'),
-      company: 'Centro Linguistico Ateneo - UniPG',
-      period: 'Mar 2020',
-      description: t('c1EnglishDesc')
+      title: t('businessManagement'),
+      company: 'Università degli Studi di Perugia',
+      period: 'Sep 2017 - Oct 2021',
+      description: t('businessManagementDesc')
     }
   ];
 
