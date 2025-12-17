@@ -26,6 +26,33 @@ const Projects: React.FC = () => {
       stats: '9 languages'
     },
     {
+      icon: '🎨',
+      badges: [t('template'), t('framer')],
+      title: t('landingTemplate'),
+      description: t('landingTemplateDesc'),
+      tech: [t('react18'), t('typescript'), t('tailwind'), 'Framer Motion'],
+      link: 'https://landing-template-bp5.pages.dev/',
+      stats: null
+    },
+    {
+      icon: '🌙',
+      badges: [t('template'), t('darkTheme')],
+      title: t('portfolioDark'),
+      description: t('portfolioDarkDesc'),
+      tech: [t('react18'), t('typescript'), t('tailwind'), 'Framer Motion'],
+      link: 'https://portfolio-dark.pages.dev/',
+      stats: null
+    },
+    {
+      icon: '🔥',
+      badges: [t('template'), t('agency')],
+      title: t('hanzoTemplate'),
+      description: t('hanzoTemplateDesc'),
+      tech: [t('react18'), t('typescript'), t('tailwind'), 'Framer Motion'],
+      link: 'https://hanzo-template.pages.dev/',
+      stats: null
+    },
+    {
       icon: 'DB',
       badges: ['RAG', t('database')],
       title: t('aiDBSearch'),

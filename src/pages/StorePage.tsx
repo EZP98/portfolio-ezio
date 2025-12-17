@@ -14,7 +14,7 @@ interface Product {
 }
 
 // ALF Full Preview Component - Backoffice + Front-end Website
-const ALFBackofficePreview: React.FC<{ language: string }> = ({ language }) => {
+const ALFBackofficePreview: React.FC<{ language: string }> = ({ language: _language }) => {
   const [activeTab, setActiveTab] = useState('collezioni');
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [searchValue, setSearchValue] = useState('');
