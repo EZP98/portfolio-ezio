@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
+import { RollingText } from './RollingText';
 import './Header.css';
 
 const Header: React.FC = () => {
@@ -19,8 +21,8 @@ const Header: React.FC = () => {
 
   const navItems = [
     { href: '#works', label: t('works') },
-    { href: '#services', label: t('services') },
-    { href: '#products', label: t('products') },
+    { href: '/components', label: 'Components' },
+    { href: '/store', label: t('products') },
     { href: '#contact', label: t('contact') },
   ];
 
@@ -45,15 +47,27 @@ const Header: React.FC = () => {
           {/* Nav Pills - appear when menu is open */}
           <div className={`nav-pills-container ${isMenuOpen ? 'open' : ''}`}>
             {navItems.map((item, index) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="nav-pill"
-                style={{ transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms' }}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.label}
-              </a>
+              item.href.startsWith('/') ? (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className="nav-pill"
+                  style={{ transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms' }}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <RollingText>{item.label}</RollingText>
+                </Link>
+              ) : (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="nav-pill"
+                  style={{ transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms' }}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <RollingText>{item.label}</RollingText>
+                </a>
+              )
             ))}
           </div>
 
@@ -64,7 +78,7 @@ const Header: React.FC = () => {
             aria-label="Toggle menu"
           >
             <span className="menu-button-text">
-              {isMenuOpen ? '' : 'Menu'}
+              {isMenuOpen ? '' : <RollingText>Menu</RollingText>}
             </span>
             <span className={`menu-button-icon ${isMenuOpen ? 'open' : ''}`}>
               <span className="icon-line"></span>

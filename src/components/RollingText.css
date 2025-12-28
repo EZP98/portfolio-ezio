@@ -1,0 +1,57 @@
+/* Rolling Text Effect - Inspired by ghuynguyen.vercel.app */
+
+.rolling-text {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+}
+
+.rolling-text-block {
+  display: inline-block;
+  position: relative;
+}
+
+.rolling-text-letter {
+  display: inline-block;
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.rolling-text-letter::before {
+  content: attr(data-letter);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: inherit;
+}
+
+/* Hover state */
+.rolling-text:hover .rolling-text-letter,
+.nav-pill:hover .rolling-text-letter,
+a:hover .rolling-text-letter,
+button:hover .rolling-text-letter {
+  transform: translateY(-100%);
+}
+
+/* Staggered animation delays - extended for longer words */
+.rolling-text-letter:nth-child(1) { transition-delay: 0s; }
+.rolling-text-letter:nth-child(2) { transition-delay: 0.02s; }
+.rolling-text-letter:nth-child(3) { transition-delay: 0.04s; }
+.rolling-text-letter:nth-child(4) { transition-delay: 0.06s; }
+.rolling-text-letter:nth-child(5) { transition-delay: 0.08s; }
+.rolling-text-letter:nth-child(6) { transition-delay: 0.1s; }
+.rolling-text-letter:nth-child(7) { transition-delay: 0.12s; }
+.rolling-text-letter:nth-child(8) { transition-delay: 0.14s; }
+.rolling-text-letter:nth-child(9) { transition-delay: 0.16s; }
+.rolling-text-letter:nth-child(10) { transition-delay: 0.18s; }
+.rolling-text-letter:nth-child(11) { transition-delay: 0.2s; }
+.rolling-text-letter:nth-child(12) { transition-delay: 0.22s; }
+
+/* Reset delay on hover out for smoother reverse animation */
+.rolling-text:not(:hover) .rolling-text-letter {
+  transition-delay: 0s !important;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+  INSPIRATION: Huy Nguyen Portfolio (ghuynguyen.vercel.app)
+
+  KEY PATTERNS:
+  1. Rolling Text Hover - letters translateY(-100%) with staggered delay
+  2. Header mix-blend-mode: difference
+  3. Mouse spotlight on text - radial-gradient at var(--x, --y)
+  4. Work item hover - clip-path polygon reveal
+  5. Marquee scroll animation
+  6. Image preloader with clip-path sequence
+  7. GSAP ScrollTrigger pinning
+  8. Three.js rotating circles
+
+  STACK: Next.js, GSAP, Three.js, Geist Font
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Inspiration - Huy Nguyen</title>
+  <style>
+    /* Rolling text */
+    .rolling-text .letter {
+      display: inline-block;
+      transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+    .rolling-text .letter::before {
+      content: attr(data-letter);
+      position: absolute;
+      top: 100%;
+    }
+    .rolling-text:hover .letter { transform: translateY(-100%); }
+
+    /* Spotlight text */
+    .spotlight-text {
+      color: rgba(255,255,255,0.2);
+      background: radial-gradient(300px at var(--x) var(--y), #fff, transparent);
+      -webkit-background-clip: text;
+    }
+
+    /* Work reveal */
+    .work-reveal {
+      clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+      transition: clip-path 0.4s ease;
+    }
+    .work-item:hover .work-reveal {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    /* Marquee */
+    @keyframes marquee { to { transform: translateX(-50%); } }
+  </style>
+</head>
+<body></body>
+</html>

@@ -5,7 +5,7 @@ import Introduction from '../components/Introduction';
 import Showcase from '../components/Showcase';
 import WorksTicker from '../components/WorksTicker';
 import Works from '../components/Works';
-import Projects from '../components/Projects';
+import ComponentsSection from '../components/ComponentsSection';
 import About from '../components/About';
 import Experience from '../components/Experience';
 import Testimonials from '../components/Testimonials';
@@ -23,9 +23,9 @@ const HomePage = () => {
         <Hero />
         <ServicesTicker />
         <Introduction />
-        <Projects />
         <WorksTicker />
         <Works />
+        <ComponentsSection />
         <Showcase />
         <About />
         <Experience />

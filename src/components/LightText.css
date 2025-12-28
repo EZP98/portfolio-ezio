@@ -1,0 +1,35 @@
+.light-text-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.light-text {
+  font-size: clamp(14px, 2vw, 24px);
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: -0.03em;
+  color: rgba(255, 255, 255, 0.15);
+  cursor: default;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(
+    var(--radius, 200px) circle at var(--x, -9999px) var(--y, -9999px),
+    rgba(255, 255, 255, calc(var(--opacity, 0) * 1)) 0%,
+    rgba(255, 255, 255, calc(var(--opacity, 0) * 0.6)) 20%,
+    rgba(255, 255, 255, calc(var(--opacity, 0) * 0.3)) 40%,
+    rgba(255, 255, 255, calc(var(--opacity, 0) * 0.1)) 60%,
+    transparent 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: currentColor;
+}
+
+.light-text-line {
+  display: block;
+}
