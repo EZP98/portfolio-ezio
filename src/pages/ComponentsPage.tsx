@@ -259,9 +259,6 @@ const ComponentsPage: React.FC = () => {
           </div>
 
           <div className="components-canvas">
-            <div className={`canvas-preview ${needsDarkBg ? 'canvas-preview-dark' : ''}`}>
-              {renderPreview()}
-            </div>
             <div className="canvas-info">
               <h2 className="canvas-title">{currentComponent.name}</h2>
               <p className="canvas-description">
@@ -272,6 +269,9 @@ const ComponentsPage: React.FC = () => {
                   <span key={tag} className="canvas-tag">{tag}</span>
                 ))}
               </div>
+            </div>
+            <div className={`canvas-preview ${needsDarkBg ? 'canvas-preview-dark' : ''}`}>
+              {renderPreview()}
             </div>
           </div>
         </section>
