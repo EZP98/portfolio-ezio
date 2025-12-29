@@ -69,7 +69,7 @@ const Works: React.FC = () => {
       category: 'Portfolio',
       description: 'Minimal dark portfolio template',
       link: 'https://hanzo-template.pages.dev',
-      image: 'https://api.microlink.io/?url=https://hanzo-template.pages.dev&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=2000'
+      image: '/templates/hanzo.mp4'
     },
     {
       id: 't2',
@@ -77,7 +77,7 @@ const Works: React.FC = () => {
       category: 'Portfolio',
       description: 'Portfolio con globe 3D interattivo',
       link: 'https://folio-ep.pages.dev',
-      image: 'https://api.microlink.io/?url=https://folio-ep.pages.dev&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=2000'
+      image: '/templates/folio-ep.mp4'
     },
     {
       id: 't3',
@@ -85,7 +85,7 @@ const Works: React.FC = () => {
       category: 'Portfolio',
       description: 'Portfolio creativo e moderno',
       link: 'https://artemis-portfolio-bbr.pages.dev',
-      image: 'https://api.microlink.io/?url=https://artemis-portfolio-bbr.pages.dev&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=2000'
+      image: '/templates/artemis.mp4'
     },
     {
       id: 't5',
@@ -93,7 +93,7 @@ const Works: React.FC = () => {
       category: 'Portfolio',
       description: 'Portfolio luxury style',
       link: 'https://ferrero-rocher-portfolio.pages.dev',
-      image: 'https://api.microlink.io/?url=https://ferrero-rocher-portfolio.pages.dev&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=2000'
+      image: '/templates/ferrero.mp4'
     },
     {
       id: 't6',
@@ -101,7 +101,7 @@ const Works: React.FC = () => {
       category: 'Portfolio',
       description: 'Dark mode minimal template',
       link: 'https://portfolio-dark.pages.dev',
-      image: 'https://api.microlink.io/?url=https://portfolio-dark.pages.dev&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=2000'
+      image: '/templates/portfolio-dark.mp4'
     },
     {
       id: 't7',
@@ -109,7 +109,7 @@ const Works: React.FC = () => {
       category: 'Landing',
       description: 'Landing page moderna e responsive',
       link: 'https://landing-template-bp5.pages.dev',
-      image: 'https://api.microlink.io/?url=https://landing-template-bp5.pages.dev&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=2000'
+      image: '/templates/landing.mp4'
     }
   ];
 
@@ -141,10 +141,8 @@ const Works: React.FC = () => {
                   />
                   <div className="work-hover-overlay">
                     <div className="work-hover-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                        <polyline points="15 3 21 3 21 9" />
-                        <line x1="10" y1="14" x2="21" y2="3" />
+                      <svg viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M1.333 8L0.741 7.693L0.582 8L0.741 8.307L1.333 8ZM14.666 8L15.258 8.307L15.417 8L15.258 7.693L14.666 8ZM1.925 8.307C3.443 5.369 5.768 4 8 4C10.231 4 12.556 5.37 14.075 8.307L15.259 7.693C13.558 4.407 10.825 2.667 8 2.667C5.173 2.667 2.44 4.407 0.74 7.693L1.924 8.307ZM0.741 8.307C2.44 11.592 5.173 13.333 7.999 13.333C10.826 13.333 13.558 11.593 15.258 8.307L14.074 7.693C12.555 10.63 10.231 12 7.999 12C5.768 12 3.443 10.63 1.925 7.693L0.741 8.307ZM9.333 8C9.333 8.736 8.736 9.333 7.999 9.333V10.667C9.472 10.667 10.666 9.473 10.666 8H9.333ZM7.999 9.333C7.263 9.333 6.666 8.736 6.666 8H5.333C5.333 9.473 6.527 10.667 7.999 10.667V9.333ZM6.666 8C6.666 7.264 7.263 6.667 7.999 6.667V5.333C6.527 5.333 5.333 6.527 5.333 8H6.666ZM7.999 6.667C8.736 6.667 9.333 7.264 9.333 8H10.666C10.666 6.527 9.472 5.333 7.999 5.333V6.667Z" />
                       </svg>
                     </div>
                   </div>
@@ -174,28 +172,32 @@ const Works: React.FC = () => {
           </div>
         </ScrollReveal>
 
-        <div className="works-grid">
+        <div className="works-grid templates-grid">
           {templates.map((template, index) => (
             <ScrollReveal key={template.id} delay={index * 100}>
               <a
                 href={template.link}
-                className="work-card"
+                className="work-card template-card"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <div className="work-image-wrapper">
-                  <img
+                  <video
                     src={template.image}
-                    alt={template.title}
-                    className="work-image"
-                    loading="lazy"
+                    className="work-video"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    onLoadedData={(e) => {
+                      const video = e.currentTarget;
+                      video.currentTime = index * 2.5;
+                    }}
                   />
                   <div className="work-hover-overlay">
                     <div className="work-hover-icon">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                        <polyline points="15 3 21 3 21 9" />
-                        <line x1="10" y1="14" x2="21" y2="3" />
+                      <svg viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M1.333 8L0.741 7.693L0.582 8L0.741 8.307L1.333 8ZM14.666 8L15.258 8.307L15.417 8L15.258 7.693L14.666 8ZM1.925 8.307C3.443 5.369 5.768 4 8 4C10.231 4 12.556 5.37 14.075 8.307L15.259 7.693C13.558 4.407 10.825 2.667 8 2.667C5.173 2.667 2.44 4.407 0.74 7.693L1.924 8.307ZM0.741 8.307C2.44 11.592 5.173 13.333 7.999 13.333C10.826 13.333 13.558 11.593 15.258 8.307L14.074 7.693C12.555 10.63 10.231 12 7.999 12C5.768 12 3.443 10.63 1.925 7.693L0.741 8.307ZM9.333 8C9.333 8.736 8.736 9.333 7.999 9.333V10.667C9.472 10.667 10.666 9.473 10.666 8H9.333ZM7.999 9.333C7.263 9.333 6.666 8.736 6.666 8H5.333C5.333 9.473 6.527 10.667 7.999 10.667V9.333ZM6.666 8C6.666 7.264 7.263 6.667 7.999 6.667V5.333C6.527 5.333 5.333 6.527 5.333 8H6.666ZM7.999 6.667C8.736 6.667 9.333 7.264 9.333 8H10.666C10.666 6.527 9.472 5.333 7.999 5.333V6.667Z" />
                       </svg>
                     </div>
                   </div>

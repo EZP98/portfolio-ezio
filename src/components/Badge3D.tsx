@@ -83,7 +83,7 @@ function Band({ title, subtitle, label }: Badge3DProps) {
           type={dragged ? 'kinematicPosition' : 'dynamic'}
         >
           <group
-            scale={2.25}
+            scale={3.5}
             position={[0, -1.2, -0.05]}
             onPointerOver={() => setHovered(true)}
             onPointerOut={() => setHovered(false)}
@@ -165,7 +165,7 @@ function Rope({ fixed, j1, j2, j3 }: any) {
 export default function Badge3D({ title, subtitle, label }: Badge3DProps) {
   return (
     <div style={{ width: '100%', height: '100%' }}>
-      <Canvas camera={{ position: [0, 0, 13], fov: 25 }}>
+      <Canvas camera={{ position: [0, 0, 8], fov: 25 }}>
         <ambientLight intensity={0.6} />
         <directionalLight position={[10, 10, 5]} intensity={1} />
         <spotLight position={[-10, -10, -10]} intensity={0.3} />

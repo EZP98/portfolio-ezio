@@ -189,6 +189,15 @@
   max-width: 100%;
 }
 
+/* Allow Books3D to overflow when opening */
+.canvas-preview:has(.books3d-container) {
+  overflow: visible;
+}
+
+.canvas-preview:has(.books3d-container) .preview-wrapper {
+  overflow: visible;
+}
+
 /* Override component margins inside preview */
 .canvas-preview .services-ticker-section,
 .canvas-preview .works-ticker-section {

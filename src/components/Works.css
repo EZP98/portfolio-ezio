@@ -87,62 +87,88 @@
   display: block;
   border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.2s ease;
-}
-
-.work-card:hover {
-  transform: translateY(-4px);
 }
 
 .work-image-wrapper {
   position: relative;
-  border-radius: 10px;
+  border-radius: 4px;
   overflow: hidden;
   aspect-ratio: 16/10;
   margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
 .work-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
 }
 
-/* Hover Overlay */
+.work-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Templates - taller cards */
+.template-card .work-image-wrapper {
+  height: 400px;
+  aspect-ratio: unset;
+  border-radius: 4px;
+  background: #0a0a0a;
+  overflow: hidden;
+}
+
+.template-card .work-image {
+  object-position: top;
+}
+
+.template-card .work-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.template-placeholder {
+  font-size: 14px;
+  color: #444;
+  font-weight: 500;
+}
+
+/* Hover Overlay - Framer style */
 .work-hover-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(34, 36, 38, 0.85);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: inherit;
+  backdrop-filter: blur(2px);
 }
 
 .work-hover-icon {
-  width: 48px;
-  height: 48px;
-  background: var(--text-primary);
+  width: 44px;
+  height: 44px;
+  background: rgba(34, 36, 38, 0.95);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: scale(0.8);
+  transform: scale(0.85) translateY(8px);
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(5, 5, 5, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .work-hover-icon svg {
-  width: 20px;
-  height: 20px;
-  color: var(--bg-primary);
-}
-
-.work-card:hover .work-image {
-  transform: scale(1.05);
+  width: 18px;
+  height: 18px;
+  color: #fff;
 }
 
 .work-card:hover .work-hover-overlay {
@@ -151,7 +177,7 @@
 
 .work-card:hover .work-hover-icon {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1) translateY(0);
 }
 
 .work-meta {
@@ -201,6 +227,19 @@
   background: var(--text-secondary);
   border-radius: 50%;
   opacity: 0.4;
+}
+
+/* Template responsive */
+@media (max-width: 768px) {
+  .template-card .work-image-wrapper {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .template-card .work-image-wrapper {
+    height: 280px;
+  }
 }
 
 

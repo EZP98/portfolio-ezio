@@ -21,8 +21,8 @@
 
 .books3d-inner {
   position: relative;
-  width: 90px;
-  height: 135px;
+  width: 120px;
+  height: 180px;
   transform-style: preserve-3d;
 }
 
@@ -41,17 +41,17 @@
 
 .books3d-title {
   font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 400;
   font-style: italic;
   text-align: center;
   color: #1a1a1a;
-  margin: 0 0 6px 0;
+  margin: 0 0 8px 0;
   line-height: 1.3;
 }
 
 .books3d-author {
-  font-size: 7px;
+  font-size: 9px;
   text-align: center;
   color: #666;
   margin: 0;
