@@ -90,11 +90,10 @@
 
 .work-image-wrapper {
   position: relative;
-  border-radius: 12px;
+  border-radius: 20px;
   overflow: hidden;
   aspect-ratio: 16/10;
   margin-bottom: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .work-image {
@@ -113,7 +112,7 @@
 .template-card .work-image-wrapper {
   height: 400px;
   aspect-ratio: unset;
-  border-radius: 12px;
+  border-radius: 20px;
   background: #0a0a0a;
   overflow: hidden;
 }
