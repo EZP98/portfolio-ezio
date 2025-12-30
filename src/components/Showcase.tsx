@@ -32,86 +32,89 @@ const Showcase: React.FC = () => {
   };
 
   return (
-    <section className="showcase-section" id="albicchiere">
+    <section className="showcase-wrapper" id="albicchiere">
       <ScrollReveal>
         <div className="section-header">
           <h2 className="section-title">Featured</h2>
         </div>
       </ScrollReveal>
-      <ScrollReveal delay={50}>
-        <div className="image-carousel">
-          <img
-            src={images[currentImage]}
-            alt="Albicchiere at Vinitaly 2025"
-            className="carousel-image"
-          />
-          <div className="carousel-dots">
-            {images.map((_, index) => (
-              <span
-                key={index}
-                className={`carousel-dot ${index === currentImage ? 'active' : ''}`}
-                onClick={() => changeImage(index)}
-              />
-            ))}
-          </div>
-        </div>
-      </ScrollReveal>
 
-      <div className="content-section">
-        <ScrollReveal delay={100}>
-          <div className="upcoming-badge">
-            {t('vinitalyBadge')}
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={200}>
-          <h2 className="content-title">{t('showcaseTitle')}</h2>
-          <p className="content-subtitle">{t('showcaseSubtitle')}</p>
-        </ScrollReveal>
-
-        <ScrollReveal delay={300}>
-          <form className="newsletter-form" onSubmit={handleSubscribe}>
-            <input
-              type="email"
-              className="newsletter-input"
-              placeholder={t('getUpdates')}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
+      <div className="showcase-section">
+        <ScrollReveal delay={50}>
+          <div className="image-carousel">
+            <img
+              src={images[currentImage]}
+              alt="Albicchiere at Vinitaly 2025"
+              className="carousel-image"
             />
-            <button type="submit" className="newsletter-button">{t('subscribe')}</button>
-          </form>
-        </ScrollReveal>
-
-        <ScrollReveal delay={400}>
-          <div className="showcase-story">
-            <p>{t('showcaseStory1')}</p>
-            <p>{t('showcaseStory2')}</p>
+            <div className="carousel-dots">
+              {images.map((_, index) => (
+                <span
+                  key={index}
+                  className={`carousel-dot ${index === currentImage ? 'active' : ''}`}
+                  onClick={() => changeImage(index)}
+                />
+              ))}
+            </div>
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={500}>
-          <div className="blog-label">{t('latestUpdates')}</div>
-          <div className="blog-links">
-            <a href="https://www.albicchiere.com/vinitaly2025" target="_blank" rel="noopener noreferrer" className="blog-link">
-              {t('vinitalySuccess')}
-              <div className="blog-arrow">
-                <span className="blog-arrow-dot"></span>
-                <span className="blog-arrow-dot"></span>
-              </div>
-            </a>
-            <a href="https://www.albicchiere.com/ces-award" target="_blank" rel="noopener noreferrer" className="blog-link">
-              {t('cesAwardWinner')}
-            </a>
-            <a href="https://www.albicchiere.com/technology" target="_blank" rel="noopener noreferrer" className="blog-link">
-              {t('iotWineTech')}
-              <div className="blog-arrow">
-                <span className="blog-arrow-dot"></span>
-                <span className="blog-arrow-dot"></span>
-              </div>
-            </a>
-          </div>
-        </ScrollReveal>
+        <div className="content-section">
+          <ScrollReveal delay={100}>
+            <div className="upcoming-badge">
+              {t('vinitalyBadge')}
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={200}>
+            <h2 className="content-title">{t('showcaseTitle')}</h2>
+            <p className="content-subtitle">{t('showcaseSubtitle')}</p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={300}>
+            <form className="newsletter-form" onSubmit={handleSubscribe}>
+              <input
+                type="email"
+                className="newsletter-input"
+                placeholder={t('getUpdates')}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <button type="submit" className="newsletter-button">{t('subscribe')}</button>
+            </form>
+          </ScrollReveal>
+
+          <ScrollReveal delay={400}>
+            <div className="showcase-story">
+              <p>{t('showcaseStory1')}</p>
+              <p>{t('showcaseStory2')}</p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={500}>
+            <div className="blog-label">{t('latestUpdates')}</div>
+            <div className="blog-links">
+              <a href="https://www.albicchiere.com/vinitaly2025" target="_blank" rel="noopener noreferrer" className="blog-link">
+                {t('vinitalySuccess')}
+                <div className="blog-arrow">
+                  <span className="blog-arrow-dot"></span>
+                  <span className="blog-arrow-dot"></span>
+                </div>
+              </a>
+              <a href="https://www.albicchiere.com/ces-award" target="_blank" rel="noopener noreferrer" className="blog-link">
+                {t('cesAwardWinner')}
+              </a>
+              <a href="https://www.albicchiere.com/technology" target="_blank" rel="noopener noreferrer" className="blog-link">
+                {t('iotWineTech')}
+                <div className="blog-arrow">
+                  <span className="blog-arrow-dot"></span>
+                  <span className="blog-arrow-dot"></span>
+                </div>
+              </a>
+            </div>
+          </ScrollReveal>
+        </div>
       </div>
     </section>
   );
