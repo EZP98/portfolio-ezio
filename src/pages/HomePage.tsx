@@ -5,6 +5,7 @@ import Works from '../components/Works';
 import About from '../components/About';
 import Experience from '../components/Experience';
 import Stack from '../components/Stack';
+import ComponentsPreview from '../components/ComponentsPreview';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
 import BlurController from '../components/BlurController';
@@ -21,6 +22,7 @@ const HomePage = () => {
         <About />
         <Experience />
         <Stack />
+        <ComponentsPreview />
         <CTA />
       </main>
 
