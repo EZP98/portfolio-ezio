@@ -187,6 +187,17 @@ const translations = {
     testimonial2Text: 'Un professionista che sa ascoltare e tradurre le esigenze in soluzioni concrete. Il progetto è stato consegnato nei tempi e ha superato le aspettative.',
     testimonial3Text: 'La collaborazione con Ezio è stata fondamentale per il lancio del nostro brand. Visione strategica e attenzione ai dettagli lo contraddistinguono.',
     testimonial4Text: 'Competenza tecnica e sensibilità creativa raramente si trovano nella stessa persona. Ezio è uno di quei rari professionisti che eccelle in entrambe.',
+
+    // Components Section
+    components: 'Componenti',
+    componentsDesc: 'Componenti UI riutilizzabili costruiti con React e design system modulare.',
+    designSystemDesc: 'Sistema di design coerente con variabili CSS e componenti standardizzati.',
+    darkModeDesc: 'Supporto completo per tema chiaro e scuro con transizioni fluide.',
+    responsiveDesc: 'Design responsive che si adatta a tutti i dispositivi.',
+    tokensDesc: 'Design tokens per colori, spacing, tipografia e raggi.',
+
+    // Photography Section
+    photography: 'Fotografia',
   },
   en: {
     // Navigation
@@ -365,6 +376,17 @@ const translations = {
     testimonial2Text: 'A professional who knows how to listen and translate needs into concrete solutions. The project was delivered on time and exceeded expectations.',
     testimonial3Text: 'Collaboration with Ezio was crucial for the launch of our brand. Strategic vision and attention to detail set him apart.',
     testimonial4Text: 'Technical competence and creative sensitivity are rarely found in the same person. Ezio is one of those rare professionals who excels in both.',
+
+    // Components Section
+    components: 'Components',
+    componentsDesc: 'Reusable UI components built with React and modular design system.',
+    designSystemDesc: 'Consistent design system with CSS variables and standardized components.',
+    darkModeDesc: 'Full support for light and dark themes with smooth transitions.',
+    responsiveDesc: 'Responsive design that adapts to all devices.',
+    tokensDesc: 'Design tokens for colors, spacing, typography and radii.',
+
+    // Photography Section
+    photography: 'Photography',
   }
 };
 
