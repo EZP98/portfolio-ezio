@@ -109,9 +109,10 @@
   display: block;
 }
 
-/* Templates - taller cards */
+/* Templates - video fills width, height proportional, cropped at container */
 .template-card .work-image-wrapper {
-  aspect-ratio: 3/4;
+  height: 400px;
+  aspect-ratio: unset;
   border-radius: 12px;
   background: #0a0a0a;
   overflow: hidden;

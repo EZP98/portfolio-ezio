@@ -30,11 +30,11 @@ const Works: React.FC = () => {
     },
     {
       id: '3',
-      title: 'Cucina Chef AI',
+      title: 'Gusto',
       category: 'AI Product',
-      description: 'App cucina con assistente AI',
-      link: 'https://cucina-chef-ai.pages.dev',
-      image: 'https://api.microlink.io/?url=https://cucina-chef-ai.pages.dev&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=2000'
+      description: 'AI recipe assistant con Claude',
+      link: 'https://gusto-8cx.pages.dev',
+      image: 'https://api.microlink.io/?url=https://gusto-8cx.pages.dev&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=2000'
     },
     {
       id: '4',
@@ -65,9 +65,9 @@ const Works: React.FC = () => {
   const templates: Project[] = [
     {
       id: 't1',
-      title: 'Hanzo',
+      title: 'Slate',
       category: 'Portfolio',
-      description: 'Minimal dark portfolio template',
+      description: 'Minimal agency template',
       link: 'https://hanzo-template.pages.dev',
       image: '/templates/hanzo.mp4'
     },
@@ -81,33 +81,33 @@ const Works: React.FC = () => {
     },
     {
       id: 't3',
-      title: 'Artemis',
+      title: 'Nova',
       category: 'Portfolio',
-      description: 'Portfolio creativo e moderno',
+      description: 'Creative modern portfolio',
       link: 'https://artemis-portfolio-bbr.pages.dev',
       image: '/templates/artemis.mp4'
     },
     {
       id: 't5',
-      title: 'Ferrero Rocher',
+      title: 'Velvet',
       category: 'Portfolio',
-      description: 'Portfolio luxury style',
+      description: 'Luxury style portfolio',
       link: 'https://ferrero-rocher-portfolio.pages.dev',
       image: '/templates/ferrero.mp4'
     },
     {
       id: 't6',
-      title: 'Portfolio Dark',
+      title: 'Obsidian',
       category: 'Portfolio',
-      description: 'Dark mode minimal template',
+      description: 'Dark minimal template',
       link: 'https://portfolio-dark.pages.dev',
       image: '/templates/portfolio-dark.mp4'
     },
     {
       id: 't7',
-      title: 'Landing Template',
+      title: 'Aurora',
       category: 'Landing',
-      description: 'Landing page moderna e responsive',
+      description: 'Modern responsive landing',
       link: 'https://landing-template-bp5.pages.dev',
       image: '/templates/landing.mp4'
     }
