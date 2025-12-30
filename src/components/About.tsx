@@ -7,14 +7,15 @@ const About: React.FC = () => {
   const { t } = useLanguage();
   
   return (
-    <section className="about-section" id="about">
+    <section className="about-wrapper" id="about">
       <ScrollReveal>
         <div className="section-header">
           <h2 className="section-title">About</h2>
         </div>
       </ScrollReveal>
-      <ScrollReveal delay={50}>
-        <p className="about-text">
+      <div className="about-section">
+        <ScrollReveal delay={50}>
+          <p className="about-text">
           {t('aboutIntro')}
           <a href="/about" className="inline-link">
             <img
@@ -60,7 +61,8 @@ const About: React.FC = () => {
           </a>
           {t('whereIShare')}
         </p>
-      </ScrollReveal>
+        </ScrollReveal>
+      </div>
     </section>
   );
 };
