@@ -73,7 +73,7 @@ const Works: React.FC = () => {
     },
     {
       id: 't2',
-      title: 'Folio EP',
+      title: 'Orbit',
       category: 'Portfolio',
       description: 'Portfolio con globe 3D interattivo',
       link: 'https://folio-ep.pages.dev',
@@ -89,7 +89,7 @@ const Works: React.FC = () => {
     },
     {
       id: 't5',
-      title: 'Velvet',
+      title: 'Ferrero Rocher',
       category: 'Portfolio',
       description: 'Luxury style portfolio',
       link: 'https://ferrero-rocher-portfolio.pages.dev',
