@@ -5,6 +5,17 @@
   min-height: 400vh; /* Taller for more scroll space before images */
 }
 
+/* Text-only version - scroll hijack, exactly 100vh */
+.intro-section.intro-section-text-only {
+  min-height: 100vh;
+  height: 100vh;
+}
+
+.intro-section-text-only .intro-content {
+  position: relative;
+  height: 100%;
+}
+
 /* Text container - FIXED position so it stays in place */
 .intro-content {
   position: fixed;
@@ -15,9 +26,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  z-index: 10;
   pointer-events: none;
-  transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+  transition: opacity 0.4s ease-out, visibility 0.4s ease-out, transform 0.4s ease-out;
 }
 
 .intro-container {
@@ -169,6 +180,19 @@
 @media (max-width: 768px) {
   .intro-section {
     min-height: 250vh;
+  }
+
+  .intro-section.intro-section-text-only {
+    min-height: auto;
+    height: auto;
+    padding: 80px 0;
+  }
+
+  .intro-section-text-only .intro-content {
+    position: relative;
+    height: auto;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   .intro-container {

@@ -59,19 +59,32 @@ body {
 @media (max-width: 768px) {
   .main-content {
     padding: 0 20px;
+    max-width: 100%;
+    width: 100%;
     overflow-x: hidden;
+  }
+
+  /* Force all sections to respect viewport */
+  .main-content > * {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 
 @media (max-width: 480px) {
   .main-content {
     padding: 0 16px;
+    max-width: 100%;
+    width: 100%;
     overflow-x: hidden;
   }
 
-  /* Force all sections to respect container width - except ticker */
-  .main-content > *:not(.works-ticker-section) {
+  /* Force all sections to respect container width */
+  .main-content > * {
     max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
     overflow-x: hidden;
   }
 }

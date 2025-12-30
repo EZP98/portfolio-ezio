@@ -5,17 +5,11 @@ const Hero: React.FC = () => {
   const { t } = useLanguage();
   const renderAnimatedText = (text: string) => {
     return text.split(' ').map((word, wordIndex) => (
-      <span key={wordIndex} className="word-wrapper" style={{ whiteSpace: 'nowrap' }}>
+      <span key={wordIndex} className="word-wrapper">
         {word.split('').map((char, charIndex) => (
           <span
             key={charIndex}
             className="char-animation"
-            style={{
-              display: 'inline-block',
-              opacity: 1,
-              transform: 'none',
-              willChange: 'transform'
-            }}
           >
             {char}
           </span>

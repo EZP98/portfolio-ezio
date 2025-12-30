@@ -16,7 +16,8 @@
   background-color: var(--bg-primary);
   width: 100%;
   opacity: 1;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 .hero-inner {
@@ -181,17 +182,28 @@
   .hero-section {
     padding: 40px 0;
   }
-  
+
   .hero-title {
-    font-size: 32px;
+    font-size: 28px;
     line-height: 1.2;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
-  
+
+  .word-wrapper {
+    white-space: normal;
+    display: inline;
+  }
+
+  .char-animation {
+    display: inline;
+  }
+
   .link-cards {
     flex-direction: column;
     gap: 16px;
   }
-  
+
   .link-card {
     width: 100%;
   }
@@ -201,20 +213,31 @@
   .hero-section {
     padding: 32px 0;
   }
-  
+
   .hero-title {
     font-size: 24px;
     word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
-  
+
+  .hero-heading {
+    overflow: visible;
+  }
+
   /* Force word wrapping on mobile */
   .word-wrapper {
     white-space: normal !important;
     display: inline !important;
+    word-break: break-word !important;
   }
-  
+
   .char-animation {
     display: inline !important;
+  }
+
+  .hero-inner {
+    overflow: visible;
   }
   
   .hero-button {

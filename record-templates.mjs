@@ -29,14 +29,14 @@ async function recordTemplate(template) {
 
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
-  await page.setViewport({ width: 1440, height: 1000 }); // Un po' più alto
+  await page.setViewport({ width: 1440, height: 1920 }); // Aspect ratio 3:4
 
   await page.goto(template.url, { waitUntil: 'networkidle2', timeout: 30000 });
   await sleep(2000); // Wait for animations
 
   // Get page height
   const pageHeight = await page.evaluate(() => document.body.scrollHeight);
-  const scrollDistance = Math.min(pageHeight - 1000, 3000); // Max 3000px scroll
+  const scrollDistance = Math.min(pageHeight - 1920, 4000); // Max 4000px scroll
 
   const totalFrames = 450; // 15 seconds at 30fps - molto lento
   const scrollPerFrame = scrollDistance / totalFrames;

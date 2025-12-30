@@ -1,0 +1,257 @@
+/* Themes Section - Dark Background with Marquee */
+.themes-section {
+  background: #0a0a0a;
+  padding: 100px 0;
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.themes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+/* Header */
+.themes-header {
+  text-align: center;
+  padding: 0 40px;
+  max-width: 800px;
+}
+
+.themes-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+
+.themes-tag-emoji {
+  font-size: 14px;
+}
+
+.themes-tag-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.themes-title {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+.themes-title-dim {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.themes-title-highlight {
+  color: #fff;
+}
+
+/* Marquee */
+.themes-marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding: 12px 0;
+}
+
+.themes-marquee-track {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 16px;
+  will-change: transform;
+}
+
+.themes-marquee-item {
+  flex-shrink: 0;
+}
+
+.themes-card {
+  position: relative;
+  width: 400px;
+  height: 240px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.themes-card-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.themes-card-border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Theme Switch */
+.themes-switch-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.themes-switch {
+  position: relative;
+  width: 120px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 100px;
+  padding: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.themes-switch:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.themes-switch-knob {
+  position: absolute;
+  top: 6px;
+  width: 52px;
+  height: 52px;
+  background: #fff;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0a0a0a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.themes-switch.dark .themes-switch-knob {
+  left: auto;
+  right: 6px;
+}
+
+.themes-switch.light .themes-switch-knob {
+  left: 6px;
+  right: auto;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .themes-title {
+    font-size: 40px;
+  }
+
+  .themes-card {
+    width: 320px;
+    height: 192px;
+  }
+}
+
+@media (max-width: 768px) {
+  .themes-section {
+    padding: 80px 0;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .themes-header {
+    padding: 0 20px;
+  }
+
+  .themes-tag {
+    padding: 6px 12px;
+  }
+
+  .themes-tag-text {
+    font-size: 13px;
+  }
+
+  .themes-title {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .themes-card {
+    width: 260px;
+    height: 156px;
+    border-radius: 10px;
+  }
+
+  .themes-marquee-track {
+    gap: 12px;
+  }
+
+  .themes-switch {
+    width: 100px;
+    height: 52px;
+  }
+
+  .themes-switch-knob {
+    width: 42px;
+    height: 42px;
+    top: 5px;
+  }
+
+  .themes-switch.dark .themes-switch-knob {
+    right: 5px;
+  }
+
+  .themes-switch.light .themes-switch-knob {
+    left: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .themes-section {
+    padding: 60px 0;
+  }
+
+  .themes-header {
+    padding: 0 16px;
+  }
+
+  .themes-title {
+    font-size: 24px;
+  }
+
+  .themes-card {
+    width: 200px;
+    height: 120px;
+    border-radius: 8px;
+  }
+
+  .themes-marquee-track {
+    gap: 10px;
+  }
+
+  .themes-switch {
+    width: 88px;
+    height: 46px;
+  }
+
+  .themes-switch-knob {
+    width: 36px;
+    height: 36px;
+    top: 5px;
+  }
+
+  .themes-switch-knob svg {
+    width: 16px;
+    height: 16px;
+  }
+}

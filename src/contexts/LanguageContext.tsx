@@ -160,7 +160,7 @@ const translations = {
     home: 'Home',
     about: 'Chi Sono',
     contact: 'Contatti',
-    copyright: '© 2024 Ezio Pappalardo. Tutti i diritti riservati.',
+    copyright: '© 2026 Ezio Pappalardo. Tutti i diritti riservati.',
     privacyPolicy: 'Privacy Policy',
     termsOfUse: 'Termini di Utilizzo',
     
@@ -176,7 +176,7 @@ const translations = {
     // Introduction Section
     introBadge: 'Filosofia',
     introText: 'Creo prodotti digitali e strategie di marketing che convertono. Dall\'ideazione al lancio, unisco AI, branding e performance marketing per trasformare idee in risultati concreti.',
-    introCopyright: '© 2024 Ezio Pappalardo',
+    introCopyright: '© 2026 Ezio Pappalardo',
 
     // Testimonials Section
     testimonials: 'Testimonianze',
@@ -338,7 +338,7 @@ const translations = {
     home: 'Home',
     about: 'About',
     contact: 'Contact',
-    copyright: '© 2024 Ezio Pappalardo. All rights reserved.',
+    copyright: '© 2026 Ezio Pappalardo. All rights reserved.',
     privacyPolicy: 'Privacy Policy',
     termsOfUse: 'Terms of Use',
     
@@ -354,7 +354,7 @@ const translations = {
     // Introduction Section
     introBadge: 'Philosophy',
     introText: 'I create digital products and marketing strategies that convert. From ideation to launch, I combine AI, branding and performance marketing to turn ideas into concrete results.',
-    introCopyright: '© 2024 Ezio Pappalardo',
+    introCopyright: '© 2026 Ezio Pappalardo',
 
     // Testimonials Section
     testimonials: 'Testimonials',

@@ -113,7 +113,6 @@ const Stack: React.FC = () => {
       <ScrollReveal>
         <div className="section-header">
           <h2 className="section-title">{t('toolsSkills')}</h2>
-          <span className="section-arrow">→</span>
         </div>
       </ScrollReveal>
 

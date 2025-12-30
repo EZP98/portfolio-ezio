@@ -119,7 +119,6 @@ const Works: React.FC = () => {
         <ScrollReveal>
           <div className="section-header">
             <h2 className="section-title">Projects</h2>
-            <span className="section-arrow">→</span>
           </div>
         </ScrollReveal>
 
@@ -168,7 +167,6 @@ const Works: React.FC = () => {
         <ScrollReveal>
           <div className="section-header">
             <h2 className="section-title">Templates</h2>
-            <span className="section-arrow">→</span>
           </div>
         </ScrollReveal>
 
