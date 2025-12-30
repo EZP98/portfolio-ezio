@@ -34,6 +34,11 @@ const Showcase: React.FC = () => {
   return (
     <section className="showcase-section" id="albicchiere">
       <ScrollReveal>
+        <div className="section-header">
+          <h2 className="section-title">Featured</h2>
+        </div>
+      </ScrollReveal>
+      <ScrollReveal delay={50}>
         <div className="image-carousel">
           <img
             src={images[currentImage]}

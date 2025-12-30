@@ -9,6 +9,11 @@ const About: React.FC = () => {
   return (
     <section className="about-section" id="about">
       <ScrollReveal>
+        <div className="section-header">
+          <h2 className="section-title">About</h2>
+        </div>
+      </ScrollReveal>
+      <ScrollReveal delay={50}>
         <p className="about-text">
           {t('aboutIntro')}
           <a href="/about" className="inline-link">
