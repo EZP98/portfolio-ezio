@@ -68,7 +68,7 @@ const Works: React.FC = () => {
       title: 'Slate',
       category: 'Portfolio',
       description: 'Minimal agency template',
-      link: 'https://hanzo-template.pages.dev',
+      link: 'https://slate-6ls.pages.dev',
       image: '/templates/hanzo.mp4'
     },
     {
@@ -76,7 +76,7 @@ const Works: React.FC = () => {
       title: 'Orbit',
       category: 'Portfolio',
       description: 'Portfolio con globe 3D interattivo',
-      link: 'https://folio-ep.pages.dev',
+      link: 'https://orbit-zq4.pages.dev',
       image: '/templates/folio-ep.mp4'
     },
     {
@@ -84,7 +84,7 @@ const Works: React.FC = () => {
       title: 'Nova',
       category: 'Portfolio',
       description: 'Creative modern portfolio',
-      link: 'https://artemis-portfolio-bbr.pages.dev',
+      link: 'https://nova-edz.pages.dev',
       image: '/templates/artemis.mp4'
     },
     {
@@ -100,7 +100,7 @@ const Works: React.FC = () => {
       title: 'Obsidian',
       category: 'Portfolio',
       description: 'Dark minimal template',
-      link: 'https://portfolio-dark.pages.dev',
+      link: 'https://obsidian-cud.pages.dev',
       image: '/templates/portfolio-dark.mp4'
     },
     {
@@ -108,7 +108,7 @@ const Works: React.FC = () => {
       title: 'Aurora',
       category: 'Landing',
       description: 'Modern responsive landing',
-      link: 'https://landing-template-bp5.pages.dev',
+      link: 'https://aurora-76x.pages.dev',
       image: '/templates/landing.mp4'
     }
   ];
