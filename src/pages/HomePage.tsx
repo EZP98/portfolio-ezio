@@ -5,8 +5,6 @@ import Introduction from '../components/Introduction';
 import Showcase from '../components/Showcase';
 import WorksTicker from '../components/WorksTicker';
 import Works from '../components/Works';
-import Components from '../components/Components';
-import PhotoGallery from '../components/PhotoGallery';
 import About from '../components/About';
 import Experience from '../components/Experience';
 import Stack from '../components/Stack';
@@ -25,8 +23,6 @@ const HomePage = () => {
         <Introduction />
         <WorksTicker />
         <Works />
-        <Components />
-        <PhotoGallery />
         <Showcase />
         <About />
         <Experience />
