@@ -100,7 +100,6 @@ const Experience: React.FC = () => {
       <ScrollReveal>
         <div className="section-header">
           <h2 className="section-title">{t('experienceEducation')}</h2>
-          <span className="section-arrow">→</span>
         </div>
       </ScrollReveal>
 
