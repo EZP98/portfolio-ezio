@@ -1,7 +1,6 @@
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import ServicesTicker from '../components/ServicesTicker';
-import Introduction from '../components/Introduction';
 import Showcase from '../components/Showcase';
 import WorksTicker from '../components/WorksTicker';
 import Works from '../components/Works';
@@ -20,7 +19,6 @@ const HomePage = () => {
       <main className="main-content">
         <Hero />
         <ServicesTicker />
-        <Introduction />
         <WorksTicker />
         <Works />
         <Showcase />

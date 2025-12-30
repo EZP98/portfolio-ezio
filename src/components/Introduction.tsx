@@ -9,7 +9,6 @@ const Introduction: React.FC = () => {
   const [isLocked, setIsLocked] = useState(false);
   const [animationProgress, setAnimationProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const [hasCompleted, setHasCompleted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const progressRef = useRef(0);
 
@@ -39,7 +38,7 @@ const Introduction: React.FC = () => {
 
   // Update word progress based on animation progress
   useEffect(() => {
-    if (isMobile) return; // Skip on mobile
+    if (isMobile) return;
     const newWordProgress = words.map((_, index) => {
       const wordStart = index / words.length;
       const wordEnd = (index + 1) / words.length;
@@ -59,35 +58,31 @@ const Introduction: React.FC = () => {
     const rect = sectionRef.current.getBoundingClientRect();
     const viewportHeight = window.innerHeight;
 
-    // Section is "active" when its top reaches middle of viewport
+    // Section is visible when it overlaps with viewport
+    const sectionInView = rect.top < viewportHeight * 0.6 && rect.bottom > viewportHeight * 0.4;
+    setIsVisible(sectionInView);
+
+    // Trigger zone for locking
     const triggerPoint = viewportHeight * 0.4;
-    const isInTriggerZone = rect.top <= triggerPoint && rect.top > -viewportHeight * 0.3;
+    const isInTriggerZone = rect.top <= triggerPoint && rect.top > -rect.height * 0.5;
 
-    // Section is visible when it's in viewport (but not scrolled too far past)
-    const sectionInView = rect.top < viewportHeight * 0.5 && rect.bottom > viewportHeight * 0.2;
-    setIsVisible(sectionInView && !hasCompleted);
-
-    // Lock when entering trigger zone and animation not complete
-    if (isInTriggerZone && progressRef.current < 1 && !hasCompleted) {
+    // Lock when in trigger zone and animation not complete
+    if (isInTriggerZone && progressRef.current < 1) {
       setIsLocked(true);
     }
 
-    // Unlock when animation complete or scrolled past
-    if (progressRef.current >= 1 || rect.top > triggerPoint) {
+    // Unlock when animation complete
+    if (progressRef.current >= 1) {
       setIsLocked(false);
     }
 
-    // Mark as completed and hide when scrolled past the section bottom
-    if (rect.bottom < viewportHeight * 0.3 && progressRef.current >= 1) {
-      setHasCompleted(true);
+    // Reset animation if scrolled back above the section
+    if (rect.top > viewportHeight * 0.7 && progressRef.current > 0) {
+      progressRef.current = 0;
+      setAnimationProgress(0);
+      setIsLocked(false);
     }
-
-    // Reset if scrolled back up before the section
-    if (rect.top > viewportHeight * 0.8) {
-      setHasCompleted(false);
-      setIsVisible(false);
-    }
-  }, [isMobile, hasCompleted]);
+  }, [isMobile]);
 
   // Handle wheel events when locked (desktop only)
   useEffect(() => {
@@ -99,18 +94,18 @@ const Introduction: React.FC = () => {
       // If scrolling UP and progress is at 0, unlock and allow normal scroll
       if (e.deltaY < 0 && progressRef.current <= 0) {
         setIsLocked(false);
-        return; // Don't prevent default - allow scroll up
+        return;
       }
 
       e.preventDefault();
 
       // Increment progress based on wheel delta
-      const delta = e.deltaY > 0 ? 0.03 : -0.03;
+      const delta = e.deltaY > 0 ? 0.035 : -0.035;
       const newProgress = Math.max(0, Math.min(1, progressRef.current + delta));
       progressRef.current = newProgress;
       setAnimationProgress(newProgress);
 
-      // Unlock when complete (scrolling down)
+      // Unlock when complete
       if (newProgress >= 1) {
         setIsLocked(false);
       }
@@ -129,7 +124,7 @@ const Introduction: React.FC = () => {
     };
   }, [isLocked, isMobile]);
 
-  // Listen for scroll to detect when section comes into view
+  // Listen for scroll
   useEffect(() => {
     if (isMobile) {
       setIsVisible(true);
@@ -148,7 +143,6 @@ const Introduction: React.FC = () => {
         style={{
           opacity: isVisible ? 1 : 0,
           visibility: isVisible ? 'visible' : 'hidden',
-          transform: isVisible ? 'translateY(0)' : 'translateY(-30px)',
         }}
       >
         <div className="intro-container">
