@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import ScrollReveal from './ScrollReveal';
+import Globe3D from './Globe3D';
 import './CreativeWork.css';
 
 const CreativeWork: React.FC = () => {
@@ -44,19 +45,12 @@ const CreativeWork: React.FC = () => {
             </div>
           </Link>
 
-          {/* Components - with preview */}
+          {/* Components - with Globe */}
           <Link to="/components" className="creative-card creative-card-components">
-            <div className="components-mini-preview">
-              <div className="mini-btn mini-btn-primary">Button</div>
-              <div className="mini-btn mini-btn-secondary">Secondary</div>
-              <div className="mini-toggle">
-                <div className="mini-toggle-track">
-                  <div className="mini-toggle-thumb"></div>
-                </div>
-              </div>
-              <div className="mini-input">
-                <span>Email</span>
-              </div>
+            <div className="globe-preview">
+              <Suspense fallback={null}>
+                <Globe3D radius={1.8} autoRotate />
+              </Suspense>
             </div>
             <div className="creative-card-content">
               <h3 className="creative-card-title">Components</h3>
