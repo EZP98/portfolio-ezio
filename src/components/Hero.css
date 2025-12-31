@@ -70,53 +70,19 @@
 }
 
 /* LumaButton */
-@keyframes lumaRotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); opacity: 0.4; }
-  50% { transform: translateY(-2px); opacity: 0.8; }
-}
-
 .luma-button {
   margin-top: 32px;
-  padding: 1px;
-  border: none;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 100px;
   cursor: pointer;
   position: relative;
-  background: rgb(40, 40, 40);
-  isolation: isolate;
+  background: rgb(0, 0, 0);
+  transition: all 0.3s ease;
 }
 
-.luma-button::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 100px;
-  padding: 1px;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0deg,
-    rgba(255, 255, 255, 0.8) 30deg,
-    transparent 60deg,
-    transparent 180deg,
-    rgba(255, 255, 255, 0.8) 210deg,
-    transparent 240deg,
-    transparent 360deg
-  );
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  animation: lumaRotate 4s linear infinite;
-}
-
-.luma-button:hover::before {
-  animation-duration: 8s;
+.luma-button:hover {
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .luma-wrapper {
@@ -139,10 +105,6 @@
   pointer-events: none;
 }
 
-.luma-star {
-  animation: float 3s ease-in-out infinite;
-}
-
 .luma-text {
   position: relative;
   z-index: 2;
@@ -150,11 +112,6 @@
   font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.01em;
-  transition: transform 0.3s ease;
-}
-
-.luma-button:hover .luma-text {
-  transform: translateX(-1px);
 }
 
 /* Link Cards */
