@@ -101,6 +101,7 @@
   height: 100%;
   object-fit: cover;
   transition: filter 0.3s ease;
+  border-radius: 20px;
 }
 
 /* Slightly dim images in dark mode */
@@ -116,6 +117,7 @@
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 20px;
 }
 
 /* Templates - video fills container completely */
@@ -154,7 +156,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: inherit;
+  border-radius: 20px;
   backdrop-filter: blur(2px);
 }
 
