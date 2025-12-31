@@ -102,6 +102,14 @@
   background: transparent;
 }
 
+/* Globe Preview */
+.globe-preview {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
 /* Coin Preview */
 .coin-preview {
   position: absolute;
@@ -115,8 +123,8 @@
 
 .coin-image {
   width: auto;
-  height: 80%;
-  max-height: 200px;
+  height: 70%;
+  max-height: 180px;
   object-fit: contain;
 }
 

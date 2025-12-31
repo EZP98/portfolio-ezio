@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import ScrollReveal from './ScrollReveal';
+import Globe3D from './Globe3D';
 import './CreativeWork.css';
 
 const CreativeWork: React.FC = () => {
@@ -14,8 +15,11 @@ const CreativeWork: React.FC = () => {
 
       <ScrollReveal delay={50}>
         <div className="creative-work-grid">
-          {/* AI Images */}
-          <Link to="/gallery/ai" className="creative-card">
+          {/* AI Images - with Coin */}
+          <Link to="/gallery/ai" className="creative-card creative-card-ai">
+            <div className="coin-preview">
+              <img src="/coin.png" alt="3D Coin" className="coin-image" />
+            </div>
             <div className="creative-card-content">
               <h3 className="creative-card-title">AI Images</h3>
               <p className="creative-card-description">Generative art with Midjourney</p>
@@ -29,10 +33,12 @@ const CreativeWork: React.FC = () => {
             </div>
           </Link>
 
-          {/* Components - with Coin */}
+          {/* Components - with Globe */}
           <Link to="/components" className="creative-card creative-card-components">
-            <div className="coin-preview">
-              <img src="/coin.png" alt="3D Coin" className="coin-image" />
+            <div className="globe-preview">
+              <Suspense fallback={null}>
+                <Globe3D radius={1.8} autoRotate />
+              </Suspense>
             </div>
             <div className="creative-card-content">
               <h3 className="creative-card-title">Components</h3>
