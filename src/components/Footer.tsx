@@ -39,10 +39,9 @@ const Footer: React.FC = () => {
             <div className="footer-links">
               <h3>{t('quickLinks')}</h3>
               <div className="footer-link-list">
-                <a href="https://www.linkedin.com/in/ezio-pappalardo/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://www.albicchiere.com" target="_blank" rel="noopener noreferrer">Albicchiere</a>
+                <a href="https://www.linkedin.com/in/ezio-pappalardo-170a73229/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a href="mailto:eziopappalardo98@gmail.com">Email</a>
-                <a href="#cv">{t('contact')}</a>
+                <a href="#contact">{t('contact')}</a>
               </div>
             </div>
           </ScrollReveal>
@@ -50,11 +49,9 @@ const Footer: React.FC = () => {
 
         <ScrollReveal delay={200}>
           <div className="footer-meta">
-            <span>🇮🇹 Based in Umbria</span>
+            <span>Based in Umbria</span>
             <span>·</span>
-            <span>CMO at Albicchiere</span>
-            <span>·</span>
-            <a href="https://www.linkedin.com/in/ezio-pappalardo/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+            <a href="https://www.linkedin.com/in/ezio-pappalardo-170a73229/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <span>·</span>
             <span>© 2025 Ezio Pappalardo</span>
           </div>
