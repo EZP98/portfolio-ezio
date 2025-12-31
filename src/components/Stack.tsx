@@ -85,9 +85,11 @@ const Stack: React.FC = () => {
               <p className="skill-description">
                 {language === 'it' ? category.descriptionIT : category.description}
               </p>
-              <span className="skill-count">
-                {category.tools.length} {language === 'it' ? 'strumenti' : 'tools'}
-              </span>
+              <div className="skill-tools">
+                {category.tools.map((tool, i) => (
+                  <span key={i} className="skill-tool-tag">{tool}</span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
