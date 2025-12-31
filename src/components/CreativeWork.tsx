@@ -37,7 +37,7 @@ const CreativeWork: React.FC = () => {
           <Link to="/components" className="creative-card creative-card-components">
             <div className="globe-preview">
               <Suspense fallback={null}>
-                <Globe3D radius={1.8} autoRotate />
+                <Globe3D radius={2.5} autoRotate />
               </Suspense>
             </div>
             <div className="creative-card-content">

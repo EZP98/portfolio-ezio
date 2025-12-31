@@ -102,10 +102,13 @@
   background: transparent;
 }
 
-/* Globe Preview */
+/* Globe Preview - larger, positioned to top-right corner, clipped */
 .globe-preview {
   position: absolute;
-  inset: 0;
+  top: -30%;
+  right: -30%;
+  width: 130%;
+  height: 130%;
   z-index: 1;
   pointer-events: none;
 }
