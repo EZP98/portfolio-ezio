@@ -199,6 +199,22 @@
   .creative-card-description {
     font-size: 12px;
   }
+
+  .coin-image {
+    height: 260px;
+  }
+
+  .coin-preview {
+    right: 10%;
+    bottom: -15%;
+  }
+
+  .globe-preview {
+    top: 20%;
+    right: -50%;
+    width: 150%;
+    height: 150%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -212,38 +228,27 @@
   }
 
   .creative-card {
-    min-height: 180px;
+    min-height: 200px;
   }
 
   .creative-card:nth-child(3) {
     grid-column: auto;
-    min-height: 220px;
+    min-height: 200px;
   }
 
-  .components-mini-preview {
-    gap: 8px;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0 16px;
+  .coin-image {
+    height: 220px;
   }
 
-  .mini-btn {
-    padding: 6px 12px;
-    font-size: 10px;
+  .coin-preview {
+    right: 5%;
+    bottom: -10%;
   }
 
-  .mini-toggle-track {
-    width: 32px;
-    height: 18px;
-  }
-
-  .mini-toggle-thumb {
-    width: 14px;
-    height: 14px;
-  }
-
-  .mini-input {
-    padding: 6px 12px;
-    font-size: 10px;
+  .globe-preview {
+    top: 15%;
+    right: -40%;
+    width: 130%;
+    height: 130%;
   }
 }
