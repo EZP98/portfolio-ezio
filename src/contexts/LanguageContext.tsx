@@ -18,8 +18,8 @@ const translations = {
 
     // Hero
     heroName: 'Ezio Pappalardo',
-    heroTagline: 'Vibe Coding',
-    heroSubtitle: 'Marketing & Prodotti Digitali',
+    heroTagline: 'Marketing & Digital Products',
+    heroSubtitle: 'Content · AI · Vibe Coder',
     connect: 'Connetti',
     viewLinkedIn: 'Vedi il mio LinkedIn',
     startup: 'Startup',
@@ -209,8 +209,8 @@ const translations = {
 
     // Hero
     heroName: 'Ezio Pappalardo',
-    heroTagline: 'Vibe Coding',
-    heroSubtitle: 'Marketing & Digital Products',
+    heroTagline: 'Marketing & Digital Products',
+    heroSubtitle: 'Content · AI · Vibe Coder',
     connect: 'Connect',
     viewLinkedIn: 'View my LinkedIn',
     startup: 'Startup',
