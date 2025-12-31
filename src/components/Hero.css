@@ -75,45 +75,49 @@
   to { transform: rotate(360deg); }
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0px); opacity: 0.4; }
+  50% { transform: translateY(-2px); opacity: 0.8; }
+}
+
 .luma-button {
   margin-top: 32px;
-  padding: 2px;
-  background: linear-gradient(rgb(34, 34, 34), rgb(34, 34, 34));
+  padding: 1px;
   border: none;
   border-radius: 100px;
   cursor: pointer;
   position: relative;
-  overflow: visible;
+  background: rgb(40, 40, 40);
+  isolation: isolate;
 }
 
 .luma-button::before {
   content: '';
   position: absolute;
-  inset: -1px;
+  inset: 0;
   border-radius: 100px;
+  padding: 1px;
   background: conic-gradient(
     from 0deg,
-    transparent 0deg,
-    transparent 300deg,
-    rgba(255, 255, 255, 0.8) 330deg,
-    rgba(255, 255, 255, 1) 360deg
+    rgb(40, 40, 40) 0deg,
+    rgb(40, 40, 40) 280deg,
+    rgba(255, 255, 255, 0.6) 320deg,
+    rgba(255, 255, 255, 0.9) 340deg,
+    rgba(255, 255, 255, 0.6) 360deg
   );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
   animation: lumaRotate 3s linear infinite;
-  z-index: -1;
-  filter: blur(4px);
-  opacity: 0.6;
-}
-
-.luma-button:hover::before {
-  opacity: 1;
-  filter: blur(6px);
 }
 
 .luma-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 28px;
+  padding: 12px 24px;
   background: rgb(0, 0, 0);
   border-radius: 100px;
   position: relative;
@@ -129,16 +133,17 @@
   pointer-events: none;
 }
 
+.luma-star {
+  animation: float 3s ease-in-out infinite;
+}
+
 .luma-text {
   position: relative;
   z-index: 2;
   color: rgb(255, 255, 255);
   font-size: 14px;
-  font-weight: 600;
-}
-
-.luma-light {
-  display: none;
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 /* Link Cards */
