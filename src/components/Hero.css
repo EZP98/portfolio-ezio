@@ -111,6 +111,11 @@
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   animation: lumaRotate 3s linear infinite;
+  transition: animation-duration 0.5s ease;
+}
+
+.luma-button:hover::before {
+  animation-duration: 6s;
 }
 
 .luma-wrapper {
@@ -137,6 +142,29 @@
   animation: float 3s ease-in-out infinite;
 }
 
+.luma-icon {
+  width: 18px;
+  height: 18px;
+  color: rgb(255, 255, 255);
+  transition: transform 0.3s ease;
+}
+
+.luma-icon-left {
+  transform-origin: center center;
+}
+
+.luma-icon-right {
+  transform-origin: center center;
+}
+
+.luma-button:hover .luma-icon-right {
+  transform: scale(0.95) rotate(5deg);
+}
+
+.luma-button:hover .luma-icon-left {
+  transform: scale(0.95) rotate(-5deg);
+}
+
 .luma-text {
   position: relative;
   z-index: 2;
@@ -144,6 +172,11 @@
   font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.01em;
+  transition: transform 0.3s ease;
+}
+
+.luma-button:hover .luma-text {
+  transform: translateX(-1px);
 }
 
 /* Link Cards */
