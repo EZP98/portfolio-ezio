@@ -3,13 +3,27 @@ import { useLanguage } from '../contexts/LanguageContext';
 import ScrollReveal from './ScrollReveal';
 import './Stack.css';
 
-const tools = [
-  'Figma', 'Framer', 'Canva',
-  'Claude', 'ChatGPT', 'Midjourney',
-  'React', 'TypeScript', 'Tailwind',
-  'Supabase', 'Vercel', 'Cloudflare',
-  'DaVinci Resolve', 'CapCut',
-  'Bolt', 'Webflow'
+const skillCategories = [
+  {
+    title: 'Design',
+    tools: ['Figma', 'Framer', 'Canva']
+  },
+  {
+    title: 'Development',
+    tools: ['React', 'TypeScript', 'Tailwind', 'Three.js']
+  },
+  {
+    title: 'AI Tools',
+    tools: ['Claude', 'ChatGPT', 'Perplexity', 'Midjourney', 'Lovart', 'Tripo', 'Bolt']
+  },
+  {
+    title: 'Infrastructure',
+    tools: ['Supabase', 'Cloudflare']
+  },
+  {
+    title: 'Video',
+    tools: ['CapCut']
+  }
 ];
 
 const Stack: React.FC = () => {
@@ -25,11 +39,16 @@ const Stack: React.FC = () => {
 
       <ScrollReveal delay={50}>
         <div className="tools-card">
-          <div className="tools-flow">
-            {tools.map((tool, i) => (
-              <span key={i} className="tool-tag">{tool}</span>
-            ))}
-          </div>
+          {skillCategories.map((category, idx) => (
+            <div key={idx} className="skill-category">
+              <h3 className="skill-category-title">{category.title}</h3>
+              <div className="tools-flow">
+                {category.tools.map((tool, i) => (
+                  <span key={i} className="tool-tag">{tool}</span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </ScrollReveal>
     </section>
