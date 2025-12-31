@@ -299,12 +299,12 @@
 
   .cta-gallery-perspective {
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
   }
 
   .cta-card {
-    width: 280px;
-    height: 360px;
+    width: 200px;
+    height: 260px;
   }
 
   .cta-card-left,
@@ -322,17 +322,29 @@
 
 @media (max-width: 480px) {
   .cta-title {
-    font-size: 28px;
+    font-size: 24px;
+  }
+
+  .cta-gallery-perspective {
+    gap: 12px;
   }
 
   .cta-card {
-    width: 100%;
-    max-width: 280px;
-    height: 320px;
+    width: 160px;
+    height: 210px;
+  }
+
+  .cta-card-brackets {
+    inset: 10px;
+  }
+
+  .bracket {
+    width: 12px;
+    height: 12px;
   }
 
   .cta-button {
-    padding: 14px 28px;
-    font-size: 15px;
+    padding: 12px 24px;
+    font-size: 14px;
   }
 }
