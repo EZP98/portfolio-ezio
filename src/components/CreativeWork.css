@@ -105,10 +105,10 @@
 /* Globe Preview - positioned to bottom-right corner, clipped */
 .globe-preview {
   position: absolute;
-  top: 15%;
-  right: -20%;
-  width: 110%;
-  height: 110%;
+  top: 25%;
+  right: -35%;
+  width: 140%;
+  height: 140%;
   z-index: 1;
   pointer-events: none;
 }
