@@ -92,7 +92,8 @@
   overflow: hidden;
   aspect-ratio: 1/1;
   margin-bottom: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
 }
 
 .work-image {
@@ -113,7 +114,7 @@
   aspect-ratio: unset;
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border-color);
 }
 
 .template-card .work-image {
