@@ -94,6 +94,7 @@
   }
 }
 
+/* Light mode (default) */
 .luma-button {
   margin-top: 32px;
   padding: 0;
@@ -106,7 +107,7 @@
 }
 
 .luma-button:hover {
-  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.15));
 }
 
 .luma-border {
@@ -114,13 +115,13 @@
   overflow: hidden;
   border-radius: 100px;
   padding: 1px;
-  background: linear-gradient(180deg, rgba(60, 60, 60, 1) 0%, rgba(34, 34, 34, 1) 100%);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(180deg, rgba(220, 220, 220, 1) 0%, rgba(180, 180, 180, 1) 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.3);
   transition: box-shadow 0.3s ease;
 }
 
 .luma-button:hover .luma-border {
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(255, 255, 255, 0.4);
 }
 
 .luma-light {
@@ -130,9 +131,9 @@
     from 0deg,
     transparent 0deg,
     transparent 60deg,
-    rgba(255, 255, 255, 0.8) 120deg,
-    white 180deg,
-    rgba(255, 255, 255, 0.8) 240deg,
+    rgba(0, 0, 0, 0.6) 120deg,
+    rgba(30, 30, 30, 0.9) 180deg,
+    rgba(0, 0, 0, 0.6) 240deg,
     transparent 300deg,
     transparent 360deg
   );
@@ -151,7 +152,7 @@
   justify-content: center;
   gap: 12px;
   padding: 12px 24px;
-  background: rgb(0, 0, 0);
+  background: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
   border-radius: 100px;
 }
 
@@ -165,13 +166,13 @@
 
 .luma-particle {
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 50%;
   animation: twinkle 2s ease-in-out infinite, float 3s ease-in-out infinite;
 }
 
 .luma-icon {
-  color: rgb(255, 255, 255);
+  color: #1a1a1a;
   transition: transform 0.3s ease, opacity 0.3s ease;
   flex-shrink: 0;
 }
@@ -183,7 +184,7 @@
 .luma-text {
   position: relative;
   z-index: 2;
-  color: rgb(255, 255, 255);
+  color: #1a1a1a;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.01em;
@@ -191,56 +192,54 @@
 }
 
 .luma-button:hover .luma-text {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Light mode */
-@media (prefers-color-scheme: light) {
-  .luma-button:hover {
-    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.15));
-  }
+/* Dark mode */
+:root.dark-mode .luma-button:hover {
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+}
 
-  .luma-border {
-    background: linear-gradient(180deg, rgba(220, 220, 220, 1) 0%, rgba(180, 180, 180, 1) 100%);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.3);
-  }
+:root.dark-mode .luma-border {
+  background: linear-gradient(180deg, rgba(60, 60, 60, 1) 0%, rgba(34, 34, 34, 1) 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
 
-  .luma-button:hover .luma-border {
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(255, 255, 255, 0.4);
-  }
+:root.dark-mode .luma-button:hover .luma-border {
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+}
 
-  .luma-light {
-    background: conic-gradient(
-      from 0deg,
-      transparent 0deg,
-      transparent 60deg,
-      rgba(0, 0, 0, 0.6) 120deg,
-      rgba(30, 30, 30, 0.9) 180deg,
-      rgba(0, 0, 0, 0.6) 240deg,
-      transparent 300deg,
-      transparent 360deg
-    );
-  }
+:root.dark-mode .luma-light {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 60deg,
+    rgba(255, 255, 255, 0.8) 120deg,
+    white 180deg,
+    rgba(255, 255, 255, 0.8) 240deg,
+    transparent 300deg,
+    transparent 360deg
+  );
+}
 
-  .luma-inner {
-    background: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
-  }
+:root.dark-mode .luma-inner {
+  background: rgb(0, 0, 0);
+}
 
-  .luma-particle {
-    background-color: rgba(0, 0, 0, 0.7);
-  }
+:root.dark-mode .luma-particle {
+  background-color: rgba(255, 255, 255, 0.8);
+}
 
-  .luma-icon {
-    color: #1a1a1a;
-  }
+:root.dark-mode .luma-icon {
+  color: rgb(255, 255, 255);
+}
 
-  .luma-text {
-    color: #1a1a1a;
-  }
+:root.dark-mode .luma-text {
+  color: rgb(255, 255, 255);
+}
 
-  .luma-button:hover .luma-text {
-    text-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  }
+:root.dark-mode .luma-button:hover .luma-text {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 /* Link Cards */
