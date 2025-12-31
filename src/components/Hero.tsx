@@ -16,24 +16,21 @@ const Hero: React.FC = () => {
           <span className="hero-tagline">{t('heroTagline')}</span>
           <span className="hero-subtitle">{t('heroSubtitle')}</span>
         </div>
-        <button className="hero-cta" onClick={copyEmail}>
-          <div className="hero-cta-stars">
-            <div className="star" style={{ left: '11%', top: '70%', width: '2px', height: '2px' }} />
-            <div className="star" style={{ left: '64%', top: '18%', width: '3px', height: '3px' }} />
-            <div className="star" style={{ left: '10%', top: '17%', width: '2px', height: '2px' }} />
-            <div className="star" style={{ left: '23%', top: '39%', width: '2px', height: '2px' }} />
-            <div className="star" style={{ left: '26%', top: '28%', width: '3px', height: '3px' }} />
-            <div className="star" style={{ left: '24%', top: '85%', width: '2px', height: '2px' }} />
-            <div className="star" style={{ left: '41%', top: '68%', width: '2.5px', height: '2.5px' }} />
-            <div className="star" style={{ left: '74%', top: '66%', width: '2px', height: '2px' }} />
-            <div className="star" style={{ left: '49%', top: '53%', width: '2px', height: '2px' }} />
-            <div className="star" style={{ left: '76%', top: '36%', width: '3px', height: '3px' }} />
-            <div className="star" style={{ left: '42%', top: '25%', width: '2px', height: '2px' }} />
-            <div className="star" style={{ left: '85%', top: '77%', width: '2px', height: '2px' }} />
-            <div className="star" style={{ left: '61%', top: '79%', width: '2px', height: '2px' }} />
-            <div className="star" style={{ left: '90%', top: '45%', width: '2.5px', height: '2.5px' }} />
+        <button className="luma-button" onClick={copyEmail}>
+          <div className="luma-button-inner">
+            <div className="luma-stars">
+              <div className="luma-star" style={{ left: '1%', top: '70%' }} />
+              <div className="luma-star" style={{ left: '33%', top: '13%' }} />
+              <div className="luma-star" style={{ left: '78%', top: '64%' }} />
+              <div className="luma-star" style={{ left: '88%', top: '81%' }} />
+              <div className="luma-star" style={{ left: '87%', top: '97%' }} />
+              <div className="luma-star" style={{ left: '94%', top: '81%' }} />
+              <div className="luma-star" style={{ left: '47%', top: '36%' }} />
+              <div className="luma-star" style={{ left: '27%', top: '55%' }} />
+            </div>
+            <span className="luma-text">{t('getInTouch')}</span>
+            <div className="luma-glow" />
           </div>
-          <span className="hero-cta-text">{t('getInTouch')}</span>
         </button>
       </div>
     </section>

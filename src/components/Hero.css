@@ -69,43 +69,83 @@
   opacity: 0.7;
 }
 
-.hero-cta {
+/* LumaButton */
+@keyframes lumaRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.luma-button {
   margin-top: 32px;
-  padding: 14px 28px;
-  background: #0a0a0a;
-  color: #ffffff;
-  border: none;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 600;
+  padding: 0;
+  background: transparent;
+  border: 1px solid rgb(34, 34, 34);
+  border-radius: 100px;
   cursor: pointer;
-  transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
 }
 
-.hero-cta-stars {
+.luma-button-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: rgb(0, 0, 0);
+  border-radius: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.luma-stars {
   position: absolute;
   inset: 0;
   pointer-events: none;
 }
 
-.hero-cta .star {
+.luma-star {
   position: absolute;
-  background-color: #ffffff;
+  width: 0.6px;
+  height: 0.6px;
+  background-color: rgb(255, 255, 255);
   border-radius: 50%;
   opacity: 0.6;
   transform: translate(-50%, -50%);
 }
 
-.hero-cta-text {
+.luma-text {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
 }
 
-.hero-cta:hover {
-  transform: translateY(-2px);
-  background: #1a1a1a;
+.luma-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 340deg,
+    rgba(255, 255, 255, 0.8) 360deg
+  );
+  filter: blur(10px);
+  opacity: 0.6;
+  animation: lumaRotate 4s linear infinite;
+  pointer-events: none;
+}
+
+.luma-button:hover .luma-glow {
+  opacity: 0.9;
+}
+
+.luma-button:hover {
+  transform: translateY(-1px);
 }
 
 /* Link Cards */
