@@ -6,9 +6,14 @@ import './Header.css';
 
 const Header: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
+
+  // Set dark mode on initial load
+  useEffect(() => {
+    document.documentElement.classList.add('dark-mode');
+  }, []);
 
   // Close menu on escape key
   useEffect(() => {
