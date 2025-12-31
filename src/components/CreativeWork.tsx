@@ -41,25 +41,16 @@ const CreativeWork: React.FC = () => {
               to={cat.link}
               className="creative-card"
             >
-              <div className="creative-card-image">
-                <div className="creative-card-placeholder">
-                  <span className="creative-card-icon">
-                    {cat.id === 'ai-images' && '◈'}
-                    {cat.id === 'photography' && '◎'}
-                    {cat.id === 'components' && '⬢'}
-                  </span>
-                </div>
-                <div className="creative-hover-overlay">
-                  <div className="creative-hover-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M7 17L17 7M17 7H7M17 7V17" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div className="creative-card-meta">
+              <div className="creative-card-content">
                 <h3 className="creative-card-title">{cat.title}</h3>
                 <p className="creative-card-description">{cat.description}</p>
+              </div>
+              <div className="creative-hover-overlay">
+                <div className="creative-hover-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
               </div>
             </Link>
           ))}
