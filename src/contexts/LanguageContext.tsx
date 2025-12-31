@@ -17,7 +17,7 @@ const translations = {
     products: 'Prodotti',
     
     // Hero
-    heroTitle: 'Digital Marketing Manager\nTrasformo idee in prodotti che convertono',
+    heroTitle: 'Ezio Pappalardo\nVibe Coding & Digital Products',
     connect: 'Connetti',
     viewLinkedIn: 'Vedi il mio LinkedIn',
     startup: 'Startup',
@@ -206,7 +206,7 @@ const translations = {
     products: 'Products',
     
     // Hero
-    heroTitle: 'Digital Marketing Manager\nTurning Ideas Into Products That Convert',
+    heroTitle: 'Ezio Pappalardo\nVibe Coding & Digital Products',
     connect: 'Connect',
     viewLinkedIn: 'View my LinkedIn',
     startup: 'Startup',
