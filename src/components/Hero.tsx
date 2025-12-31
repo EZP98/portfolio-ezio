@@ -8,7 +8,7 @@ const generateParticles = (count: number) => {
     id: i,
     left: Math.random() * 100,
     top: Math.random() * 100,
-    size: 0.5 + Math.random() * 0.5,
+    size: 2 + Math.random() * 1,
     delay: Math.random() * 2,
     duration: 2 + Math.random() * 2,
   }));
