@@ -24,10 +24,12 @@ const Stack: React.FC = () => {
       </ScrollReveal>
 
       <ScrollReveal delay={50}>
-        <div className="tools-flow">
-          {tools.map((tool, i) => (
-            <span key={i} className="tool-tag">{tool}</span>
-          ))}
+        <div className="tools-card">
+          <div className="tools-flow">
+            {tools.map((tool, i) => (
+              <span key={i} className="tool-tag">{tool}</span>
+            ))}
+          </div>
         </div>
       </ScrollReveal>
     </section>

@@ -3,6 +3,13 @@
   margin-bottom: 120px;
 }
 
+.tools-card {
+  background: #111;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 24px;
+}
+
 .tools-flow {
   display: flex;
   flex-wrap: wrap;
