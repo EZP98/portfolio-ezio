@@ -103,6 +103,11 @@
   cursor: pointer;
   position: relative;
   background: transparent;
+  transition: filter 0.3s ease;
+}
+
+.luma-button:hover {
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
 }
 
 .luma-border {
@@ -111,11 +116,6 @@
   border-radius: 100px;
   padding: 1px;
   background: linear-gradient(180deg, rgba(60, 60, 60, 1) 0%, rgba(34, 34, 34, 1) 100%);
-  transition: box-shadow 0.3s ease;
-}
-
-.luma-button:hover .luma-border {
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
 }
 
 .luma-light {
