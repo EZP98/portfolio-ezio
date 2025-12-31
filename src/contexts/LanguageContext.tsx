@@ -101,10 +101,12 @@ const translations = {
     
     // About
     aboutIntro: 'Sono',
-    aboutText1: ', nato a Perugia con radici salernitane. Appassionato di contenuti visivi, design e innovazione. Scatto con una Fujifilm X100VI, ascolto rock music, e assorbo costantemente informazioni per migliorare giorno dopo giorno.',
-    aboutBio: 'Costruisco prodotti digitali e strategie di branding con AI e codice. Vibe coding significa trasformare idee in prodotti funzionanti velocemente - dal branding ai prodotti completi, iterando rapidamente e rilasciando ciò che conta.',
+    aboutText1: ', nato a Perugia con radici salernitane. Appassionato di storytelling visivo e tecnologia. Scatto con una Fujifilm X100VI, ascolto musica rock. Determinato e curioso, lavoro duro per ciò in cui credo.',
+    aboutBio: 'Creo prodotti digitali e strategie di branding con AI e codice.',
+    aboutVibeCoding: 'Vibe coding',
+    aboutVibeDesc: 'significa trasformare idee in prodotti funzionanti velocemente, iterando e rilasciando ciò che conta.',
     findMeOn: 'Mi trovi su',
-    whereIShare: 'dove condivido intuizioni su marketing, tecnologia del vino e progetti creativi.',
+    whereIShare: '',
     
     // Experience
     currentPosition: 'Posizione Attuale',
@@ -166,8 +168,8 @@ const translations = {
     copied: 'Copiato!',
 
     // CTA Section
-    ctaTitle: 'Il prossimo prodotto digitale è solo una conversazione di distanza',
-    ctaSubtitle: 'Pronto a trasformare la tua idea in un prodotto digitale di successo? Contattami per discutere della tua strategia.',
+    ctaTitle: 'Pronto a costruire qualcosa insieme?',
+    ctaSubtitle: '',
     getInTouch: 'Contattami',
 
     // Introduction Section
@@ -287,10 +289,12 @@ const translations = {
     
     // About
     aboutIntro: "I'm",
-    aboutText1: ', born in Perugia with roots in Salerno. Passionate about visual content, design, and innovation. I shoot with a Fujifilm X100VI, listen to rock music, and constantly absorb information to improve day by day.',
-    aboutBio: 'I build digital products and brand strategies with AI and code. Vibe coding means turning ideas into working products fast - from branding to full products, iterating quickly and shipping what matters.',
-    findMeOn: 'You can find me on',
-    whereIShare: 'where I share insights about marketing, wine technology, and creative projects.',
+    aboutText1: ', born in Perugia with roots in Salerno. Passionate about visual storytelling and technology. I shoot with a Fujifilm X100VI, listen to rock music. Determined and curious, I work hard for what I believe in.',
+    aboutBio: 'I create digital products and brand strategies with AI and code.',
+    aboutVibeCoding: 'Vibe coding',
+    aboutVibeDesc: 'means turning ideas into working products fast, iterating and shipping what matters.',
+    findMeOn: 'Find me on',
+    whereIShare: '',
     
     // Experience
     currentPosition: 'Current Position',
@@ -352,8 +356,8 @@ const translations = {
     copied: 'Copied!',
 
     // CTA Section
-    ctaTitle: 'Your next digital product is just a conversation away',
-    ctaSubtitle: 'Ready to transform your idea into a successful digital product? Get in touch to discuss your strategy.',
+    ctaTitle: 'Ready to build something together?',
+    ctaSubtitle: '',
     getInTouch: 'Get in touch',
 
     // Introduction Section

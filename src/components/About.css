@@ -49,9 +49,18 @@
     height: 20px;
   }
   
-  .social-icon {
-    width: 20px;
-    height: 20px;
+  .social-pill {
+    padding: 4px 10px 4px 8px;
+    gap: 4px;
+  }
+
+  .social-pill svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .social-pill span {
+    font-size: 12px;
   }
 }
 
@@ -103,15 +112,13 @@
   background-clip: text;
 }
 
-.social-icon {
+.social-pill {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
+  gap: 6px;
+  padding: 6px 14px 6px 10px;
   background: #EDEDED;
-  border: 0.5px solid #E0E0E0;
-  border-radius: 76px;
+  border-radius: 86px;
   margin: 0 2px;
   transition: all 0.2s;
   vertical-align: middle;
@@ -119,14 +126,20 @@
   color: var(--text-primary);
 }
 
-.social-icon:hover {
+.social-pill:hover {
   background: #E5E5E5;
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
-.social-icon svg {
-  width: 16px;
-  height: 16px;
+.social-pill svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.social-pill span {
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* Responsive */
