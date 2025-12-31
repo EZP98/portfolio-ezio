@@ -29,11 +29,14 @@ const CreativeWork: React.FC = () => {
             </div>
           </Link>
 
-          {/* Photography */}
-          <Link to="/gallery/photos" className="creative-card">
+          {/* Components - with Coin */}
+          <Link to="/components" className="creative-card creative-card-components">
+            <div className="coin-preview">
+              <img src="/coin.png" alt="3D Coin" className="coin-image" />
+            </div>
             <div className="creative-card-content">
-              <h3 className="creative-card-title">Photography</h3>
-              <p className="creative-card-description">Moments captured</p>
+              <h3 className="creative-card-title">Components</h3>
+              <p className="creative-card-description">React & Three.js</p>
             </div>
             <div className="creative-hover-overlay">
               <div className="creative-hover-icon">
@@ -44,14 +47,11 @@ const CreativeWork: React.FC = () => {
             </div>
           </Link>
 
-          {/* Components - with Coin */}
-          <Link to="/components" className="creative-card creative-card-components">
-            <div className="coin-preview">
-              <img src="/coin.png" alt="3D Coin" className="coin-image" />
-            </div>
+          {/* Photography - full width */}
+          <Link to="/gallery/photos" className="creative-card">
             <div className="creative-card-content">
-              <h3 className="creative-card-title">Components</h3>
-              <p className="creative-card-description">React & Three.js</p>
+              <h3 className="creative-card-title">Photography</h3>
+              <p className="creative-card-description">Moments captured</p>
             </div>
             <div className="creative-hover-overlay">
               <div className="creative-hover-icon">
