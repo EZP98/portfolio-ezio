@@ -170,8 +170,8 @@
 }
 
 .photo-left {
-  transform: translateX(40px) translateZ(-80px) rotate(-6deg) rotateY(12deg);
-  margin-right: -70px;
+  transform: translateX(60px) translateZ(-60px) rotate(-8deg) rotateY(15deg);
+  margin-right: -90px;
 }
 
 .photo-center {
@@ -180,20 +180,22 @@
 }
 
 .photo-right {
-  transform: translateX(-40px) translateZ(-80px) rotate(6deg) rotateY(-12deg);
-  margin-left: -70px;
+  transform: translateX(-60px) translateZ(-60px) rotate(8deg) rotateY(-15deg);
+  margin-left: -90px;
 }
 
 .creative-card-photos:hover .photo-left {
-  transform: translateX(60px) translateZ(-60px) rotate(-10deg) rotateY(18deg);
+  transform: translateX(30px) translateZ(-40px) rotate(-4deg) rotateY(8deg);
+  margin-right: -50px;
 }
 
 .creative-card-photos:hover .photo-center {
-  transform: translateZ(20px) translateY(-10px);
+  transform: translateZ(10px);
 }
 
 .creative-card-photos:hover .photo-right {
-  transform: translateX(-60px) translateZ(-60px) rotate(10deg) rotateY(-18deg);
+  transform: translateX(-30px) translateZ(-40px) rotate(4deg) rotateY(-8deg);
+  margin-left: -50px;
 }
 
 .creative-card-photos:hover .photo-placeholder {
