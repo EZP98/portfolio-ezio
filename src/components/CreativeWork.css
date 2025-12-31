@@ -141,29 +141,30 @@
 /* Photos Preview - 3 cards with perspective */
 .photos-preview {
   position: absolute;
-  inset: 0;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%) perspective(800px);
+  transform-style: preserve-3d;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   gap: 0;
-  transform: perspective(800px);
-  transform-style: preserve-3d;
   z-index: 1;
   pointer-events: none;
 }
 
 .photo-placeholder {
-  width: 120px;
-  height: 160px;
+  width: 180px;
+  height: 240px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  transition: all 0.3s ease;
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .photo-left {
-  transform: translateX(20px) translateZ(-100px) rotate(-8deg) rotateY(15deg);
-  margin-right: -30px;
+  transform: translateX(40px) translateZ(-80px) rotate(-6deg) rotateY(12deg);
+  margin-right: -70px;
 }
 
 .photo-center {
@@ -172,13 +173,25 @@
 }
 
 .photo-right {
-  transform: translateX(-20px) translateZ(-100px) rotate(8deg) rotateY(-15deg);
-  margin-left: -30px;
+  transform: translateX(-40px) translateZ(-80px) rotate(6deg) rotateY(-12deg);
+  margin-left: -70px;
+}
+
+.creative-card-photos:hover .photo-left {
+  transform: translateX(60px) translateZ(-60px) rotate(-10deg) rotateY(18deg);
+}
+
+.creative-card-photos:hover .photo-center {
+  transform: translateZ(20px) translateY(-10px);
+}
+
+.creative-card-photos:hover .photo-right {
+  transform: translateX(-60px) translateZ(-60px) rotate(10deg) rotateY(-18deg);
 }
 
 .creative-card-photos:hover .photo-placeholder {
   background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Coin Particles - same as hero button */
