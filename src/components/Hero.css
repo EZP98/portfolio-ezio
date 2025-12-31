@@ -12,7 +12,7 @@
 
 /* Hero Section */
 .hero {
-  min-height: 100vh;
+  padding: 120px 0 80px;
   background-color: var(--bg-primary);
   width: 100%;
   opacity: 1;
@@ -21,10 +21,9 @@
 }
 
 .hero-inner {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   opacity: 1;
   width: 100%;
@@ -33,7 +32,7 @@
 
 .hero-heading {
   opacity: 0;
-  margin-bottom: 48px;
+  margin-bottom: 0;
   width: 100%;
   max-width: 100%;
   animation: heroFadeIn 0.8s cubic-bezier(0.12, 0.23, 0.5, 1) forwards;
