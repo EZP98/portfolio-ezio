@@ -31,7 +31,15 @@ const About: React.FC = () => {
 
         <ScrollReveal delay={100}>
           <p className="about-text">
-            {t('aboutBio')}
+            I build
+            <span className="inline-link"><span className="inline-text">digital products</span></span>
+            and
+            <span className="inline-link"><span className="inline-text">branding</span></span>
+            with
+            <span className="inline-link"><span className="inline-text">AI</span></span>
+            and code.
+            <span className="inline-link"><span className="inline-text">Vibe coding</span></span>
+            means turning ideas into working products fast - iterating quickly and shipping what matters.
           </p>
         </ScrollReveal>
 
