@@ -196,20 +196,20 @@
 }
 
 /* Dark mode */
-:root.dark-mode .luma-button:hover {
+.dark-mode .luma-button:hover {
   filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
 }
 
-:root.dark-mode .luma-border {
+.dark-mode .luma-border {
   background: linear-gradient(180deg, rgba(60, 60, 60, 1) 0%, rgba(34, 34, 34, 1) 100%);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-:root.dark-mode .luma-button:hover .luma-border {
+.dark-mode .luma-button:hover .luma-border {
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
 }
 
-:root.dark-mode .luma-light {
+.dark-mode .luma-light {
   background: conic-gradient(
     from 0deg,
     transparent 0deg,
@@ -222,23 +222,23 @@
   );
 }
 
-:root.dark-mode .luma-inner {
+.dark-mode .luma-inner {
   background: rgb(0, 0, 0);
 }
 
-:root.dark-mode .luma-particle {
+.dark-mode .luma-particle {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-:root.dark-mode .luma-icon {
+.dark-mode .luma-icon {
   color: rgb(255, 255, 255);
 }
 
-:root.dark-mode .luma-text {
+.dark-mode .luma-text {
   color: rgb(255, 255, 255);
 }
 
-:root.dark-mode .luma-button:hover .luma-text {
+.dark-mode .luma-button:hover .luma-text {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
