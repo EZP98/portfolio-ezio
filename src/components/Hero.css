@@ -116,23 +116,24 @@
 
 .luma-light {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: -100%;
+  left: 50%;
+  width: 20px;
+  height: 300%;
   background-color: rgb(255, 255, 255);
   filter: blur(10px);
-  opacity: 0.15;
+  opacity: 1;
+  transform-origin: center center;
   animation: lumaRotate 4s linear infinite;
   pointer-events: none;
 }
 
 .luma-button:hover .luma-light {
-  opacity: 0.25;
+  opacity: 1;
 }
 
 .luma-button:hover {
-  transform: translateY(-1px);
+  border-color: rgb(60, 60, 60);
 }
 
 /* Link Cards */
