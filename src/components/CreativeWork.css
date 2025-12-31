@@ -6,31 +6,22 @@
 .creative-work-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 
 .creative-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  background: #FAFAFA;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 20px;
-  overflow: hidden;
   text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.creative-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(0, 0, 0, 0.12);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  display: block;
 }
 
 .creative-card-image {
   position: relative;
-  aspect-ratio: 4/3;
+  border-radius: 20px;
   overflow: hidden;
+  aspect-ratio: 4/3;
+  margin-bottom: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #F5F5F5;
 }
 
 .creative-card-placeholder {
@@ -39,77 +30,101 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #F0F0F0 0%, #E8E8E8 100%);
+  background: linear-gradient(135deg, #FAFAFA 0%, #F0F0F0 100%);
 }
 
 .creative-card-icon {
-  font-size: 48px;
-  opacity: 0.3;
-}
-
-.creative-card-content {
-  padding: 24px;
-}
-
-.creative-card-title {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 32px;
+  opacity: 0.2;
   color: var(--text-primary);
-  margin-bottom: 8px;
 }
 
-.creative-card-description {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.5;
-}
-
-.creative-card-arrow {
+/* Hover Overlay - same as Works */
+.creative-hover-overlay {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 32px;
-  height: 32px;
+  inset: 0;
+  background: rgba(34, 36, 38, 0.85);
+  opacity: 0;
+  transition: opacity 0.25s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.9);
+  border-radius: inherit;
+  backdrop-filter: blur(2px);
+}
+
+.creative-hover-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(34, 36, 38, 0.95);
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.85) translateY(8px);
   opacity: 0;
-  transform: translate(-8px, 8px);
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(5, 5, 5, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.creative-card:hover .creative-card-arrow {
+.creative-hover-icon svg {
+  width: 18px;
+  height: 18px;
+  color: #fff;
+}
+
+.creative-card:hover .creative-hover-overlay {
   opacity: 1;
-  transform: translate(0, 0);
 }
 
-.creative-card-arrow svg {
-  width: 16px;
-  height: 16px;
+.creative-card:hover .creative-hover-icon {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Card Meta */
+.creative-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.creative-card-title {
+  font-size: 16px;
+  font-weight: 600;
   color: var(--text-primary);
 }
 
+.creative-card-description {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+  .creative-work-section {
+    margin-bottom: 80px;
+  }
+
   .creative-work-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
 
-  .creative-card-content {
-    padding: 20px;
+  .creative-card-title {
+    font-size: 14px;
   }
 
-  .creative-card-title {
-    font-size: 16px;
+  .creative-card-description {
+    font-size: 12px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .creative-work-section {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
   }
 
   .creative-work-grid {
@@ -118,10 +133,10 @@
   }
 
   .creative-card-image {
-    aspect-ratio: 16/9;
+    aspect-ratio: 16/10;
   }
 
   .creative-card-icon {
-    font-size: 36px;
+    font-size: 28px;
   }
 }

@@ -8,22 +8,19 @@ const CreativeWork: React.FC = () => {
     {
       id: 'ai-images',
       title: 'AI Images',
-      description: 'Generative art with Midjourney & DALL-E',
-      image: '/images/ai-preview.jpg',
+      description: 'Generative art with Midjourney',
       link: '/gallery/ai'
     },
     {
       id: 'photography',
       title: 'Photography',
-      description: 'Moments captured through my lens',
-      image: '/images/photo-preview.jpg',
+      description: 'Moments captured',
       link: '/gallery/photos'
     },
     {
       id: 'components',
-      title: 'Web Components',
-      description: 'Interactive React & Three.js experiments',
-      image: '/images/components-preview.jpg',
+      title: 'Components',
+      description: 'React & Three.js',
       link: '/components'
     }
   ];
@@ -38,30 +35,31 @@ const CreativeWork: React.FC = () => {
 
       <ScrollReveal delay={50}>
         <div className="creative-work-grid">
-          {categories.map((cat, index) => (
+          {categories.map((cat) => (
             <Link
               key={cat.id}
               to={cat.link}
               className="creative-card"
-              style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="creative-card-image">
                 <div className="creative-card-placeholder">
                   <span className="creative-card-icon">
-                    {cat.id === 'ai-images' && '✦'}
-                    {cat.id === 'photography' && '◐'}
-                    {cat.id === 'components' && '⬡'}
+                    {cat.id === 'ai-images' && '◈'}
+                    {cat.id === 'photography' && '◎'}
+                    {cat.id === 'components' && '⬢'}
                   </span>
                 </div>
+                <div className="creative-hover-overlay">
+                  <div className="creative-hover-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M7 17L17 7M17 7H7M17 7V17" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
               </div>
-              <div className="creative-card-content">
+              <div className="creative-card-meta">
                 <h3 className="creative-card-title">{cat.title}</h3>
                 <p className="creative-card-description">{cat.description}</p>
-              </div>
-              <div className="creative-card-arrow">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M7 17L17 7M17 7H7M17 7V17" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
               </div>
             </Link>
           ))}
