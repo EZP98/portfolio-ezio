@@ -101,13 +101,8 @@ const translations = {
     
     // About
     aboutIntro: 'Sono',
-    aboutText1: ', un professionista del marketing appassionato di',
-    innovation: 'Innovazione',
-    and: 'e',
-    creativeStorytelling: 'Storytelling Creativo',
-    aboutText2: '. Ho lavorato come CMO presso',
-    aboutText3: 'da novembre 2022 a dicembre 2025, dove ho guidato la strategia di marketing, design UI/UX e sviluppo prodotto.',
-    aboutBio: 'Nato in Umbria nel 1998 con radici meridionali. Sono appassionato di cinema e ciclismo, attività fortemente caratterizzate da creatività e spirito di squadra: proprio come il marketing. Lavorare in team e affrontare problemi diversi utilizzando non solo regole fisse ma anche principi mutevoli è ciò che apprezzo di più. Ho sempre ammirato la felicità e la meraviglia create dai prodotti: spero di diventare non solo un fruitore ma un creatore di tale magia.',
+    aboutText1: ', nato a Perugia con radici salernitane. Appassionato di contenuti visivi, design e innovazione. Scatto con una Fujifilm X100VI, ascolto rock music, e assorbo costantemente informazioni per migliorare giorno dopo giorno.',
+    aboutBio: 'Costruisco prodotti digitali e strategie di branding con AI e codice. Vibe coding significa trasformare idee in prodotti funzionanti velocemente - dal branding ai prodotti completi, iterando rapidamente e rilasciando ciò che conta.',
     findMeOn: 'Mi trovi su',
     whereIShare: 'dove condivido intuizioni su marketing, tecnologia del vino e progetti creativi.',
     
@@ -292,13 +287,8 @@ const translations = {
     
     // About
     aboutIntro: "I'm",
-    aboutText1: ', a marketing professional passionate about',
-    innovation: 'Innovation',
-    and: 'and',
-    creativeStorytelling: 'Creative Storytelling',
-    aboutText2: '. I worked as CMO at',
-    aboutText3: 'from November 2022 to December 2025, where I led marketing strategy, UI/UX design, and product development.',
-    aboutBio: 'Born in Umbria 1998 with Southern roots. I am passionate about cinema and cycling, activities strongly characterized by creativity and team spirit: just like marketing. Working in teams and tackling different problems using not only fixed rules but also changing principles is what I appreciate most. I\'ve always admired the happiness and wonder created by products: I hope to become not just a recipient but a creator of such magic.',
+    aboutText1: ', born in Perugia with roots in Salerno. Passionate about visual content, design, and innovation. I shoot with a Fujifilm X100VI, listen to rock music, and constantly absorb information to improve day by day.',
+    aboutBio: 'I build digital products and brand strategies with AI and code. Vibe coding means turning ideas into working products fast - from branding to full products, iterating quickly and shipping what matters.',
     findMeOn: 'You can find me on',
     whereIShare: 'where I share insights about marketing, wine technology, and creative projects.',
     

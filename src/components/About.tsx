@@ -16,35 +16,24 @@ const About: React.FC = () => {
       <div className="about-section">
         <ScrollReveal delay={50}>
           <p className="about-text">
-          {t('aboutIntro')}
-          <a href="/about" className="inline-link">
-            <img
-              src="/profile.webp"
-              alt="Ezio"
-              className="inline-avatar"
-            />
-            <span className="inline-text name-text">Ezio Pappalardo</span>
-          </a>{t('aboutText1')}
-          <a href="#innovation" className="inline-link">
-            <span className="inline-text">{t('innovation')}</span>
-          </a>
-          {t('and')}
-          <a href="#creativity" className="inline-link">
-            <span className="inline-text">{t('creativeStorytelling')}</span>
-          </a>.
-          {t('aboutText2')}
-          <a href="https://www.albicchiere.com" target="_blank" rel="noopener noreferrer" className="inline-link">
-            <span className="inline-text">Albicchiere</span>
-          </a>
-          {t('aboutText3')}
-        </p>
-      </ScrollReveal>
+            {t('aboutIntro')}
+            <a href="/about" className="inline-link">
+              <img
+                src="/profile.webp"
+                alt="Ezio"
+                className="inline-avatar"
+              />
+              <span className="inline-text name-text">Ezio Pappalardo</span>
+            </a>
+            {t('aboutText1')}
+          </p>
+        </ScrollReveal>
 
-      <ScrollReveal delay={100}>
-        <p className="about-text">
-          {t('aboutBio')}
-        </p>
-      </ScrollReveal>
+        <ScrollReveal delay={100}>
+          <p className="about-text">
+            {t('aboutBio')}
+          </p>
+        </ScrollReveal>
 
       <ScrollReveal delay={200}>
         <p className="about-text">
