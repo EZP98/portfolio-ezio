@@ -26,8 +26,15 @@
 }
 
 .skill-icon {
-  font-size: 24px;
+  width: 24px;
+  height: 24px;
   margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.skill-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .skill-title {
