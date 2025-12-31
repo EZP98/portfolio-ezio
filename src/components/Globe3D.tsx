@@ -258,7 +258,7 @@ const Globe3D: React.FC<Globe3DProps> = ({
       )}
 
       <Canvas
-        camera={{ position: [0, 0, 5], fov: 45 }}
+        camera={{ position: [0, 1.2, 5], fov: 45 }}
         style={{ cursor: 'grab', background: 'transparent' }}
         gl={{ antialias: true, alpha: true }}
       >
