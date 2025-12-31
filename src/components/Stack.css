@@ -3,9 +3,10 @@
   margin-bottom: 120px;
 }
 
-.skills-grid {
+.skills-bento {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
   gap: 16px;
 }
 
@@ -16,15 +17,42 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
+}
+
+/* Bento sizes */
+.skill-card-design {
+  grid-column: span 1;
+}
+
+.skill-card-development {
+  grid-column: span 2;
+}
+
+.skill-card-ai {
+  grid-column: span 1;
+}
+
+.skill-card-infrastructure {
+  grid-column: span 1;
+}
+
+.skill-card-video {
+  grid-column: span 1;
 }
 
 .skill-category-title {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.skill-category-desc {
+  font-size: 11px;
   color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  line-height: 1.4;
+  margin-bottom: 4px;
 }
 
 .tools-flow {
@@ -53,13 +81,23 @@
 }
 
 /* Responsive */
+@media (max-width: 900px) {
+  .skills-bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skill-card-development {
+    grid-column: span 2;
+  }
+
+  .skill-card-ai {
+    grid-column: span 2;
+  }
+}
+
 @media (max-width: 768px) {
   .stack-section {
     margin-bottom: 80px;
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .tools-flow {
@@ -77,8 +115,13 @@
     margin-bottom: 60px;
   }
 
-  .skills-grid {
+  .skills-bento {
     grid-template-columns: 1fr;
+  }
+
+  .skill-card-development,
+  .skill-card-ai {
+    grid-column: span 1;
   }
 
   .tool-tag {
