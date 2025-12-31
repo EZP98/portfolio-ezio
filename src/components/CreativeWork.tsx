@@ -1,7 +1,6 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import ScrollReveal from './ScrollReveal';
-import Globe3D from './Globe3D';
 import './CreativeWork.css';
 
 const CreativeWork: React.FC = () => {
@@ -45,12 +44,10 @@ const CreativeWork: React.FC = () => {
             </div>
           </Link>
 
-          {/* Components - with Globe */}
+          {/* Components - with Coin */}
           <Link to="/components" className="creative-card creative-card-components">
-            <div className="globe-preview">
-              <Suspense fallback={null}>
-                <Globe3D radius={1.8} autoRotate />
-              </Suspense>
+            <div className="coin-preview">
+              <img src="/coin.png" alt="3D Coin" className="coin-image" />
             </div>
             <div className="creative-card-content">
               <h3 className="creative-card-title">Components</h3>

@@ -97,12 +97,27 @@
   transform: scale(1) translateY(0);
 }
 
-/* Globe Preview */
-.globe-preview {
+/* Components card - no background */
+.creative-card-components {
+  background: transparent;
+}
+
+/* Coin Preview */
+.coin-preview {
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coin-image {
+  width: auto;
+  height: 80%;
+  max-height: 200px;
+  object-fit: contain;
 }
 
 /* Responsive */
