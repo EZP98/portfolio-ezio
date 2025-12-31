@@ -17,7 +17,6 @@ const CTA: React.FC = () => {
         <ScrollReveal>
           <div className="cta-content">
             <h2 className="cta-title">{t('ctaTitle')}</h2>
-            <p className="cta-subtitle">{t('ctaSubtitle')}</p>
             <button className="cta-button" onClick={copyEmail}>
               {t('getInTouch')}
             </button>

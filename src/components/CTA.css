@@ -279,6 +279,19 @@
 
   .cta-container {
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cta-content {
+    order: 2;
+    margin-bottom: 0;
+    margin-top: 48px;
+  }
+
+  .cta-gallery {
+    order: 1;
+    margin-bottom: 0;
   }
 
   .cta-title {
@@ -287,14 +300,6 @@
 
   .cta-subtitle {
     font-size: 14px;
-  }
-
-  .cta-content {
-    margin-bottom: 48px;
-  }
-
-  .cta-gallery {
-    margin-bottom: 48px;
   }
 
   .cta-gallery-perspective {
