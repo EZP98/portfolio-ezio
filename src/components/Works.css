@@ -92,11 +92,8 @@
   overflow: hidden;
   aspect-ratio: 1/1;
   margin-bottom: 16px;
+  border: 1px solid var(--border-color);
   background: var(--bg-secondary);
-}
-
-.dark-mode .work-image-wrapper {
-  border: none;
 }
 
 .work-image {
@@ -151,12 +148,14 @@
 .work-hover-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(34, 36, 38, 0.9);
+  background: rgba(34, 36, 38, 0.85);
   opacity: 0;
   transition: opacity 0.25s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: inherit;
+  backdrop-filter: blur(2px);
 }
 
 .work-hover-icon {
