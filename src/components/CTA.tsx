@@ -74,42 +74,6 @@ const CTA: React.FC = () => {
           </div>
         </div>
 
-        {/* Social Links */}
-        <div className="cta-social">
-          <a
-            href="https://www.linkedin.com/in/ezio-pappalardo/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-social-link"
-          >
-            <span>LinkedIn</span>
-            <svg className="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M7 17L17 7M17 7H7M17 7V17" />
-            </svg>
-          </a>
-          <a
-            href="https://www.instagram.com/eziopappalardo/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-social-link"
-          >
-            <span>Instagram</span>
-            <svg className="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M7 17L17 7M17 7H7M17 7V17" />
-            </svg>
-          </a>
-          <a
-            href="https://www.youtube.com/@eziopappalardo"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-social-link"
-          >
-            <span>YouTube</span>
-            <svg className="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M7 17L17 7M17 7H7M17 7V17" />
-            </svg>
-          </a>
-        </div>
       </div>
     </section>
   );
