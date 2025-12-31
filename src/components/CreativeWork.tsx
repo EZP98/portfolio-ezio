@@ -15,23 +15,25 @@ const CreativeWork: React.FC = () => {
 
       <ScrollReveal delay={50}>
         <div className="creative-work-grid">
-          {/* AI Images - with Coin and Sparkles */}
+          {/* AI Images - with Coin and Particles */}
           <Link to="/gallery/ai" className="creative-card creative-card-ai">
             <div className="coin-preview">
               <img src="/coin.png" alt="3D Coin" className="coin-image" />
-              {/* Sparkles */}
-              <svg className="sparkle sparkle-1" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2L13.09 8.26L19 9L13.09 9.74L12 16L10.91 9.74L5 9L10.91 8.26L12 2Z" fill="currentColor" />
-              </svg>
-              <svg className="sparkle sparkle-2" width="14" height="14" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2L13.09 8.26L19 9L13.09 9.74L12 16L10.91 9.74L5 9L10.91 8.26L12 2Z" fill="currentColor" />
-              </svg>
-              <svg className="sparkle sparkle-3" width="16" height="16" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2L13.09 8.26L19 9L13.09 9.74L12 16L10.91 9.74L5 9L10.91 8.26L12 2Z" fill="currentColor" />
-              </svg>
-              <svg className="sparkle sparkle-4" width="12" height="12" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2L13.09 8.26L19 9L13.09 9.74L12 16L10.91 9.74L5 9L10.91 8.26L12 2Z" fill="currentColor" />
-              </svg>
+              {/* Particles - same style as hero button */}
+              <div className="coin-particles">
+                <div className="coin-particle" style={{ left: '11%', top: '70%', width: '0.7px', height: '0.7px', animationDelay: '0s', animationDuration: '2s, 3s' }} />
+                <div className="coin-particle" style={{ left: '64%', top: '18%', width: '0.9px', height: '0.9px', animationDelay: '0.3s', animationDuration: '2.5s, 3.5s' }} />
+                <div className="coin-particle" style={{ left: '10%', top: '17%', width: '0.6px', height: '0.6px', animationDelay: '0.7s', animationDuration: '2.2s, 3.2s' }} />
+                <div className="coin-particle" style={{ left: '23%', top: '39%', width: '0.8px', height: '0.8px', animationDelay: '1.1s', animationDuration: '2.8s, 3.8s' }} />
+                <div className="coin-particle" style={{ left: '26%', top: '28%', width: '0.7px', height: '0.7px', animationDelay: '0.5s', animationDuration: '2.3s, 3.3s' }} />
+                <div className="coin-particle" style={{ left: '24%', top: '85%', width: '0.9px', height: '0.9px', animationDelay: '1.5s', animationDuration: '2.6s, 3.6s' }} />
+                <div className="coin-particle" style={{ left: '41%', top: '68%', width: '0.6px', height: '0.6px', animationDelay: '0.2s', animationDuration: '2.1s, 3.1s' }} />
+                <div className="coin-particle" style={{ left: '74%', top: '66%', width: '0.8px', height: '0.8px', animationDelay: '0.9s', animationDuration: '2.4s, 3.4s' }} />
+                <div className="coin-particle" style={{ left: '49%', top: '53%', width: '0.7px', height: '0.7px', animationDelay: '1.3s', animationDuration: '2.7s, 3.7s' }} />
+                <div className="coin-particle" style={{ left: '76%', top: '36%', width: '0.9px', height: '0.9px', animationDelay: '0.4s', animationDuration: '2.9s, 3.9s' }} />
+                <div className="coin-particle" style={{ left: '42%', top: '25%', width: '0.6px', height: '0.6px', animationDelay: '1.7s', animationDuration: '2.2s, 3.2s' }} />
+                <div className="coin-particle" style={{ left: '85%', top: '77%', width: '0.8px', height: '0.8px', animationDelay: '0.6s', animationDuration: '2.5s, 3.5s' }} />
+              </div>
             </div>
             <div className="creative-card-content">
               <h3 className="creative-card-title">AI Images</h3>

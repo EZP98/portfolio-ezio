@@ -142,46 +142,38 @@
   }
 }
 
-/* Sparkles */
-.sparkle {
+/* Coin Particles - same as hero button */
+.coin-particles {
   position: absolute;
-  color: rgba(255, 255, 255, 0.9);
-  animation: sparkle-pulse 2s ease-in-out infinite;
-  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
 
-.sparkle-1 {
-  top: 18%;
-  left: 15%;
-  animation-delay: 0s;
+.coin-particle {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: coin-twinkle 2s ease-in-out infinite, coin-float 3s ease-in-out infinite;
 }
 
-.sparkle-2 {
-  top: 12%;
-  right: 20%;
-  animation-delay: 0.5s;
-}
-
-.sparkle-3 {
-  bottom: 30%;
-  left: 12%;
-  animation-delay: 1s;
-}
-
-.sparkle-4 {
-  bottom: 18%;
-  right: 15%;
-  animation-delay: 1.5s;
-}
-
-@keyframes sparkle-pulse {
+@keyframes coin-twinkle {
   0%, 100% {
     opacity: 0.3;
-    transform: scale(0.8);
+    transform: translate(-50%, -50%) scale(0.8);
   }
   50% {
     opacity: 1;
-    transform: scale(1.1);
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+@keyframes coin-float {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-3px);
   }
 }
 
