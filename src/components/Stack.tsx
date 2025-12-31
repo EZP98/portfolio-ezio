@@ -37,10 +37,10 @@ const Stack: React.FC = () => {
         </div>
       </ScrollReveal>
 
-      <ScrollReveal delay={50}>
-        <div className="tools-card">
-          {skillCategories.map((category, idx) => (
-            <div key={idx} className="skill-category">
+      <div className="skills-grid">
+        {skillCategories.map((category, idx) => (
+          <ScrollReveal key={idx} delay={50 + idx * 30}>
+            <div className="skill-card">
               <h3 className="skill-category-title">{category.title}</h3>
               <div className="tools-flow">
                 {category.tools.map((tool, i) => (
@@ -48,9 +48,9 @@ const Stack: React.FC = () => {
                 ))}
               </div>
             </div>
-          ))}
-        </div>
-      </ScrollReveal>
+          </ScrollReveal>
+        ))}
+      </div>
     </section>
   );
 };
