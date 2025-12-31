@@ -113,11 +113,11 @@
   pointer-events: none;
 }
 
-/* Coin Preview - bottom right corner like globe */
+/* Coin Preview - centered, slightly to right */
 .coin-preview {
   position: absolute;
-  bottom: -15%;
-  right: -10%;
+  bottom: -10%;
+  right: 15%;
   z-index: 1;
   pointer-events: none;
 }
