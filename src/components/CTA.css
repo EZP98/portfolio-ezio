@@ -298,20 +298,27 @@
   }
 
   .cta-gallery-perspective {
-    flex-direction: column;
-    gap: 16px;
+    gap: 0;
   }
 
   .cta-card {
-    width: 200px;
-    height: 260px;
+    width: 140px;
+    height: 180px;
   }
 
-  .cta-card-left,
-  .cta-card-center,
+  .cta-card-left {
+    transform: translateX(30px) translateZ(-150px) rotate(-8deg) rotateY(30deg);
+    margin-right: -40px;
+  }
+
+  .cta-card-center {
+    transform: translateZ(0);
+    z-index: 10;
+  }
+
   .cta-card-right {
-    transform: none;
-    margin: 0;
+    transform: translateX(-30px) translateZ(-150px) rotate(8deg) rotateY(-30deg);
+    margin-left: -40px;
   }
 
   .cta-social {
@@ -325,22 +332,28 @@
     font-size: 24px;
   }
 
-  .cta-gallery-perspective {
-    gap: 12px;
+  .cta-card {
+    width: 120px;
+    height: 155px;
   }
 
-  .cta-card {
-    width: 160px;
-    height: 210px;
+  .cta-card-left {
+    transform: translateX(20px) translateZ(-100px) rotate(-6deg) rotateY(25deg);
+    margin-right: -30px;
+  }
+
+  .cta-card-right {
+    transform: translateX(-20px) translateZ(-100px) rotate(6deg) rotateY(-25deg);
+    margin-left: -30px;
   }
 
   .cta-card-brackets {
-    inset: 10px;
+    inset: 8px;
   }
 
   .bracket {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
   }
 
   .cta-button {
