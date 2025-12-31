@@ -20,7 +20,7 @@
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--border-color);
-  background: var(--bg-secondary);
+  background: #111;
   transition: all 0.3s ease;
 }
 
