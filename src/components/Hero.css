@@ -95,6 +95,18 @@
   border-radius: 100px;
   position: relative;
   overflow: hidden;
+  z-index: 1;
+}
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(2px, -2px);
+    opacity: 0.8;
+  }
 }
 
 .luma-stars {
@@ -105,6 +117,18 @@
   overflow: hidden;
   pointer-events: none;
 }
+
+.luma-stars > div {
+  animation: floatParticle 3s ease-in-out infinite;
+}
+
+.luma-stars > div:nth-child(2) { animation-delay: 0.5s; }
+.luma-stars > div:nth-child(3) { animation-delay: 1s; }
+.luma-stars > div:nth-child(4) { animation-delay: 1.5s; }
+.luma-stars > div:nth-child(5) { animation-delay: 2s; }
+.luma-stars > div:nth-child(6) { animation-delay: 2.5s; }
+.luma-stars > div:nth-child(7) { animation-delay: 0.3s; }
+.luma-stars > div:nth-child(8) { animation-delay: 1.8s; }
 
 .luma-text {
   position: relative;
@@ -117,16 +141,18 @@
 
 .luma-light {
   position: absolute;
-  top: -50%;
-  left: 50%;
-  width: 10px;
-  height: 200%;
-  background-color: rgb(255, 255, 255);
-  filter: blur(10px);
-  opacity: 1;
-  transform-origin: center center;
+  inset: 0;
+  border-radius: 100px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg 330deg,
+    rgba(255,255,255,0.6) 345deg,
+    rgba(255,255,255,0.8) 355deg,
+    transparent 360deg
+  );
   animation: lumaRotate 4s linear infinite;
   pointer-events: none;
+  z-index: 0;
 }
 
 .luma-button:hover .luma-light {
