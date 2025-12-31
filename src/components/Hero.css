@@ -142,29 +142,6 @@
   animation: float 3s ease-in-out infinite;
 }
 
-.luma-icon {
-  width: 18px;
-  height: 18px;
-  color: rgb(255, 255, 255);
-  transition: transform 0.3s ease;
-}
-
-.luma-icon-left {
-  transform-origin: center center;
-}
-
-.luma-icon-right {
-  transform-origin: center center;
-}
-
-.luma-button:hover .luma-icon-right {
-  transform: scale(0.95) rotate(5deg);
-}
-
-.luma-button:hover .luma-icon-left {
-  transform: scale(0.95) rotate(-5deg);
-}
-
 .luma-text {
   position: relative;
   z-index: 2;
