@@ -27,7 +27,7 @@
 /* Third card spans full width */
 .creative-card:nth-child(3) {
   grid-column: 1 / -1;
-  min-height: 140px;
+  min-height: 180px;
 }
 
 .creative-card:hover {
