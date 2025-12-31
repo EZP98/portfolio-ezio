@@ -116,8 +116,8 @@ const Experience: React.FC = () => {
                 aria-expanded={expandedId === item.id}
               >
                 <div className="experience-main">
-                  <span className="experience-type-badge">{getTypeLabel(item.type)}</span>
                   <span className="experience-title">{item.title}</span>
+                  <span className="experience-type-badge">{getTypeLabel(item.type)}</span>
                 </div>
                 <div className="experience-meta">
                   <span className="experience-company">
