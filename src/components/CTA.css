@@ -1,9 +1,9 @@
 /* CTA Section */
 .cta-section {
-  padding: 48px 0;
+  padding: 96px 0;
   background: #0a0a0a;
   border-radius: 24px;
-  margin: 0 20px 40px;
+  margin: 0;
   overflow: hidden;
 }
 
