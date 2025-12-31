@@ -122,12 +122,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-left: 30px;
 }
 
 .coin-image {
   width: auto;
-  height: 85%;
-  max-height: 260px;
+  height: 90%;
+  max-height: 300px;
   object-fit: contain;
   animation: float 3s ease-in-out infinite;
 }
