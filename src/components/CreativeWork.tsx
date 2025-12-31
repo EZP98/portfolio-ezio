@@ -69,7 +69,12 @@ const CreativeWork: React.FC = () => {
           </Link>
 
           {/* Photography - full width */}
-          <Link to="/gallery/photos" className="creative-card">
+          <Link to="/gallery/photos" className="creative-card creative-card-photos">
+            <div className="photos-preview">
+              <div className="photo-placeholder photo-left"></div>
+              <div className="photo-placeholder photo-center"></div>
+              <div className="photo-placeholder photo-right"></div>
+            </div>
             <div className="creative-card-content">
               <h3 className="creative-card-title">Photography</h3>
               <p className="creative-card-description">Moments captured</p>

@@ -138,6 +138,49 @@
   }
 }
 
+/* Photos Preview - 3 cards with perspective */
+.photos-preview {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  transform: perspective(800px);
+  transform-style: preserve-3d;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.photo-placeholder {
+  width: 120px;
+  height: 160px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.photo-left {
+  transform: translateX(20px) translateZ(-100px) rotate(-8deg) rotateY(15deg);
+  margin-right: -30px;
+}
+
+.photo-center {
+  transform: translateZ(0);
+  z-index: 10;
+}
+
+.photo-right {
+  transform: translateX(-20px) translateZ(-100px) rotate(8deg) rotateY(-15deg);
+  margin-left: -30px;
+}
+
+.creative-card-photos:hover .photo-placeholder {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
 /* Coin Particles - same as hero button */
 .coin-particles {
   position: absolute;
