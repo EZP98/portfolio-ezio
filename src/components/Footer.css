@@ -18,6 +18,10 @@
   margin-bottom: 60px;
 }
 
+.footer-newsletter {
+  max-width: 400px;
+}
+
 .footer-newsletter h3 {
   font-size: 18px;
   font-weight: 500;
