@@ -97,9 +97,9 @@
   transform: scale(1) translateY(0);
 }
 
-/* Components card - no background */
+/* Components card - same background as others */
 .creative-card-components {
-  background: transparent;
+  background: #111;
 }
 
 /* Globe Preview - positioned to bottom-right corner, clipped */
