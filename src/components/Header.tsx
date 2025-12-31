@@ -10,11 +10,6 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
 
-  // Set dark mode on initial load
-  useEffect(() => {
-    document.documentElement.classList.add('dark-mode');
-  }, []);
-
   // Close menu on escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
