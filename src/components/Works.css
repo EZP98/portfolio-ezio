@@ -100,6 +100,16 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: filter 0.3s ease;
+}
+
+/* Slightly dim images in dark mode */
+.dark-mode .work-image {
+  filter: brightness(0.9);
+}
+
+.dark-mode .work-card:hover .work-image {
+  filter: brightness(0.85);
 }
 
 .work-video {
