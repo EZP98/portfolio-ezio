@@ -41,7 +41,7 @@
 
 .hero-name {
   display: block;
-  font-size: 42px;
+  font-size: 56px;
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -51,17 +51,17 @@
 
 .hero-tagline {
   display: block;
-  font-size: 42px;
+  font-size: 56px;
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--text-secondary);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .hero-subtitle {
   display: block;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: 0.02em;
