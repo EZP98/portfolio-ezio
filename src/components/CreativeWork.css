@@ -113,12 +113,11 @@
   pointer-events: none;
 }
 
-/* Coin Preview */
+/* Coin Preview - bottom right corner like globe */
 .coin-preview {
   position: absolute;
-  bottom: -20%;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: -15%;
+  right: -10%;
   z-index: 1;
   pointer-events: none;
 }
@@ -127,6 +126,16 @@
   width: auto;
   height: 380px;
   object-fit: contain;
+  animation: coin-rotate 8s ease-in-out infinite;
+}
+
+@keyframes coin-rotate {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
 }
 
 /* Coin Particles - same as hero button */
