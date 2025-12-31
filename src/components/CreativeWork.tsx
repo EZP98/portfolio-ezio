@@ -26,7 +26,7 @@ const CreativeWork: React.FC = () => {
   ];
 
   return (
-    <section className="creative-work-section">
+    <section className="creative-work-section" id="creative">
       <ScrollReveal>
         <div className="section-header">
           <h2 className="section-title">Creative Work</h2>
