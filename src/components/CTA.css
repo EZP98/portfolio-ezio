@@ -1,10 +1,11 @@
 /* CTA Section */
 .cta-section {
   padding: 96px 0;
-  background: #0a0a0a;
+  background: #111;
   border-radius: 24px;
   margin: 0;
   overflow: hidden;
+  border: 1px solid var(--border-color);
 }
 
 /* Entrance Animations */
