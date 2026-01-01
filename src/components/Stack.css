@@ -13,10 +13,13 @@
   background: #111;
   border: 1px solid var(--border-color);
   border-radius: 16px;
-  padding: 20px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 160px;
+  aspect-ratio: 1.2 / 1;
 }
 
 .skill-category-title {
@@ -87,6 +90,11 @@
 
   .skills-bento {
     grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    aspect-ratio: auto;
+    min-height: auto;
   }
 
   .tool-tag {
