@@ -13,13 +13,12 @@
   background: #111;
   border: 1px solid var(--border-color);
   border-radius: 16px;
-  padding: 24px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 16px;
-  min-height: 160px;
-  aspect-ratio: 1.2 / 1;
+  min-height: 140px;
 }
 
 .skill-category-title {
@@ -117,7 +116,6 @@
   }
 
   .skill-card {
-    aspect-ratio: auto;
     min-height: auto;
   }
 
