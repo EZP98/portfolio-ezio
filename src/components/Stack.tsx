@@ -65,9 +65,9 @@ const Stack: React.FC = () => {
                 <div
                   className="tools-track"
                   style={{
-                    animationDuration: `${category.tools.length * 4}s`,
+                    '--duration': `${category.tools.length * 4}s`,
                     animationDelay: `${idx * -2}s`
-                  }}
+                  } as React.CSSProperties}
                 >
                   {category.tools.map((tool, i) => (
                     <span key={i} className="tool-tag">{tool}</span>

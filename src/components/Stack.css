@@ -57,11 +57,12 @@
   width: max-content;
   position: relative;
   left: 100%;
-  animation: marquee linear infinite;
+  animation: marquee var(--duration, 12s) linear infinite;
+  transition: animation-duration 0.5s ease;
 }
 
-.tools-track:hover {
-  animation-play-state: paused;
+.skill-card:hover .tools-track {
+  animation-duration: calc(var(--duration, 12s) * 2.5);
 }
 
 @keyframes marquee {
