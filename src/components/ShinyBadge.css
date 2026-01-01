@@ -1,0 +1,92 @@
+/* ShinyBadge - 3D holographic badge with shine effect */
+
+.shiny-badge-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  background-color: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.shiny-badge-container {
+  width: 440px;
+  height: 100px;
+  perspective: 500px;
+  cursor: pointer;
+}
+
+.shiny-badge-transform {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
+.shiny-badge-base {
+  width: 100%;
+  height: 100%;
+  background-color: #FAE100;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.shiny-badge-content {
+  position: absolute;
+  inset: 2px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 16px;
+  border-radius: 10px;
+  border: 1px solid #E5CF00;
+  background: #FAE100;
+}
+
+.shiny-badge-icon {
+  flex-shrink: 0;
+}
+
+.shiny-badge-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.shiny-badge-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #9A4500;
+}
+
+.shiny-badge-subtitle {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #8B4513;
+}
+
+.shiny-badge-highlight {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+.shiny-badge-shine {
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  filter: blur(3px);
+  transition: transform 0.2s ease-out;
+  opacity: 1;
+}

@@ -18,6 +18,7 @@ import LogoParticles from '../components/LogoParticles';
 import VaporizeText from '../components/VaporizeText';
 import EzioBadge from '../components/EzioBadge';
 import PerspectiveGrid from '../components/PerspectiveGrid';
+import ShinyBadge from '../components/ShinyBadge';
 import './ComponentsPage.css';
 
 interface ComponentInfo {
@@ -130,6 +131,12 @@ const components: ComponentInfo[] = [
     descriptionIT: 'Galleria 3D prospettica con colonne auto-scroll. Crea effetto scroll infinito con animazione a onda.',
     tags: ['3D', 'Gallery', 'Animation'],
   },
+  {
+    name: 'ShinyBadge',
+    description: '3D holographic badge with rainbow shine effect. Mouse tracking creates realistic light reflection.',
+    descriptionIT: 'Badge olografico 3D con effetto shine arcobaleno. Il tracking del mouse crea riflesso luce realistico.',
+    tags: ['3D', 'Holographic', 'Interactive'],
+  },
 ];
 
 const ComponentsPage: React.FC = () => {
@@ -139,7 +146,7 @@ const ComponentsPage: React.FC = () => {
   const currentComponent = components.find(c => c.name === activeComponent) || components[0];
 
   // Components that need dark background
-  const darkComponents = ['Globe3D', 'Carousel3D', 'LightText', 'RotatingCircles', 'LumaButton', 'ElectricCard', 'LogoParticles', 'VaporizeText', 'EzioBadge'];
+  const darkComponents = ['Globe3D', 'Carousel3D', 'LightText', 'RotatingCircles', 'LumaButton', 'ElectricCard', 'LogoParticles', 'VaporizeText', 'EzioBadge', 'ShinyBadge'];
   const needsDarkBg = darkComponents.includes(activeComponent);
 
   const renderPreview = () => {
@@ -270,6 +277,12 @@ const ComponentsPage: React.FC = () => {
         return (
           <div className="preview-wrapper preview-full">
             <PerspectiveGrid />
+          </div>
+        );
+      case 'ShinyBadge':
+        return (
+          <div className="preview-wrapper preview-centered">
+            <ShinyBadge />
           </div>
         );
       default:
