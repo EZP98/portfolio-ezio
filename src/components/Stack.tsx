@@ -64,7 +64,10 @@ const Stack: React.FC = () => {
               <div className="tools-flow">
                 <div
                   className="tools-track"
-                  style={{ animationDuration: `${category.tools.length * 3}s` }}
+                  style={{
+                    animationDuration: `${category.tools.length * 4}s`,
+                    animationDelay: `${idx * -2}s`
+                  }}
                 >
                   {category.tools.map((tool, i) => (
                     <span key={i} className="tool-tag">{tool}</span>

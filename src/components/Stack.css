@@ -55,7 +55,9 @@
   display: flex;
   gap: 10px;
   width: max-content;
-  animation: marquee 15s linear infinite;
+  position: relative;
+  left: 100%;
+  animation: marquee linear infinite;
 }
 
 .tools-track:hover {
@@ -64,10 +66,10 @@
 
 @keyframes marquee {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% - 350px));
   }
 }
 
