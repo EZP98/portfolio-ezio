@@ -112,7 +112,12 @@
   width: 100%;
   max-width: 700px;
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
+}
+
+.cta-section .luma-button {
+  position: relative;
+  z-index: 20;
 }
 
 .cta-image img {
