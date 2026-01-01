@@ -18,6 +18,7 @@ import LumaButton from '../components/LumaButton';
 import ElectricCard from '../components/ElectricCard';
 import LogoParticles from '../components/LogoParticles';
 import VaporizeText from '../components/VaporizeText';
+import EzioBadge from '../components/EzioBadge';
 import './ComponentsPage.css';
 
 interface ComponentInfo {
@@ -130,6 +131,12 @@ const components: ComponentInfo[] = [
     descriptionIT: 'Effetto vaporizzazione testo con disintegrazione in particelle. Cicla tra parole con animazione a onda.',
     tags: ['Canvas', 'Particles', 'Text Effect'],
   },
+  {
+    name: 'EzioBadge',
+    description: '3D interactive badge with mouse tracking. Elegant design with canvas texture and physics-based rotation.',
+    descriptionIT: 'Badge 3D interattivo con tracking del mouse. Design elegante con texture canvas e rotazione fisica.',
+    tags: ['3D', 'Three.js', 'Interactive'],
+  },
 ];
 
 const ComponentsPage: React.FC = () => {
@@ -139,7 +146,7 @@ const ComponentsPage: React.FC = () => {
   const currentComponent = components.find(c => c.name === activeComponent) || components[0];
 
   // Components that need dark background
-  const darkComponents = ['Globe3D', 'Badge3D', 'Carousel3D', 'LightText', 'RotatingCircles', 'LumaButton', 'ElectricCard', 'LogoParticles', 'VaporizeText'];
+  const darkComponents = ['Globe3D', 'Badge3D', 'Carousel3D', 'LightText', 'RotatingCircles', 'LumaButton', 'ElectricCard', 'LogoParticles', 'VaporizeText', 'EzioBadge'];
   const needsDarkBg = darkComponents.includes(activeComponent);
 
   const renderPreview = () => {
@@ -270,6 +277,12 @@ const ComponentsPage: React.FC = () => {
               height={250}
               fontSize={80}
             />
+          </div>
+        );
+      case 'EzioBadge':
+        return (
+          <div className="preview-wrapper preview-centered">
+            <EzioBadge width={400} height={500} />
           </div>
         );
       default:

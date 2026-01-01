@@ -1,0 +1,16 @@
+/* EzioBadge - 3D interactive badge with mouse tracking */
+
+.ezio-badge-container {
+  background: #050505;
+  cursor: grab;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ezio-badge-container:active {
+  cursor: grabbing;
+}
+
+.ezio-badge-container canvas {
+  display: block;
+}
