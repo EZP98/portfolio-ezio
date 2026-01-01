@@ -111,9 +111,28 @@ const Introduction: React.FC = () => {
       }
     };
 
+    // Click anywhere unlocks scroll
+    const handleClick = () => {
+      if (isLocked && progressRef.current < 1) {
+        progressRef.current = 1;
+        setAnimationProgress(1);
+        setIsLocked(false);
+      }
+    };
+
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+
     if (isLocked) {
       document.body.style.overflow = 'hidden';
       window.addEventListener('wheel', handleWheel, { passive: false });
+      window.addEventListener('click', handleClick);
+
+      // Safety timeout - auto unlock after 5 seconds
+      timeoutId = setTimeout(() => {
+        progressRef.current = 1;
+        setAnimationProgress(1);
+        setIsLocked(false);
+      }, 5000);
     } else {
       document.body.style.overflow = '';
     }
@@ -121,6 +140,8 @@ const Introduction: React.FC = () => {
     return () => {
       document.body.style.overflow = '';
       window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('click', handleClick);
+      if (timeoutId) clearTimeout(timeoutId);
     };
   }, [isLocked, isMobile]);
 

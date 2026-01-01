@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   perspective: 1246px;
-  touch-action: none;
+  touch-action: pan-y;
   user-select: none;
   overflow: hidden;
 }
