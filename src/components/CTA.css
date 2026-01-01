@@ -79,6 +79,8 @@
 
 /* Text Content */
 .cta-content {
+  position: relative;
+  z-index: 10;
   margin-bottom: 0;
   will-change: transform;
   animation: fadeInUp 0.8s ease-out forwards;
@@ -104,12 +106,13 @@
 /* Keyboard Image */
 .cta-image {
   position: absolute;
-  bottom: -180px;
+  bottom: -100px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   max-width: 700px;
   pointer-events: none;
+  z-index: 1;
 }
 
 .cta-image img {
