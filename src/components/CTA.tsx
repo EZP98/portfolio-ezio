@@ -88,6 +88,10 @@ const CTA: React.FC = () => {
             </button>
           </div>
         </ScrollReveal>
+
+        <div className="cta-image">
+          <img src="/keyboard.png" alt="Keyboard" />
+        </div>
       </div>
     </section>
   );

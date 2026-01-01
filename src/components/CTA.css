@@ -100,6 +100,19 @@
   margin: 0 auto 24px;
 }
 
+/* Keyboard Image */
+.cta-image {
+  margin-top: 60px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.cta-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 
 /* 3D Gallery */
 .cta-gallery {
