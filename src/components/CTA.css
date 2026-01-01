@@ -106,7 +106,7 @@
 /* Keyboard Image */
 .cta-image {
   position: absolute;
-  bottom: -100px;
+  bottom: -300px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
