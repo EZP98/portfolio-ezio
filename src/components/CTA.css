@@ -99,24 +99,43 @@
   margin: 0 auto 24px;
 }
 
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 28px;
-  background: #ffffff;
-  color: #0a0a0a;
-  border: none;
-  border-radius: 100px;
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
+/* CTA Luma Button - Green variant */
+.cta-section .luma-border {
+  background: linear-gradient(180deg, #c8ff00 0%, #a8e000 100%);
+  box-shadow: 0 4px 20px rgba(180, 255, 0, 0.25), inset 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
-.cta-button:hover {
-  transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.9);
+.cta-section .luma-button:hover .luma-border {
+  box-shadow: 0 6px 30px rgba(180, 255, 0, 0.35), inset 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.cta-section .luma-inner {
+  background: linear-gradient(180deg, #c8ff00 0%, #b8f000 100%);
+}
+
+.cta-section .luma-light {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 60deg,
+    rgba(100, 150, 0, 0.6) 120deg,
+    rgba(80, 120, 0, 0.9) 180deg,
+    rgba(100, 150, 0, 0.6) 240deg,
+    transparent 300deg,
+    transparent 360deg
+  );
+}
+
+.cta-section .luma-particle {
+  background-color: rgba(50, 80, 0, 0.7);
+}
+
+.cta-section .luma-icon {
+  color: #1a1a1a;
+}
+
+.cta-section .luma-text {
+  color: #1a1a1a;
 }
 
 /* 3D Gallery */
