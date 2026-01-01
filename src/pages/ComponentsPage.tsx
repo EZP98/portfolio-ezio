@@ -14,6 +14,7 @@ import Badge3D from '../components/Badge3D';
 import Gallery3D from '../components/Gallery3D';
 import RotatingCircles from '../components/RotatingCircles';
 import ImageMarquee from '../components/ImageMarquee';
+import LumaButton from '../components/LumaButton';
 import './ComponentsPage.css';
 
 interface ComponentInfo {
@@ -102,6 +103,12 @@ const components: ComponentInfo[] = [
     descriptionIT: 'Carousel immagini orizzontale infinito con animazione fluida. Pausa su hover.',
     tags: ['Carousel', 'Animation', 'Infinite Scroll'],
   },
+  {
+    name: 'LumaButton',
+    description: 'Animated button with rotating light border and floating particles. Supports light/dark mode.',
+    descriptionIT: 'Bottone animato con bordo luminoso rotante e particelle fluttuanti. Supporta light/dark mode.',
+    tags: ['Button', 'Animation', 'Interactive'],
+  },
 ];
 
 const ComponentsPage: React.FC = () => {
@@ -111,7 +118,7 @@ const ComponentsPage: React.FC = () => {
   const currentComponent = components.find(c => c.name === activeComponent) || components[0];
 
   // Components that need dark background
-  const darkComponents = ['Globe3D', 'Badge3D', 'Carousel3D', 'LightText', 'RotatingCircles'];
+  const darkComponents = ['Globe3D', 'Badge3D', 'Carousel3D', 'LightText', 'RotatingCircles', 'LumaButton'];
   const needsDarkBg = darkComponents.includes(activeComponent);
 
   const renderPreview = () => {
@@ -213,6 +220,12 @@ const ComponentsPage: React.FC = () => {
         return (
           <div className="preview-wrapper preview-full-width">
             <ImageMarquee speed={0.5} />
+          </div>
+        );
+      case 'LumaButton':
+        return (
+          <div className="preview-wrapper preview-centered">
+            <LumaButton text="Click me" dark />
           </div>
         );
       default:

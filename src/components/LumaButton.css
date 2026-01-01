@@ -1,0 +1,186 @@
+/* LumaButton - Animated button with rotating light and particles */
+
+@keyframes lumaRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-3px);
+  }
+}
+
+/* Light mode (default) */
+.luma-button {
+  padding: 0;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+  transition: filter 0.3s ease;
+}
+
+.luma-button:hover {
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.15));
+}
+
+.luma-border {
+  position: relative;
+  overflow: hidden;
+  border-radius: 100px;
+  padding: 1px;
+  background: linear-gradient(180deg, rgba(220, 220, 220, 1) 0%, rgba(180, 180, 180, 1) 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.luma-button:hover .luma-border {
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.luma-light {
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 60deg,
+    rgba(0, 0, 0, 0.6) 120deg,
+    rgba(30, 30, 30, 0.9) 180deg,
+    rgba(0, 0, 0, 0.6) 240deg,
+    transparent 300deg,
+    transparent 360deg
+  );
+  filter: blur(8px);
+  animation: lumaRotate 4s linear infinite;
+}
+
+.luma-button:hover .luma-light {
+  animation-duration: 8s;
+}
+
+.luma-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
+  border-radius: 100px;
+}
+
+.luma-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 100px;
+  pointer-events: none;
+}
+
+.luma-particle {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  animation: twinkle 2s ease-in-out infinite, float 3s ease-in-out infinite;
+}
+
+.luma-icon {
+  color: #1a1a1a;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  flex-shrink: 0;
+}
+
+.luma-button:hover .luma-icon {
+  transform: scale(1.1);
+}
+
+.luma-text {
+  position: relative;
+  z-index: 2;
+  color: #1a1a1a;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: text-shadow 0.3s ease;
+}
+
+.luma-button:hover .luma-text {
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark mode */
+.dark-mode .luma-button:hover,
+.luma-button.dark:hover {
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+}
+
+.dark-mode .luma-border,
+.luma-button.dark .luma-border {
+  background: linear-gradient(180deg, rgba(60, 60, 60, 1) 0%, rgba(34, 34, 34, 1) 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode .luma-button:hover .luma-border,
+.luma-button.dark:hover .luma-border {
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+}
+
+.dark-mode .luma-light,
+.luma-button.dark .luma-light {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 60deg,
+    rgba(255, 255, 255, 0.8) 120deg,
+    white 180deg,
+    rgba(255, 255, 255, 0.8) 240deg,
+    transparent 300deg,
+    transparent 360deg
+  );
+}
+
+.dark-mode .luma-inner,
+.luma-button.dark .luma-inner {
+  background: rgb(0, 0, 0);
+}
+
+.dark-mode .luma-particle,
+.luma-button.dark .luma-particle {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.dark-mode .luma-icon,
+.luma-button.dark .luma-icon {
+  color: rgb(255, 255, 255);
+}
+
+.dark-mode .luma-text,
+.luma-button.dark .luma-text {
+  color: rgb(255, 255, 255);
+}
+
+.dark-mode .luma-button:hover .luma-text,
+.luma-button.dark:hover .luma-text {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
