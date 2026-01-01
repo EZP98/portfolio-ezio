@@ -62,6 +62,10 @@
   animation-play-state: paused;
 }
 
+.tools-flow.no-animate .tools-track {
+  animation: none;
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0);
