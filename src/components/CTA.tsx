@@ -25,8 +25,19 @@ const CTA: React.FC = () => {
 
   return (
     <section className="cta-section" id="contact">
+      {/* Keyboard - below everything */}
+      <div className="cta-image">
+        <img src="/keyboard.png" alt="Keyboard" />
+      </div>
+
+      {/* Decorative details */}
+      <img src="/detail-1.png" alt="" className="cta-detail cta-detail-1" />
+      <img src="/detail-2.png" alt="" className="cta-detail cta-detail-2" />
+      <img src="/detail-3.png" alt="" className="cta-detail cta-detail-3" />
+      <img src="/detail-4.png" alt="" className="cta-detail cta-detail-4" />
+
+      {/* Main content - above everything */}
       <div className="cta-container">
-        {/* Text Content */}
         <ScrollReveal>
           <div className="cta-content">
             <h2 className="cta-title">{t('ctaTitle')}</h2>
@@ -88,16 +99,6 @@ const CTA: React.FC = () => {
             </button>
           </div>
         </ScrollReveal>
-
-        <div className="cta-image">
-          <img src="/keyboard.png" alt="Keyboard" />
-        </div>
-
-        {/* Decorative details */}
-        <img src="/detail-1.png" alt="" className="cta-detail cta-detail-1" />
-        <img src="/detail-2.png" alt="" className="cta-detail cta-detail-2" />
-        <img src="/detail-3.png" alt="" className="cta-detail cta-detail-3" />
-        <img src="/detail-4.png" alt="" className="cta-detail cta-detail-4" />
       </div>
     </section>
   );

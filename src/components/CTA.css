@@ -68,6 +68,8 @@
 }
 
 .cta-container {
+  position: relative;
+  z-index: 10;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
@@ -112,43 +114,38 @@
   width: 100%;
   max-width: 700px;
   pointer-events: none;
-  z-index: 0;
-}
-
-.cta-section .luma-button {
-  position: relative;
-  z-index: 20;
+  z-index: 1;
 }
 
 /* Decorative details */
 .cta-detail {
   position: absolute;
   pointer-events: none;
-  z-index: 5;
+  z-index: 2;
 }
 
 .cta-detail-1 {
-  width: 80px;
+  width: 120px;
   top: 20%;
-  left: 10%;
-}
-
-.cta-detail-2 {
-  width: 50px;
-  top: 15%;
-  right: 15%;
-}
-
-.cta-detail-3 {
-  width: 100px;
-  bottom: 25%;
   left: 8%;
 }
 
+.cta-detail-2 {
+  width: 80px;
+  top: 12%;
+  right: 12%;
+}
+
+.cta-detail-3 {
+  width: 140px;
+  bottom: 22%;
+  left: 6%;
+}
+
 .cta-detail-4 {
-  width: 120px;
-  bottom: 20%;
-  right: 10%;
+  width: 160px;
+  bottom: 18%;
+  right: 8%;
 }
 
 .cta-image img {
