@@ -16,6 +16,7 @@ import RotatingCircles from '../components/RotatingCircles';
 import ImageMarquee from '../components/ImageMarquee';
 import LumaButton from '../components/LumaButton';
 import ElectricCard from '../components/ElectricCard';
+import LogoParticles from '../components/LogoParticles';
 import './ComponentsPage.css';
 
 interface ComponentInfo {
@@ -116,6 +117,12 @@ const components: ComponentInfo[] = [
     descriptionIT: 'Card con bordo elettrico animato usando filtri SVG turbulence. Colore personalizzabile.',
     tags: ['Card', 'SVG Filter', 'Animation'],
   },
+  {
+    name: 'LogoParticles',
+    description: 'Interactive particle effect forming a letter. Particles react to mouse with spring physics.',
+    descriptionIT: 'Effetto particelle interattivo che forma una lettera. Le particelle reagiscono al mouse con fisica a molla.',
+    tags: ['Canvas', 'Particles', 'Interactive'],
+  },
 ];
 
 const ComponentsPage: React.FC = () => {
@@ -125,7 +132,7 @@ const ComponentsPage: React.FC = () => {
   const currentComponent = components.find(c => c.name === activeComponent) || components[0];
 
   // Components that need dark background
-  const darkComponents = ['Globe3D', 'Badge3D', 'Carousel3D', 'LightText', 'RotatingCircles', 'LumaButton', 'ElectricCard'];
+  const darkComponents = ['Globe3D', 'Badge3D', 'Carousel3D', 'LightText', 'RotatingCircles', 'LumaButton', 'ElectricCard', 'LogoParticles'];
   const needsDarkBg = darkComponents.includes(activeComponent);
 
   const renderPreview = () => {
@@ -239,6 +246,12 @@ const ComponentsPage: React.FC = () => {
         return (
           <div className="preview-wrapper preview-centered">
             <ElectricCard width={280} height={380} />
+          </div>
+        );
+      case 'LogoParticles':
+        return (
+          <div className="preview-wrapper preview-centered">
+            <LogoParticles size={350} />
           </div>
         );
       default:

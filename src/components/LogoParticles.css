@@ -1,0 +1,6 @@
+/* LogoParticles - Interactive particle letter effect */
+
+.logo-particles-canvas {
+  cursor: pointer;
+  display: block;
+}
