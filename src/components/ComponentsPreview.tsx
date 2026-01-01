@@ -7,7 +7,7 @@ const ComponentsPreview: React.FC = () => {
   const components = [
     { name: 'Globe3D', tags: ['Three.js', '3D'] },
     { name: 'Carousel3D', tags: ['Interactive', '3D'] },
-    { name: 'Badge3D', tags: ['Physics', 'Rapier'] },
+    { name: 'EzioBadge', tags: ['Three.js', '3D'] },
     { name: 'Books3D', tags: ['CSS', 'Animation'] },
     { name: 'LightText', tags: ['Mouse Track', 'Effect'] },
     { name: 'ImageMarquee', tags: ['Infinite', 'Scroll'] },
