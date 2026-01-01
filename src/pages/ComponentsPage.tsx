@@ -10,7 +10,6 @@ import Books3D from '../components/Books3D';
 import LightText from '../components/LightText';
 import Carousel3D from '../components/Carousel3D';
 import Globe3D from '../components/Globe3D';
-import Badge3D from '../components/Badge3D';
 import Gallery3D from '../components/Gallery3D';
 import RotatingCircles from '../components/RotatingCircles';
 import ImageMarquee from '../components/ImageMarquee';
@@ -84,12 +83,6 @@ const components: ComponentInfo[] = [
     tags: ['3D', 'Three.js', 'Interactive'],
   },
   {
-    name: 'Badge3D',
-    description: 'Physics-based draggable badge on rope. Built with Rapier physics engine.',
-    descriptionIT: 'Badge trascinabile con fisica su corda. Costruito con motore fisico Rapier.',
-    tags: ['3D', 'Physics', 'Interactive'],
-  },
-  {
     name: 'Gallery3D',
     description: 'Perspective gallery with auto-scrolling columns. Creates infinite scroll effect.',
     descriptionIT: 'Galleria prospettica con colonne auto-scroll. Crea effetto scroll infinito.',
@@ -146,7 +139,7 @@ const ComponentsPage: React.FC = () => {
   const currentComponent = components.find(c => c.name === activeComponent) || components[0];
 
   // Components that need dark background
-  const darkComponents = ['Globe3D', 'Badge3D', 'Carousel3D', 'LightText', 'RotatingCircles', 'LumaButton', 'ElectricCard', 'LogoParticles', 'VaporizeText', 'EzioBadge'];
+  const darkComponents = ['Globe3D', 'Carousel3D', 'LightText', 'RotatingCircles', 'LumaButton', 'ElectricCard', 'LogoParticles', 'VaporizeText', 'EzioBadge'];
   const needsDarkBg = darkComponents.includes(activeComponent);
 
   const renderPreview = () => {
@@ -224,12 +217,6 @@ const ComponentsPage: React.FC = () => {
         return (
           <div className="preview-wrapper preview-full">
             <Globe3D />
-          </div>
-        );
-      case 'Badge3D':
-        return (
-          <div className="preview-wrapper preview-centered">
-            <Badge3D title="Ezio\nPappalardo" subtitle="DEVELOPER" label="2025" />
           </div>
         );
       case 'Gallery3D':
