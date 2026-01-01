@@ -62,7 +62,10 @@ const Stack: React.FC = () => {
                 <p className="skill-category-desc">{category.desc}</p>
               </div>
               <div className="tools-flow">
-                <div className="tools-track">
+                <div
+                  className="tools-track"
+                  style={{ animationDuration: `${category.tools.length * 3}s` }}
+                >
                   {category.tools.map((tool, i) => (
                     <span key={i} className="tool-tag">{tool}</span>
                   ))}
