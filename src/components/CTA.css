@@ -108,7 +108,7 @@
 /* Keyboard Image */
 .cta-image {
   position: absolute;
-  bottom: -150px;
+  bottom: -200px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -125,27 +125,27 @@
 }
 
 .cta-detail-1 {
-  width: 120px;
-  top: 20%;
-  left: 8%;
-}
-
-.cta-detail-2 {
-  width: 80px;
-  top: 12%;
-  right: 12%;
-}
-
-.cta-detail-3 {
-  width: 140px;
-  bottom: 22%;
+  width: 180px;
+  top: 18%;
   left: 6%;
 }
 
+.cta-detail-2 {
+  width: 120px;
+  top: 10%;
+  right: 10%;
+}
+
+.cta-detail-3 {
+  width: 200px;
+  bottom: 20%;
+  left: 4%;
+}
+
 .cta-detail-4 {
-  width: 160px;
-  bottom: 18%;
-  right: 8%;
+  width: 220px;
+  bottom: 15%;
+  right: 5%;
 }
 
 .cta-image img {
