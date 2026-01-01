@@ -187,9 +187,11 @@ const Works: React.FC = () => {
                     loop
                     muted
                     playsInline
+                    preload="auto"
                     onLoadedData={(e) => {
                       const video = e.currentTarget;
                       video.currentTime = index * 2.5;
+                      video.play().catch(() => {});
                     }}
                   />
                   <div className="work-hover-overlay">

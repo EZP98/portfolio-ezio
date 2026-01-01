@@ -77,6 +77,12 @@ const ThemesSection: React.FC = () => {
                     loop
                     muted
                     playsInline
+                    preload="auto"
+                    ref={(el) => {
+                      if (el) {
+                        el.play().catch(() => {});
+                      }
+                    }}
                   />
                   <div className="themes-card-border" />
                 </div>
