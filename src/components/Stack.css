@@ -29,7 +29,15 @@
   grid-column: span 2;
 }
 
-.skill-card-ai {
+.skill-card-ai-code {
+  grid-column: span 1;
+}
+
+.skill-card-ai-image {
+  grid-column: span 1;
+}
+
+.skill-card-ai-3d {
   grid-column: span 1;
 }
 
@@ -89,10 +97,6 @@
   .skill-card-development {
     grid-column: span 2;
   }
-
-  .skill-card-ai {
-    grid-column: span 2;
-  }
 }
 
 @media (max-width: 768px) {
@@ -119,8 +123,7 @@
     grid-template-columns: 1fr;
   }
 
-  .skill-card-development,
-  .skill-card-ai {
+  .skill-card-development {
     grid-column: span 1;
   }
 

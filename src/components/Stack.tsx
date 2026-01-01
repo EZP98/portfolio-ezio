@@ -17,10 +17,22 @@ const skillCategories = [
     tools: ['React', 'TypeScript', 'Tailwind', 'Three.js']
   },
   {
-    id: 'ai',
-    title: 'AI Tools',
-    desc: 'Generative & Automation',
-    tools: ['Claude', 'ChatGPT', 'Perplexity', 'Midjourney', 'Lovart', 'Tripo', 'Bolt']
+    id: 'ai-code',
+    title: 'AI Coding',
+    desc: 'Development & Research',
+    tools: ['Claude', 'Bolt', 'Perplexity', 'Brave Search']
+  },
+  {
+    id: 'ai-image',
+    title: 'AI Images',
+    desc: 'Generative Art',
+    tools: ['ChatGPT', 'Midjourney', 'Lovart']
+  },
+  {
+    id: 'ai-3d',
+    title: 'AI 3D',
+    desc: '3D Generation',
+    tools: ['Tripo']
   },
   {
     id: 'infrastructure',
