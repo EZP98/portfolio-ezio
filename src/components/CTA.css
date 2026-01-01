@@ -78,7 +78,7 @@
 
 /* Text Content */
 .cta-content {
-  margin-bottom: 60px;
+  margin-bottom: 0;
   will-change: transform;
   animation: fadeInUp 0.8s ease-out forwards;
 }
