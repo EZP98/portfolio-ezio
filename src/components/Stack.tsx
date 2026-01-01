@@ -61,13 +61,10 @@ const Stack: React.FC = () => {
                 <h3 className="skill-category-title">{category.title}</h3>
                 <p className="skill-category-desc">{category.desc}</p>
               </div>
-              <div className={`tools-flow ${category.tools.length <= 2 ? 'no-animate' : ''}`}>
+              <div className="tools-flow">
                 <div className="tools-track">
                   {category.tools.map((tool, i) => (
                     <span key={i} className="tool-tag">{tool}</span>
-                  ))}
-                  {category.tools.length > 2 && category.tools.map((tool, i) => (
-                    <span key={`dup-${i}`} className="tool-tag">{tool}</span>
                   ))}
                 </div>
               </div>
