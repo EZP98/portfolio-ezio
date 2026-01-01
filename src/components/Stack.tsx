@@ -20,19 +20,13 @@ const skillCategories = [
     id: 'ai-code',
     title: 'AI Coding',
     desc: 'Development & Research',
-    tools: ['Claude', 'Bolt', 'Perplexity', 'Brave Search']
+    tools: ['Claude', 'Bolt', 'Perplexity']
   },
   {
-    id: 'ai-image',
-    title: 'AI Images',
-    desc: 'Generative Art',
-    tools: ['ChatGPT', 'Midjourney', 'Lovart']
-  },
-  {
-    id: 'ai-3d',
-    title: 'AI 3D',
-    desc: '3D Generation',
-    tools: ['Tripo']
+    id: 'ai-creative',
+    title: 'AI Creative',
+    desc: 'Images & 3D',
+    tools: ['Midjourney', 'ChatGPT', 'Lovart', 'Tripo']
   },
   {
     id: 'infrastructure',
