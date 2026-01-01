@@ -17,6 +17,7 @@ import ImageMarquee from '../components/ImageMarquee';
 import LumaButton from '../components/LumaButton';
 import ElectricCard from '../components/ElectricCard';
 import LogoParticles from '../components/LogoParticles';
+import VaporizeText from '../components/VaporizeText';
 import './ComponentsPage.css';
 
 interface ComponentInfo {
@@ -123,6 +124,12 @@ const components: ComponentInfo[] = [
     descriptionIT: 'Effetto particelle interattivo che forma una lettera. Le particelle reagiscono al mouse con fisica a molla.',
     tags: ['Canvas', 'Particles', 'Interactive'],
   },
+  {
+    name: 'VaporizeText',
+    description: 'Text vaporization effect with particle disintegration. Cycles through words with smooth wave animation.',
+    descriptionIT: 'Effetto vaporizzazione testo con disintegrazione in particelle. Cicla tra parole con animazione a onda.',
+    tags: ['Canvas', 'Particles', 'Text Effect'],
+  },
 ];
 
 const ComponentsPage: React.FC = () => {
@@ -132,7 +139,7 @@ const ComponentsPage: React.FC = () => {
   const currentComponent = components.find(c => c.name === activeComponent) || components[0];
 
   // Components that need dark background
-  const darkComponents = ['Globe3D', 'Badge3D', 'Carousel3D', 'LightText', 'RotatingCircles', 'LumaButton', 'ElectricCard', 'LogoParticles'];
+  const darkComponents = ['Globe3D', 'Badge3D', 'Carousel3D', 'LightText', 'RotatingCircles', 'LumaButton', 'ElectricCard', 'LogoParticles', 'VaporizeText'];
   const needsDarkBg = darkComponents.includes(activeComponent);
 
   const renderPreview = () => {
@@ -252,6 +259,17 @@ const ComponentsPage: React.FC = () => {
         return (
           <div className="preview-wrapper preview-centered">
             <LogoParticles size={350} />
+          </div>
+        );
+      case 'VaporizeText':
+        return (
+          <div className="preview-wrapper preview-centered">
+            <VaporizeText
+              texts={['Creative', 'Design', 'Motion', 'Effects']}
+              width={600}
+              height={250}
+              fontSize={80}
+            />
           </div>
         );
       default:
