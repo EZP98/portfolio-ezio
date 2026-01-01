@@ -71,8 +71,8 @@ const VaporizeText: React.FC<VaporizeTextProps> = ({
     }
 
     function getTextBounds(text: string) {
-      ctx.font = font;
-      const metrics = ctx.measureText(text);
+      ctx!.font = font;
+      const metrics = ctx!.measureText(text);
       const textWidth = metrics.width;
       const startX = (width - textWidth) / 2;
       const endX = startX + textWidth;
