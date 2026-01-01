@@ -10,7 +10,6 @@ import Books3D from '../components/Books3D';
 import LightText from '../components/LightText';
 import Carousel3D from '../components/Carousel3D';
 import Globe3D from '../components/Globe3D';
-import Gallery3D from '../components/Gallery3D';
 import RotatingCircles from '../components/RotatingCircles';
 import ImageMarquee from '../components/ImageMarquee';
 import LumaButton from '../components/LumaButton';
@@ -81,12 +80,6 @@ const components: ComponentInfo[] = [
     description: 'Interactive 3D globe with city pins. Built with Three.js and real GeoJSON data.',
     descriptionIT: 'Globo 3D interattivo con pin città. Costruito con Three.js e dati GeoJSON reali.',
     tags: ['3D', 'Three.js', 'Interactive'],
-  },
-  {
-    name: 'Gallery3D',
-    description: 'Perspective gallery with auto-scrolling columns. Creates infinite scroll effect.',
-    descriptionIT: 'Galleria prospettica con colonne auto-scroll. Crea effetto scroll infinito.',
-    tags: ['3D', 'Gallery', 'Animation'],
   },
   {
     name: 'RotatingCircles',
@@ -217,12 +210,6 @@ const ComponentsPage: React.FC = () => {
         return (
           <div className="preview-wrapper preview-full">
             <Globe3D />
-          </div>
-        );
-      case 'Gallery3D':
-        return (
-          <div className="preview-wrapper preview-full">
-            <Gallery3D />
           </div>
         );
       case 'RotatingCircles':
