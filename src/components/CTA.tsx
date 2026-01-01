@@ -92,6 +92,12 @@ const CTA: React.FC = () => {
         <div className="cta-image">
           <img src="/keyboard.png" alt="Keyboard" />
         </div>
+
+        {/* Decorative details */}
+        <img src="/detail-1.png" alt="" className="cta-detail cta-detail-1" />
+        <img src="/detail-2.png" alt="" className="cta-detail cta-detail-2" />
+        <img src="/detail-3.png" alt="" className="cta-detail cta-detail-3" />
+        <img src="/detail-4.png" alt="" className="cta-detail cta-detail-4" />
       </div>
     </section>
   );

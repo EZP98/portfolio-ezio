@@ -120,6 +120,37 @@
   z-index: 20;
 }
 
+/* Decorative details */
+.cta-detail {
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.cta-detail-1 {
+  width: 80px;
+  top: 20%;
+  left: 10%;
+}
+
+.cta-detail-2 {
+  width: 50px;
+  top: 15%;
+  right: 15%;
+}
+
+.cta-detail-3 {
+  width: 100px;
+  bottom: 25%;
+  left: 8%;
+}
+
+.cta-detail-4 {
+  width: 120px;
+  bottom: 20%;
+  right: 10%;
+}
+
 .cta-image img {
   width: 100%;
   height: auto;
