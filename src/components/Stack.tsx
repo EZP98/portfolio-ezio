@@ -65,7 +65,7 @@ const Stack: React.FC = () => {
                 <div
                   className="tools-track"
                   style={{
-                    '--duration': `${category.tools.length * 8}s`,
+                    '--duration': `${category.tools.length * 12}s`,
                     animationDelay: `${idx * -2}s`
                   } as React.CSSProperties}
                 >
