@@ -10,6 +10,11 @@
   overflow: hidden;
 }
 
+.skills-bento > * {
+  min-width: 0;
+  overflow: hidden;
+}
+
 .skill-card {
   background: #111;
   border: 1px solid var(--border-color);
