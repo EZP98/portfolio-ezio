@@ -15,6 +15,7 @@ import Gallery3D from '../components/Gallery3D';
 import RotatingCircles from '../components/RotatingCircles';
 import ImageMarquee from '../components/ImageMarquee';
 import LumaButton from '../components/LumaButton';
+import ElectricCard from '../components/ElectricCard';
 import './ComponentsPage.css';
 
 interface ComponentInfo {
@@ -109,6 +110,12 @@ const components: ComponentInfo[] = [
     descriptionIT: 'Bottone animato con bordo luminoso rotante e particelle fluttuanti. Supporta light/dark mode.',
     tags: ['Button', 'Animation', 'Interactive'],
   },
+  {
+    name: 'ElectricCard',
+    description: 'Card with animated electric border using SVG turbulence filters. Customizable color.',
+    descriptionIT: 'Card con bordo elettrico animato usando filtri SVG turbulence. Colore personalizzabile.',
+    tags: ['Card', 'SVG Filter', 'Animation'],
+  },
 ];
 
 const ComponentsPage: React.FC = () => {
@@ -118,7 +125,7 @@ const ComponentsPage: React.FC = () => {
   const currentComponent = components.find(c => c.name === activeComponent) || components[0];
 
   // Components that need dark background
-  const darkComponents = ['Globe3D', 'Badge3D', 'Carousel3D', 'LightText', 'RotatingCircles', 'LumaButton'];
+  const darkComponents = ['Globe3D', 'Badge3D', 'Carousel3D', 'LightText', 'RotatingCircles', 'LumaButton', 'ElectricCard'];
   const needsDarkBg = darkComponents.includes(activeComponent);
 
   const renderPreview = () => {
@@ -226,6 +233,12 @@ const ComponentsPage: React.FC = () => {
         return (
           <div className="preview-wrapper preview-centered">
             <LumaButton text="Click me" dark />
+          </div>
+        );
+      case 'ElectricCard':
+        return (
+          <div className="preview-wrapper preview-centered">
+            <ElectricCard width={280} height={380} />
           </div>
         );
       default:

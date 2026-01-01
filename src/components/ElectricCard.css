@@ -1,0 +1,121 @@
+/* ElectricCard - Animated electric border effect */
+
+.electric-card-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.electric-card-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 1px;
+  border-radius: 32px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.electric-border-layers {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.electric-border-base {
+  width: 100%;
+  height: 100%;
+  border: 2px solid;
+  border-radius: 32px;
+  box-sizing: border-box;
+}
+
+.electric-border-animated {
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  border: 2px solid;
+  box-sizing: border-box;
+}
+
+.electric-glow-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid;
+  border-radius: 32px;
+  filter: blur(1px);
+  opacity: 0.7;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.electric-glow-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid;
+  border-radius: 32px;
+  filter: blur(4px);
+  opacity: 0.7;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.electric-bg-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  filter: blur(32px);
+  transform: scale(1.1);
+  opacity: 0.21;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.electric-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.electric-default-content {
+  text-align: center;
+}
+
+.electric-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.electric-title {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.electric-description {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  line-height: 1.5;
+}
