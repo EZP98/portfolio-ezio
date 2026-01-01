@@ -310,7 +310,7 @@
 
 @media (max-width: 768px) {
   .cta-section {
-    padding: 60px 0;
+    padding: 60px 0 120px;
   }
 
   .cta-container {
@@ -366,9 +366,24 @@
     flex-wrap: wrap;
     gap: 24px;
   }
+
+  /* Hide decorative details on mobile */
+  .cta-detail {
+    display: none;
+  }
+
+  /* Adjust keyboard for mobile */
+  .cta-image {
+    bottom: -100px;
+    max-width: 400px;
+  }
 }
 
 @media (max-width: 480px) {
+  .cta-section {
+    padding: 48px 0 100px;
+  }
+
   .cta-title {
     font-size: 24px;
   }
@@ -400,5 +415,10 @@
   .cta-button {
     padding: 12px 24px;
     font-size: 14px;
+  }
+
+  .cta-image {
+    bottom: -80px;
+    max-width: 320px;
   }
 }
