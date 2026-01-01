@@ -38,21 +38,45 @@
 
 .tools-flow {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 10px;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+}
+
+.tools-track {
+  display: flex;
+  gap: 10px;
+  animation: marquee 20s linear infinite;
+}
+
+.tools-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .tool-tag {
   display: inline-flex;
   align-items: center;
-  padding: 12px 20px;
+  padding: 10px 18px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--border-color);
   border-radius: 100px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--text-secondary);
   transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .tool-tag:hover {

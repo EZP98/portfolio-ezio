@@ -62,9 +62,14 @@ const Stack: React.FC = () => {
                 <p className="skill-category-desc">{category.desc}</p>
               </div>
               <div className="tools-flow">
-                {category.tools.map((tool, i) => (
-                  <span key={i} className="tool-tag">{tool}</span>
-                ))}
+                <div className="tools-track">
+                  {category.tools.map((tool, i) => (
+                    <span key={i} className="tool-tag">{tool}</span>
+                  ))}
+                  {category.tools.map((tool, i) => (
+                    <span key={`dup-${i}`} className="tool-tag">{tool}</span>
+                  ))}
+                </div>
               </div>
             </div>
           </ScrollReveal>
