@@ -367,9 +367,29 @@
     gap: 24px;
   }
 
-  /* Hide decorative details on mobile */
-  .cta-detail {
-    display: none;
+  /* Reposition decorative details on mobile */
+  .cta-detail-1 {
+    width: 100px;
+    top: 5%;
+    left: 3%;
+  }
+
+  .cta-detail-2 {
+    width: 70px;
+    top: 3%;
+    right: 5%;
+  }
+
+  .cta-detail-3 {
+    width: 90px;
+    bottom: 8%;
+    left: 2%;
+  }
+
+  .cta-detail-4 {
+    width: 110px;
+    bottom: 5%;
+    right: 0%;
   }
 
   /* Adjust keyboard for mobile */
@@ -420,5 +440,29 @@
   .cta-image {
     bottom: -80px;
     max-width: 320px;
+  }
+
+  .cta-detail-1 {
+    width: 80px;
+    top: 3%;
+    left: 2%;
+  }
+
+  .cta-detail-2 {
+    width: 55px;
+    top: 2%;
+    right: 3%;
+  }
+
+  .cta-detail-3 {
+    width: 70px;
+    bottom: 6%;
+    left: 0%;
+  }
+
+  .cta-detail-4 {
+    width: 85px;
+    bottom: 4%;
+    right: -2%;
   }
 }
