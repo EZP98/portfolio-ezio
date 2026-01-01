@@ -310,7 +310,7 @@
 
 @media (max-width: 768px) {
   .cta-section {
-    padding: 48px 0 80px;
+    padding: 48px 0 160px;
     min-height: auto;
   }
 
@@ -402,7 +402,7 @@
 
 @media (max-width: 480px) {
   .cta-section {
-    padding: 40px 0 60px;
+    padding: 40px 0 140px;
   }
 
   .cta-title {
