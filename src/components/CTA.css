@@ -1,7 +1,7 @@
 /* CTA Section */
 .cta-section {
   position: relative;
-  padding: 96px 0;
+  padding: 96px 0 200px;
   background: #111;
   border-radius: 24px;
   margin: 0;
@@ -104,7 +104,7 @@
 /* Keyboard Image */
 .cta-image {
   position: absolute;
-  bottom: -80px;
+  bottom: -180px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
