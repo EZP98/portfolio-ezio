@@ -17,6 +17,7 @@ import ElectricCard from '../components/ElectricCard';
 import LogoParticles from '../components/LogoParticles';
 import VaporizeText from '../components/VaporizeText';
 import EzioBadge from '../components/EzioBadge';
+import PerspectiveGrid from '../components/PerspectiveGrid';
 import './ComponentsPage.css';
 
 interface ComponentInfo {
@@ -122,6 +123,12 @@ const components: ComponentInfo[] = [
     description: '3D interactive badge with mouse tracking. Elegant design with canvas texture and physics-based rotation.',
     descriptionIT: 'Badge 3D interattivo con tracking del mouse. Design elegante con texture canvas e rotazione fisica.',
     tags: ['3D', 'Three.js', 'Interactive'],
+  },
+  {
+    name: 'PerspectiveGrid',
+    description: '3D perspective gallery with auto-scrolling columns. Creates infinite scroll effect with wave animation.',
+    descriptionIT: 'Galleria 3D prospettica con colonne auto-scroll. Crea effetto scroll infinito con animazione a onda.',
+    tags: ['3D', 'Gallery', 'Animation'],
   },
 ];
 
@@ -257,6 +264,12 @@ const ComponentsPage: React.FC = () => {
         return (
           <div className="preview-wrapper preview-centered">
             <EzioBadge width={400} height={500} />
+          </div>
+        );
+      case 'PerspectiveGrid':
+        return (
+          <div className="preview-wrapper preview-full">
+            <PerspectiveGrid />
           </div>
         );
       default:
