@@ -146,7 +146,7 @@ const ComponentsPage: React.FC = () => {
   const currentComponent = components.find(c => c.name === activeComponent) || components[0];
 
   // Components that need dark background
-  const darkComponents = ['Globe3D', 'Carousel3D', 'LightText', 'RotatingCircles', 'LumaButton', 'ElectricCard', 'LogoParticles', 'VaporizeText', 'EzioBadge', 'ShinyBadge', 'WorksTicker'];
+  const darkComponents = ['Globe3D', 'Carousel3D', 'LightText', 'RotatingCircles', 'LumaButton', 'ElectricCard', 'LogoParticles', 'VaporizeText', 'EzioBadge', 'ShinyBadge', 'WorksTicker', 'ScrollReveal'];
   const needsDarkBg = darkComponents.includes(activeComponent);
 
   const renderPreview = () => {
@@ -165,11 +165,28 @@ const ComponentsPage: React.FC = () => {
         );
       case 'ScrollReveal':
         return (
-          <ScrollReveal>
-            <div className="reveal-demo-box">
-              {language === 'it' ? 'Scorri per vedere' : 'Scroll to reveal'}
+          <div className="preview-wrapper preview-scroll-demo">
+            <div className="scroll-demo-container">
+              <div className="scroll-demo-hint">
+                {language === 'it' ? 'Scorri verso il basso' : 'Scroll down'}
+              </div>
+              <ScrollReveal>
+                <div className="reveal-demo-box">Element 1</div>
+              </ScrollReveal>
+              <ScrollReveal delay={100}>
+                <div className="reveal-demo-box">Element 2</div>
+              </ScrollReveal>
+              <ScrollReveal delay={200}>
+                <div className="reveal-demo-box">Element 3</div>
+              </ScrollReveal>
+              <ScrollReveal variant="up">
+                <div className="reveal-demo-box reveal-up">Slide Up</div>
+              </ScrollReveal>
+              <ScrollReveal variant="fade">
+                <div className="reveal-demo-box reveal-fade">Fade In</div>
+              </ScrollReveal>
             </div>
-          </ScrollReveal>
+          </div>
         );
       case 'RollingText':
         return (
