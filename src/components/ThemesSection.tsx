@@ -1,42 +1,20 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import './ThemesSection.css';
 
 // Theme preview videos
 const themeImages = [
-  { name: 'Slate', src: '/templates/slate.mp4?v=20260102b' },
-  { name: 'Orbit', src: '/templates/orbit.mp4?v=20260102' },
-  { name: 'Nova', src: '/templates/nova.mp4?v=20260102' },
-  { name: 'Obsidian', src: '/templates/obsidian.mp4?v=20260102' },
+  { name: 'Slate', src: '/templates/slate.mp4?v=20260102c' },
+  { name: 'Orbit', src: '/templates/orbit.mp4?v=20260102c' },
+  { name: 'Nova', src: '/templates/nova.mp4?v=20260102c' },
+  { name: 'Obsidian', src: '/templates/obsidian.mp4?v=20260102c' },
+  { name: 'Aurora', src: '/templates/aurora.mp4?v=20260102c' },
+  { name: 'Ferrero', src: '/templates/ferrero.mp4?v=20260102c' },
 ];
 
 const ThemesSection: React.FC = () => {
   const { language } = useLanguage();
-  const marqueeRef = useRef<HTMLUListElement>(null);
   const [isDarkMode, setIsDarkMode] = useState(true);
-
-  // Marquee animation
-  useEffect(() => {
-    const marquee = marqueeRef.current;
-    if (!marquee) return;
-
-    let animationId: number;
-    let position = 0;
-    const speed = 0.4;
-
-    const animate = () => {
-      position -= speed;
-      const totalWidth = marquee.scrollWidth / 3;
-      if (Math.abs(position) >= totalWidth) {
-        position = 0;
-      }
-      marquee.style.transform = `translateX(${position}px)`;
-      animationId = requestAnimationFrame(animate);
-    };
-
-    animationId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationId);
-  }, []);
 
   return (
     <section className="themes-section" id="themes">
@@ -64,31 +42,28 @@ const ThemesSection: React.FC = () => {
           </h2>
         </div>
 
-        {/* Themes Marquee */}
-        <div className="themes-marquee-wrapper">
-          <ul className="themes-marquee-track" ref={marqueeRef}>
-            {[...themeImages, ...themeImages, ...themeImages].map((theme, index) => (
-              <li key={index} className="themes-marquee-item">
-                <div className="themes-card">
-                  <video
-                    className="themes-card-video"
-                    src={theme.src}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="auto"
-                    ref={(el) => {
-                      if (el) {
-                        el.play().catch(() => {});
-                      }
-                    }}
-                  />
-                  <div className="themes-card-border" />
-                </div>
-              </li>
-            ))}
-          </ul>
+        {/* Themes Grid - 3 per row */}
+        <div className="themes-grid">
+          {themeImages.map((theme, index) => (
+            <div key={index} className="themes-card">
+              <video
+                className="themes-card-video"
+                src={theme.src}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                ref={(el) => {
+                  if (el) {
+                    el.play().catch(() => {});
+                  }
+                }}
+              />
+              <div className="themes-card-border" />
+              <span className="themes-card-name">{theme.name}</span>
+            </div>
+          ))}
         </div>
 
         {/* Theme Switch */}
