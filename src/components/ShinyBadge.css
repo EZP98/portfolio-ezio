@@ -1,13 +1,7 @@
 /* ShinyBadge - 3D holographic badge with shine effect */
 
 .shiny-badge-wrapper {
-  width: 100%;
-  height: 100%;
-  min-height: 200px;
-  background-color: #0a0a0a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
   font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
