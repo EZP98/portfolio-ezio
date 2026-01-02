@@ -112,8 +112,12 @@ const LogoParticles: React.FC<LogoParticlesProps> = ({
     const animate = () => {
       time += 1;
 
-      ctx.fillStyle = backgroundColor;
-      ctx.fillRect(0, 0, canvasSize, canvasSize);
+      // Clear canvas - use clearRect for transparency support
+      ctx.clearRect(0, 0, canvasSize, canvasSize);
+      if (backgroundColor !== 'transparent') {
+        ctx.fillStyle = backgroundColor;
+        ctx.fillRect(0, 0, canvasSize, canvasSize);
+      }
 
       const mouse = mouseRef.current;
 

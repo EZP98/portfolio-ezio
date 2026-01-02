@@ -270,7 +270,7 @@ const ComponentsPage: React.FC = () => {
       case 'LogoParticles':
         return (
           <div className="preview-wrapper preview-centered">
-            <LogoParticles size={350} />
+            <LogoParticles size={350} backgroundColor="transparent" />
           </div>
         );
       case 'VaporizeText':
