@@ -34,14 +34,15 @@ const EzioBadge: React.FC<EzioBadgeProps> = ({
 
     // Scene
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x050505);
+    // Transparent background to blend with container
 
     // Camera
     const camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 1000);
     camera.position.set(0, 0, 5.5);
 
-    // Renderer
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    // Renderer with alpha for transparency
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setClearColor(0x000000, 0);
     renderer.setSize(w, h);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(renderer.domElement);

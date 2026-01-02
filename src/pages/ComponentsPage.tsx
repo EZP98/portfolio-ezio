@@ -287,7 +287,7 @@ const ComponentsPage: React.FC = () => {
       case 'EzioBadge':
         return (
           <div className="preview-wrapper preview-centered">
-            <EzioBadge width={400} height={500} />
+            <EzioBadge width={280} height={350} />
           </div>
         );
       case 'PerspectiveGrid':
