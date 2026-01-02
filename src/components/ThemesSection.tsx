@@ -2,12 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import './ThemesSection.css';
 
-// Theme preview images - using template screenshots
+// Theme preview videos
 const themeImages = [
-  { name: 'Light', src: '/templates/portfolio-dark.mp4', poster: '/templates/portfolio-dark-poster.jpg' },
-  { name: 'Dark', src: '/templates/folio-ep.mp4', poster: '/templates/folio-ep-poster.jpg' },
-  { name: 'Minimal', src: '/templates/developer.mp4', poster: '/templates/developer-poster.jpg' },
-  { name: 'Colorful', src: '/templates/portfolio-dark.mp4', poster: '/templates/portfolio-dark-poster.jpg' },
+  { name: 'Slate', src: '/templates/slate.mp4?v=20260102b' },
+  { name: 'Orbit', src: '/templates/orbit.mp4?v=20260102' },
+  { name: 'Nova', src: '/templates/nova.mp4?v=20260102' },
+  { name: 'Obsidian', src: '/templates/obsidian.mp4?v=20260102' },
 ];
 
 const ThemesSection: React.FC = () => {
