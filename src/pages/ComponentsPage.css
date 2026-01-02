@@ -198,6 +198,24 @@
   overflow: visible;
 }
 
+/* Allow ShinyBadge 3D tilt to overflow */
+.canvas-preview:has(.shiny-badge-wrapper) {
+  overflow: visible;
+}
+
+.canvas-preview:has(.shiny-badge-wrapper) .preview-wrapper {
+  overflow: visible;
+}
+
+/* Allow EzioBadge 3D tilt to overflow */
+.canvas-preview:has(.ezio-badge-container) {
+  overflow: visible;
+}
+
+.canvas-preview:has(.ezio-badge-container) .preview-wrapper {
+  overflow: visible;
+}
+
 /* Override component margins inside preview */
 .canvas-preview .services-ticker-section,
 .canvas-preview .works-ticker-section {
