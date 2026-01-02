@@ -204,6 +204,33 @@
   margin: 0 !important;
 }
 
+/* Scale down WorksTicker for preview */
+.canvas-preview .works-ticker-section {
+  width: 100% !important;
+  margin-left: 0 !important;
+  padding: 20px 0 !important;
+}
+
+.canvas-preview .works-ticker-wrapper {
+  width: 120% !important;
+  margin-left: -10% !important;
+  transform: perspective(1200px) rotateX(10deg) rotateY(-6deg) rotateZ(1.5deg) !important;
+}
+
+.canvas-preview .ticker-card {
+  width: 140px !important;
+  height: 210px !important;
+  border-radius: 10px !important;
+}
+
+.canvas-preview .works-ticker-track {
+  gap: 12px !important;
+}
+
+.canvas-preview .ticker-card-title {
+  font-size: 12px !important;
+}
+
 .canvas-info {
   flex-shrink: 0;
 }
