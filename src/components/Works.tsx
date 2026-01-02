@@ -69,7 +69,7 @@ const Works: React.FC = () => {
       category: 'Portfolio',
       description: 'Minimal agency template',
       link: 'https://slate-6ls.pages.dev',
-      image: '/templates/hanzo.mp4'
+      image: '/templates/slate.mp4?v=20260102'
     },
     {
       id: 't2',
@@ -77,7 +77,7 @@ const Works: React.FC = () => {
       category: 'Portfolio',
       description: 'Portfolio con globe 3D interattivo',
       link: 'https://orbit-zq4.pages.dev',
-      image: '/templates/folio-ep.mp4'
+      image: '/templates/orbit.mp4?v=20260102'
     },
     {
       id: 't3',
@@ -85,31 +85,31 @@ const Works: React.FC = () => {
       category: 'Portfolio',
       description: 'Creative modern portfolio',
       link: 'https://nova-edz.pages.dev',
-      image: '/templates/artemis.mp4'
+      image: '/templates/nova.mp4?v=20260102'
     },
     {
-      id: 't5',
+      id: 't4',
       title: 'Ferrero Rocher',
       category: 'Portfolio',
       description: 'Luxury style portfolio',
       link: 'https://ferrero-rocher-portfolio.pages.dev',
-      image: '/templates/ferrero.mp4'
+      image: '/templates/ferrero.mp4?v=20260102'
     },
     {
-      id: 't6',
+      id: 't5',
       title: 'Obsidian',
       category: 'Portfolio',
       description: 'Dark minimal template',
       link: 'https://obsidian-cud.pages.dev',
-      image: '/templates/portfolio-dark.mp4'
+      image: '/templates/obsidian.mp4?v=20260102'
     },
     {
-      id: 't7',
+      id: 't6',
       title: 'Aurora',
       category: 'Landing',
       description: 'Modern responsive landing',
       link: 'https://aurora-76x.pages.dev',
-      image: '/templates/landing.mp4'
+      image: '/templates/aurora.mp4?v=20260102'
     }
   ];
 

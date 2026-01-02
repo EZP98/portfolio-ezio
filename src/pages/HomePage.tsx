@@ -2,7 +2,6 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Showcase from '../components/Showcase';
 import Works from '../components/Works';
-import ThemesSection from '../components/ThemesSection';
 import About from '../components/About';
 import Experience from '../components/Experience';
 import Stack from '../components/Stack';
@@ -19,7 +18,6 @@ const HomePage = () => {
       <main className="main-content">
         <Hero />
         <Works />
-        <ThemesSection />
         <Showcase />
         <About />
         <Experience />
