@@ -8,7 +8,7 @@ interface Template {
   name: string;
   description: string;
   descriptionIT: string;
-  image: string;
+  video: string;
   category: string;
   link: string;
 }
@@ -19,54 +19,54 @@ const templates: Template[] = [
     name: 'Slate',
     description: 'Minimal agency template',
     descriptionIT: 'Template agenzia minimale',
-    image: 'https://framerusercontent.com/images/mnZ0pS3d98m7Drs9IEa1qJipIlc.png',
+    video: '/templates/slate.mp4',
     category: 'Portfolio',
-    link: 'https://hanzo-template.pages.dev',
+    link: 'https://slate-6ls.pages.dev',
   },
   {
     id: '2',
-    name: 'Folio EP',
+    name: 'Orbit',
     description: 'Portfolio with interactive 3D globe',
-    descriptionIT: 'Portfolio con globo 3D interattivo',
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=600&fit=crop',
+    descriptionIT: 'Portfolio con globe 3D interattivo',
+    video: '/templates/orbit.mp4',
     category: 'Portfolio',
-    link: '#',
+    link: 'https://orbit-zq4.pages.dev',
   },
   {
     id: '3',
     name: 'Nova',
     description: 'Creative modern portfolio',
     descriptionIT: 'Portfolio creativo e moderno',
-    image: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=800&h=600&fit=crop',
+    video: '/templates/nova.mp4',
     category: 'Portfolio',
-    link: '#',
+    link: 'https://nova-edz.pages.dev',
   },
   {
     id: '4',
-    name: 'Velvet',
+    name: 'Ferrero Rocher',
     description: 'Luxury style portfolio',
     descriptionIT: 'Portfolio stile luxury',
-    image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800&h=600&fit=crop',
+    video: '/templates/ferrero.mp4',
     category: 'Portfolio',
-    link: '#',
+    link: 'https://ferrero-rocher-portfolio.pages.dev',
   },
   {
     id: '5',
     name: 'Obsidian',
     description: 'Dark minimal template',
     descriptionIT: 'Template minimale dark',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+    video: '/templates/obsidian.mp4',
     category: 'Portfolio',
-    link: '#',
+    link: 'https://obsidian-cud.pages.dev',
   },
   {
     id: '6',
     name: 'Aurora',
     description: 'Modern responsive landing',
     descriptionIT: 'Landing page moderna e responsive',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop',
+    video: '/templates/aurora.mp4',
     category: 'Landing',
-    link: '#',
+    link: 'https://aurora-76x.pages.dev',
   },
 ];
 
@@ -90,8 +90,8 @@ const TemplatesPage: React.FC = () => {
           </h1>
           <p className="templates-subtitle">
             {language === 'it'
-              ? 'Template Framer pronti all\'uso per il tuo prossimo progetto'
-              : 'Ready-to-use Framer templates for your next project'}
+              ? 'Template pronti all\'uso per il tuo prossimo progetto'
+              : 'Ready-to-use templates for your next project'}
           </p>
         </section>
 
@@ -106,10 +106,16 @@ const TemplatesPage: React.FC = () => {
                 rel="noopener noreferrer"
               >
                 <div className="template-preview">
-                  <img
-                    src={template.image}
-                    alt={template.name}
-                    loading="lazy"
+                  <video
+                    src={template.video}
+                    muted
+                    loop
+                    playsInline
+                    onMouseEnter={(e) => e.currentTarget.play()}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.pause();
+                      e.currentTarget.currentTime = 0;
+                    }}
                   />
                 </div>
                 <div className="template-meta">
