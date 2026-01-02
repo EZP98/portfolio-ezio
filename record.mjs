@@ -3,10 +3,9 @@ import { PuppeteerScreenRecorder } from 'puppeteer-screen-recorder';
 
 const outputDir = '/Users/eziopappalardo/Documents/portfolio-ezio/public/templates';
 
-// Template card dimensions: ~384x400 (3 columns in 1200px container)
-// Scale 2x for quality: 768x800
-const VIDEO_WIDTH = 768;
-const VIDEO_HEIGHT = 800;
+// MacBook Air resolution for realistic desktop view
+const VIDEO_WIDTH = 1440;
+const VIDEO_HEIGHT = 900;
 
 async function record(name, url) {
   console.log(`Recording ${name}...`);
