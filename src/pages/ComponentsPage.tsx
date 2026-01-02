@@ -146,7 +146,7 @@ const ComponentsPage: React.FC = () => {
   const currentComponent = components.find(c => c.name === activeComponent) || components[0];
 
   // Components that need dark background
-  const darkComponents = ['Globe3D', 'Carousel3D', 'LightText', 'RotatingCircles', 'LumaButton', 'ElectricCard', 'LogoParticles', 'VaporizeText', 'EzioBadge', 'ShinyBadge'];
+  const darkComponents = ['Globe3D', 'Carousel3D', 'LightText', 'RotatingCircles', 'LumaButton', 'ElectricCard', 'LogoParticles', 'VaporizeText', 'EzioBadge', 'ShinyBadge', 'WorksTicker'];
   const needsDarkBg = darkComponents.includes(activeComponent);
 
   const renderPreview = () => {
