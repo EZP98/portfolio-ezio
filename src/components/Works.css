@@ -109,7 +109,7 @@
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  aspect-ratio: 1/1;
+  aspect-ratio: var(--card-aspect, 1/1);
   margin-bottom: 16px;
   border: 1px solid var(--border-color);
   background: var(--bg-secondary);
@@ -137,10 +137,13 @@
   display: block;
 }
 
-/* Templates - video fills container completely */
+/* Templates - override aspect ratio via custom property */
+.template-card {
+  --card-aspect: 16 / 10;
+}
+
 .template-card .work-image-wrapper {
   height: auto;
-  aspect-ratio: 16 / 10;
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--border-color);
