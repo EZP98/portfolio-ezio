@@ -137,7 +137,10 @@
   display: block;
 }
 
-/* Templates - same 1:1 aspect ratio as projects */
+/* Templates - 4:3 rectangular ratio for video preview */
+.template-card {
+  --card-aspect: 4 / 3;
+}
 
 .template-card .work-image-wrapper {
   height: auto;
