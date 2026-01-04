@@ -4,12 +4,12 @@ import './ThemesSection.css';
 
 // Theme preview videos
 const themeImages = [
-  { name: 'Slate', src: '/templates/slate.mp4?v=20260102d' },
-  { name: 'Orbit', src: '/templates/orbit.mp4?v=20260102d' },
-  { name: 'Nova', src: '/templates/nova.mp4?v=20260102d' },
-  { name: 'Obsidian', src: '/templates/obsidian.mp4?v=20260102d' },
-  { name: 'Aurora', src: '/templates/aurora.mp4?v=20260102d' },
-  { name: 'Ferrero', src: '/templates/ferrero.mp4?v=20260102d' },
+  { name: 'Slate', src: '/templates/slate.mp4?v=20260104' },
+  { name: 'Orbit', src: '/templates/orbit.mp4?v=20260104' },
+  { name: 'Nova', src: '/templates/nova.mp4?v=20260104' },
+  { name: 'Obsidian', src: '/templates/obsidian.mp4?v=20260104' },
+  { name: 'Aurora', src: '/templates/aurora.mp4?v=20260104' },
+  { name: 'Ferrero', src: '/templates/ferrero.mp4?v=20260104' },
 ];
 
 const ThemesSection: React.FC = () => {
