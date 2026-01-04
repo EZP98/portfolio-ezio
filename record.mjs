@@ -1,79 +1,9 @@
 import puppeteer from 'puppeteer';
-import { PuppeteerScreenRecorder } from 'puppeteer-screen-recorder';
+import { execSync } from 'child_process';
+import fs from 'fs';
+import path from 'path';
 
-const outputDir = '/Users/eziopappalardo/Documents/portfolio-ezio/public/templates';
-
-// MacBook Air resolution for realistic desktop view
-const VIDEO_WIDTH = 1440;
-const VIDEO_HEIGHT = 900;
-
-async function record(name, url) {
-  console.log(`Recording ${name}...`);
-  const browser = await puppeteer.launch({ headless: true });
-  const page = await browser.newPage();
-  await page.setViewport({ width: VIDEO_WIDTH, height: VIDEO_HEIGHT });
-
-  const recorder = new PuppeteerScreenRecorder(page, {
-    fps: 60, // Higher fps for smoother video
-    videoFrame: { width: VIDEO_WIDTH, height: VIDEO_HEIGHT },
-  });
-
-  await page.goto(url, { waitUntil: 'networkidle2', timeout: 60000 });
-  await new Promise(r => setTimeout(r, 1500));
-
-  await recorder.start(`${outputDir}/${name}.mp4`);
-
-  // Inject smooth scroll animation into page
-  const scrollDistance = await page.evaluate(() => {
-    const maxScroll = Math.min(
-      (document.body.scrollHeight - window.innerHeight) * 0.5,
-      1800
-    );
-    return maxScroll;
-  });
-
-  // Smooth scroll animation using requestAnimationFrame
-  // Down for 2.5s, pause 0.5s, up for 2s = 5s total loop
-  await page.evaluate((distance) => {
-    return new Promise((resolve) => {
-      function easeInOutQuad(t) {
-        return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
-      }
-
-      function smoothScroll(from, to, duration) {
-        return new Promise((res) => {
-          const start = performance.now();
-          function animate(now) {
-            const elapsed = now - start;
-            const progress = Math.min(elapsed / duration, 1);
-            const eased = easeInOutQuad(progress);
-            const current = from + (to - from) * eased;
-            window.scrollTo(0, current);
-            if (progress < 1) {
-              requestAnimationFrame(animate);
-            } else {
-              res();
-            }
-          }
-          requestAnimationFrame(animate);
-        });
-      }
-
-      async function run() {
-        await smoothScroll(0, distance, 2500);       // Scroll down (2.5s)
-        await new Promise(r => setTimeout(r, 500)); // Pause at bottom
-        await smoothScroll(distance, 0, 2000);       // Scroll up (2s)
-        resolve();
-      }
-      run();
-    });
-  }, scrollDistance);
-
-  await new Promise(r => setTimeout(r, 300));
-  await recorder.stop();
-  await browser.close();
-  console.log(`Done: ${name}`);
-}
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 const templates = [
   { name: 'slate', url: 'https://slate-6ls.pages.dev' },
@@ -84,8 +14,78 @@ const templates = [
   { name: 'aurora', url: 'https://aurora-76x.pages.dev' },
 ];
 
-for (const t of templates) {
-  await record(t.name, t.url);
+const outputDir = './public/templates';
+const framesDir = './temp-frames';
+
+// Easing for smooth start/end
+function easeInOutQuad(t) {
+  return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
 }
 
-console.log('All done!');
+async function recordTemplate(template) {
+  console.log(`Recording ${template.name}...`);
+
+  const templateFramesDir = path.join(framesDir, template.name);
+  if (fs.existsSync(templateFramesDir)) {
+    fs.rmSync(templateFramesDir, { recursive: true });
+  }
+  fs.mkdirSync(templateFramesDir, { recursive: true });
+
+  const browser = await puppeteer.launch({ headless: true });
+  const page = await browser.newPage();
+  await page.setViewport({ width: 1440, height: 900 });
+
+  await page.goto(template.url, { waitUntil: 'networkidle2', timeout: 60000 });
+  await sleep(2000);
+
+  const pageHeight = await page.evaluate(() => document.body.scrollHeight);
+  const scrollDistance = Math.min(pageHeight - 900, 1500); // Scroll leggero
+
+  // 5 seconds at 30fps = 150 frames
+  const totalFrames = 150;
+
+  for (let i = 0; i < totalFrames; i++) {
+    const progress = i / (totalFrames - 1);
+    const eased = easeInOutQuad(progress);
+    const scrollY = eased * scrollDistance;
+
+    await page.evaluate((y) => window.scrollTo(0, y), scrollY);
+    await sleep(16); // Small delay for render
+
+    await page.screenshot({
+      path: path.join(templateFramesDir, `frame-${String(i).padStart(4, '0')}.png`),
+      type: 'png'
+    });
+  }
+
+  await browser.close();
+
+  // ffmpeg: smooth video
+  const outputPath = path.join(outputDir, `${template.name}.mp4`);
+  try {
+    execSync(`ffmpeg -y -framerate 30 -i "${templateFramesDir}/frame-%04d.png" -c:v libx264 -pix_fmt yuv420p -crf 20 "${outputPath}"`, { stdio: 'pipe' });
+    console.log(`Done: ${template.name}`);
+  } catch (e) {
+    console.error(`Error: ${template.name}`, e.message);
+  }
+
+  fs.rmSync(templateFramesDir, { recursive: true });
+}
+
+async function main() {
+  if (!fs.existsSync(framesDir)) {
+    fs.mkdirSync(framesDir, { recursive: true });
+  }
+
+  for (const template of templates) {
+    await recordTemplate(template);
+  }
+
+  if (fs.existsSync(framesDir)) {
+    fs.rmSync(framesDir, { recursive: true });
+  }
+
+  console.log('All done!');
+}
+
+main().catch(console.error);
