@@ -137,10 +137,7 @@
   display: block;
 }
 
-/* Templates - override aspect ratio via custom property */
-.template-card {
-  --card-aspect: 16 / 10;
-}
+/* Templates - same 1:1 aspect ratio as projects */
 
 .template-card .work-image-wrapper {
   height: auto;
