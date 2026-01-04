@@ -7,11 +7,6 @@ const outputDir = '/Users/eziopappalardo/Documents/portfolio-ezio/public/templat
 const VIDEO_WIDTH = 1440;
 const VIDEO_HEIGHT = 900;
 
-// Easing function for smooth acceleration/deceleration
-function easeInOutCubic(t) {
-  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-}
-
 async function record(name, url) {
   console.log(`Recording ${name}...`);
   const browser = await puppeteer.launch({ headless: true });
@@ -19,33 +14,62 @@ async function record(name, url) {
   await page.setViewport({ width: VIDEO_WIDTH, height: VIDEO_HEIGHT });
 
   const recorder = new PuppeteerScreenRecorder(page, {
-    fps: 30,
+    fps: 60, // Higher fps for smoother video
     videoFrame: { width: VIDEO_WIDTH, height: VIDEO_HEIGHT },
   });
 
   await page.goto(url, { waitUntil: 'networkidle2', timeout: 60000 });
-  await new Promise(r => setTimeout(r, 1500)); // Wait for animations
+  await new Promise(r => setTimeout(r, 1500));
 
   await recorder.start(`${outputDir}/${name}.mp4`);
 
-  // Get scroll distance (only scroll ~60% of page for lighter feel)
-  const scrollHeight = await page.evaluate(() => document.body.scrollHeight);
-  const maxScroll = Math.min((scrollHeight - VIDEO_HEIGHT) * 0.6, 2000);
+  // Inject smooth scroll animation into page
+  const scrollDistance = await page.evaluate(() => {
+    const maxScroll = Math.min(
+      (document.body.scrollHeight - window.innerHeight) * 0.5,
+      1800
+    );
+    return maxScroll;
+  });
 
-  // 5 seconds at 30fps = 150 frames
-  const totalFrames = 150;
-  const frameDelay = 1000 / 30; // ~33ms per frame
+  // Smooth scroll animation using requestAnimationFrame
+  // Down for 2.5s, pause 0.5s, up for 2s = 5s total loop
+  await page.evaluate((distance) => {
+    return new Promise((resolve) => {
+      function easeInOutQuad(t) {
+        return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+      }
 
-  for (let frame = 0; frame <= totalFrames; frame++) {
-    const progress = frame / totalFrames;
-    const easedProgress = easeInOutCubic(progress);
-    const scrollY = easedProgress * maxScroll;
+      function smoothScroll(from, to, duration) {
+        return new Promise((res) => {
+          const start = performance.now();
+          function animate(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = easeInOutQuad(progress);
+            const current = from + (to - from) * eased;
+            window.scrollTo(0, current);
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            } else {
+              res();
+            }
+          }
+          requestAnimationFrame(animate);
+        });
+      }
 
-    await page.evaluate((y) => window.scrollTo(0, y), scrollY);
-    await new Promise(r => setTimeout(r, frameDelay));
-  }
+      async function run() {
+        await smoothScroll(0, distance, 2500);       // Scroll down (2.5s)
+        await new Promise(r => setTimeout(r, 500)); // Pause at bottom
+        await smoothScroll(distance, 0, 2000);       // Scroll up (2s)
+        resolve();
+      }
+      run();
+    });
+  }, scrollDistance);
 
-  await new Promise(r => setTimeout(r, 500));
+  await new Promise(r => setTimeout(r, 300));
   await recorder.stop();
   await browser.close();
   console.log(`Done: ${name}`);
