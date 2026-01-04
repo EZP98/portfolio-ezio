@@ -17,7 +17,7 @@ const templates = [
 const outputDir = './public/templates';
 const framesDir = './temp-frames';
 
-// Easing for smooth start/end
+// Smooth easing
 function easeInOutQuad(t) {
   return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
 }
@@ -39,18 +39,32 @@ async function recordTemplate(template) {
   await sleep(2000);
 
   const pageHeight = await page.evaluate(() => document.body.scrollHeight);
-  const scrollDistance = Math.min(pageHeight - 900, 800); // Scroll leggero
+  const scrollDistance = Math.min(pageHeight - 900, 600); // Scroll leggero
 
-  // 10 seconds at 30fps = 300 frames
-  const totalFrames = 300;
+  // 15 secondi totali a 30fps = 450 frames
+  const heroFrames = 90;    // 3 secondi hero statico
+  const scrollFrames = 300; // 10 secondi scroll lento
+  const endFrames = 60;     // 2 secondi pausa fine
+  const totalFrames = heroFrames + scrollFrames + endFrames;
 
   for (let i = 0; i < totalFrames; i++) {
-    const progress = i / (totalFrames - 1);
-    const eased = easeInOutQuad(progress);
-    const scrollY = eased * scrollDistance;
+    let scrollY = 0;
+
+    if (i < heroFrames) {
+      // Primi 3 secondi: hero statico
+      scrollY = 0;
+    } else if (i < heroFrames + scrollFrames) {
+      // 10 secondi: scroll lento con easing
+      const scrollProgress = (i - heroFrames) / scrollFrames;
+      const eased = easeInOutQuad(scrollProgress);
+      scrollY = eased * scrollDistance;
+    } else {
+      // Ultimi 2 secondi: pausa in basso
+      scrollY = scrollDistance;
+    }
 
     await page.evaluate((y) => window.scrollTo(0, y), scrollY);
-    await sleep(16); // Small delay for render
+    await sleep(16);
 
     await page.screenshot({
       path: path.join(templateFramesDir, `frame-${String(i).padStart(4, '0')}.png`),
@@ -60,7 +74,6 @@ async function recordTemplate(template) {
 
   await browser.close();
 
-  // ffmpeg: smooth video
   const outputPath = path.join(outputDir, `${template.name}.mp4`);
   try {
     execSync(`ffmpeg -y -framerate 30 -i "${templateFramesDir}/frame-%04d.png" -c:v libx264 -pix_fmt yuv420p -crf 20 "${outputPath}"`, { stdio: 'pipe' });
