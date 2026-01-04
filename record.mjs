@@ -39,10 +39,10 @@ async function recordTemplate(template) {
   await sleep(2000);
 
   const pageHeight = await page.evaluate(() => document.body.scrollHeight);
-  const scrollDistance = Math.min(pageHeight - 900, 1500); // Scroll leggero
+  const scrollDistance = Math.min(pageHeight - 900, 800); // Scroll leggero
 
-  // 5 seconds at 30fps = 150 frames
-  const totalFrames = 150;
+  // 10 seconds at 30fps = 300 frames
+  const totalFrames = 300;
 
   for (let i = 0; i < totalFrames; i++) {
     const progress = i / (totalFrames - 1);

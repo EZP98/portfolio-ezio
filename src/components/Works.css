@@ -139,8 +139,8 @@
 
 /* Templates - video fills container completely */
 .template-card .work-image-wrapper {
-  height: 400px;
-  aspect-ratio: unset;
+  height: auto;
+  aspect-ratio: 16 / 10;
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--border-color);
