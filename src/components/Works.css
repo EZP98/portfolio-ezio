@@ -137,9 +137,9 @@
   display: block;
 }
 
-/* Templates - 5:4 ratio for taller cards */
+/* Templates - 1:1 square ratio like projects */
 .template-card {
-  --card-aspect: 5 / 4;
+  --card-aspect: 1 / 1;
 }
 
 .template-card .work-image-wrapper {
