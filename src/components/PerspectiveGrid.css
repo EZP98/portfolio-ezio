@@ -77,15 +77,18 @@
 /* Responsive - Mobile */
 @media (max-width: 768px) {
   .perspective-grid {
-    min-height: 280px;
-    max-height: 350px;
+    min-height: 300px;
     perspective: 600px;
-    transform: scale(0.7);
-    transform-origin: center center;
+  }
+
+  .perspective-container {
+    width: 100%;
+    gap: 10px;
   }
 
   .perspective-column {
     gap: 8px;
+    max-width: calc((100% - 30px) / 4);
   }
 
   .perspective-item {
@@ -95,9 +98,16 @@
 
 @media (max-width: 480px) {
   .perspective-grid {
-    min-height: 250px;
-    max-height: 300px;
+    min-height: 280px;
     perspective: 500px;
-    transform: scale(0.6);
+  }
+
+  .perspective-container {
+    gap: 8px;
+  }
+
+  .perspective-column {
+    gap: 6px;
+    max-width: calc((100% - 24px) / 4);
   }
 }
