@@ -73,3 +73,31 @@
   object-fit: cover;
   display: block;
 }
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .perspective-grid {
+    min-height: 280px;
+    max-height: 350px;
+    perspective: 600px;
+    transform: scale(0.7);
+    transform-origin: center center;
+  }
+
+  .perspective-column {
+    gap: 8px;
+  }
+
+  .perspective-item {
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .perspective-grid {
+    min-height: 250px;
+    max-height: 300px;
+    perspective: 500px;
+    transform: scale(0.6);
+  }
+}
