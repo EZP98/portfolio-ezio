@@ -137,9 +137,9 @@
   display: block;
 }
 
-/* Templates - exact 16:10 ratio to match video (1440x900) */
+/* Templates - 4:3 ratio to match video (1440x1080) */
 .template-card {
-  --card-aspect: 16 / 10;
+  --card-aspect: 4 / 3;
 }
 
 .template-card .work-image-wrapper {

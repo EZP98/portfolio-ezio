@@ -9,7 +9,13 @@ const Introduction: React.FC = () => {
   const [isLocked, setIsLocked] = useState(false);
   const [animationProgress, setAnimationProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  // Initialize isMobile immediately to prevent race condition
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth <= 768;
+    }
+    return false;
+  });
   const progressRef = useRef(0);
 
   const text = t('introText');

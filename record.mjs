@@ -33,7 +33,7 @@ async function recordTemplate(template) {
 
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
-  await page.setViewport({ width: 1440, height: 900 });
+  await page.setViewport({ width: 1440, height: 1080 });  // 4:3 aspect ratio
 
   await page.goto(template.url, { waitUntil: 'networkidle2', timeout: 60000 });
   await sleep(2000);
