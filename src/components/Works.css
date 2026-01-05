@@ -137,9 +137,9 @@
   display: block;
 }
 
-/* Templates - 4:3 ratio to match video (1440x1080) */
+/* Templates - 5:4 ratio for taller cards */
 .template-card {
-  --card-aspect: 4 / 3;
+  --card-aspect: 5 / 4;
 }
 
 .template-card .work-image-wrapper {
