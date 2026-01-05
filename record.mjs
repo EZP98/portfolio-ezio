@@ -33,13 +33,13 @@ async function recordTemplate(template) {
 
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
-  await page.setViewport({ width: 1440, height: 1080 });  // 4:3 aspect ratio
+  await page.setViewport({ width: 1440, height: 1440 });  // 1:1 square aspect ratio
 
   await page.goto(template.url, { waitUntil: 'networkidle2', timeout: 60000 });
   await sleep(2000);
 
   const pageHeight = await page.evaluate(() => document.body.scrollHeight);
-  const scrollDistance = Math.min(pageHeight - 900, 600); // Scroll leggero
+  const scrollDistance = Math.min(pageHeight - 1440, 600); // Scroll leggero
 
   // 15 secondi totali a 30fps = 450 frames
   const heroFrames = 90;    // 3 secondi hero statico
