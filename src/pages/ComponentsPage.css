@@ -557,7 +557,7 @@
   .canvas-preview:has(.perspective-grid),
   .canvas-preview:has(.carousel3d-container),
   .canvas-preview:has(.globe-container) {
-    min-height: 350px;
+    min-height: 300px;
   }
 
   .canvas-info {

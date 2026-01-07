@@ -98,11 +98,9 @@
 
 @media (max-width: 480px) {
   .perspective-grid {
-    min-height: 250px;
-    max-height: 350px;
+    min-height: 100%;
+    height: 100%;
     perspective: 400px;
-    transform: scale(0.85);
-    transform-origin: center center;
   }
 
   .perspective-container {
