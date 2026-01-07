@@ -477,9 +477,16 @@
 
   .canvas-preview {
     flex: 1;
-    min-height: 350px;
-    height: 350px;
+    min-height: 300px;
+    height: auto;
     border-radius: 12px;
+  }
+
+  /* 3D components need more space */
+  .canvas-preview:has(.perspective-grid),
+  .canvas-preview:has(.carousel3d-container),
+  .canvas-preview:has(.globe-container) {
+    min-height: 400px;
   }
 
   .canvas-info {
@@ -537,13 +544,20 @@
   }
 
   .components-canvas {
-    min-height: 350px;
+    min-height: 320px;
   }
 
   .canvas-preview {
     flex: 1;
-    min-height: 300px;
-    height: 300px;
+    min-height: 280px;
+    height: auto;
+  }
+
+  /* 3D components on small mobile */
+  .canvas-preview:has(.perspective-grid),
+  .canvas-preview:has(.carousel3d-container),
+  .canvas-preview:has(.globe-container) {
+    min-height: 350px;
   }
 
   .canvas-info {

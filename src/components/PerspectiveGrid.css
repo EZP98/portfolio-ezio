@@ -98,16 +98,28 @@
 
 @media (max-width: 480px) {
   .perspective-grid {
-    min-height: 280px;
-    perspective: 500px;
+    min-height: 250px;
+    max-height: 350px;
+    perspective: 400px;
+    transform: scale(0.85);
+    transform-origin: center center;
   }
 
   .perspective-container {
-    gap: 8px;
+    gap: 6px;
   }
 
   .perspective-column {
     gap: 6px;
-    max-width: calc((100% - 24px) / 4);
+    max-width: calc((100% - 18px) / 3);
+  }
+
+  /* Hide 4th column on small mobile */
+  .perspective-column:nth-child(4) {
+    display: none;
+  }
+
+  .perspective-item {
+    border-radius: 6px;
   }
 }
