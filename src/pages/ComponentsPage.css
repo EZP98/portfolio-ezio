@@ -311,6 +311,16 @@
   animation: bounce 2s infinite;
 }
 
+.reveal-demo-text {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  padding: 20px 0;
+  max-width: 400px;
+  text-align: center;
+}
+
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }

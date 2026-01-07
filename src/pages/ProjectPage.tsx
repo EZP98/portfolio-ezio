@@ -124,7 +124,7 @@ const ProjectPage = () => {
           </div>
         </div>
 
-        {/* Gallery - Full Width Below */}
+        {/* Gallery - Only show if images exist */}
         {project.gallery.length > 0 && (
           <section className="project-section project-gallery-section">
             <h2 className="project-section-title">Gallery</h2>
@@ -134,21 +134,6 @@ const ProjectPage = () => {
                   <img src={image} alt={`${project.title} screenshot ${index + 1}`} />
                 </div>
               ))}
-            </div>
-          </section>
-        )}
-
-        {/* Placeholder gallery when empty */}
-        {project.gallery.length === 0 && (
-          <section className="project-section project-gallery-section">
-            <h2 className="project-section-title">Gallery</h2>
-            <div className="project-gallery">
-              <div className="project-gallery-item">
-                <span className="project-gallery-placeholder">Coming soon</span>
-              </div>
-              <div className="project-gallery-item">
-                <span className="project-gallery-placeholder">Coming soon</span>
-              </div>
             </div>
           </section>
         )}
