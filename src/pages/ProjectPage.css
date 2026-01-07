@@ -222,18 +222,18 @@
 }
 
 .project-tech-tag {
-  padding: 10px 16px;
+  padding: 6px 12px;
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  border-radius: 10px;
-  font-size: 14px;
+  border-radius: 8px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--text-primary);
 }
 
 /* About Section */
 .project-about {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--text-secondary);
   line-height: 1.8;
   white-space: pre-line;
