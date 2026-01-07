@@ -191,8 +191,9 @@ const ComponentsPage: React.FC = () => {
       case 'RollingText':
         return (
           <div className="preview-rolling">
-            <span>{language === 'it' ? 'Creo ' : 'I create '}</span>
-            <RollingText>products</RollingText>
+            <RollingText auto interval={2500}>
+              {language === 'it' ? 'Creo prodotti' : 'I create products'}
+            </RollingText>
           </div>
         );
       case 'GradualBlur':

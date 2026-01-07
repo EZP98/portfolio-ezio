@@ -1,0 +1,360 @@
+/* ProjectPage - Framer-style project detail page */
+
+.project-page {
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.project-main {
+  padding: 100px 40px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Back Button */
+.project-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 32px;
+}
+
+.project-back:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.project-back svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Hero Image */
+.project-hero {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  margin-bottom: 48px;
+}
+
+.project-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Header Section */
+.project-header {
+  margin-bottom: 48px;
+}
+
+.project-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.project-category-dots {
+  display: flex;
+  gap: 3px;
+}
+
+.project-category-dot {
+  width: 3px;
+  height: 3px;
+  background: var(--text-secondary);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.project-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.project-description {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+
+/* Actions Row */
+.project-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.project-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.project-status.live {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.project-status.live .project-status-dot {
+  background: #22c55e;
+}
+
+.project-status.development {
+  background: rgba(234, 179, 8, 0.1);
+  color: #eab308;
+}
+
+.project-status.development .project-status-dot {
+  background: #eab308;
+}
+
+.project-status.idea {
+  background: rgba(107, 114, 128, 0.1);
+  color: #6b7280;
+}
+
+.project-status.idea .project-status-dot {
+  background: #6b7280;
+}
+
+.project-visit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.project-visit:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.project-visit svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Tech Stack Section */
+.project-section {
+  margin-bottom: 48px;
+}
+
+.project-section-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 16px;
+}
+
+.project-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-tech-tag {
+  padding: 10px 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* About Section */
+.project-about {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  white-space: pre-line;
+  max-width: 800px;
+}
+
+/* Gallery Section */
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.project-gallery-item {
+  aspect-ratio: 16 / 10;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.project-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-gallery-placeholder {
+  font-size: 14px;
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+/* 404 State */
+.project-not-found {
+  text-align: center;
+  padding: 120px 40px;
+}
+
+.project-not-found h1 {
+  font-size: 120px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  opacity: 0.1;
+}
+
+.project-not-found p {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin: 0 0 32px;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .project-main {
+    padding: 90px 32px 60px;
+  }
+
+  .project-title {
+    font-size: 40px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .project-main {
+    padding: 80px 20px 60px;
+  }
+
+  .project-hero {
+    border-radius: 16px;
+    margin-bottom: 32px;
+  }
+
+  .project-header {
+    margin-bottom: 32px;
+  }
+
+  .project-title {
+    font-size: 32px;
+  }
+
+  .project-description {
+    font-size: 16px;
+  }
+
+  .project-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-section {
+    margin-bottom: 32px;
+  }
+
+  .project-gallery {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .project-gallery-item {
+    border-radius: 12px;
+  }
+
+  .project-about {
+    font-size: 15px;
+  }
+}
+
+/* Responsive - Small Mobile */
+@media (max-width: 480px) {
+  .project-main {
+    padding: 70px 16px 40px;
+  }
+
+  .project-back {
+    padding: 8px 14px;
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+
+  .project-hero {
+    border-radius: 12px;
+    margin-bottom: 24px;
+  }
+
+  .project-title {
+    font-size: 26px;
+  }
+
+  .project-description {
+    font-size: 15px;
+  }
+
+  .project-tech-tag {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .project-not-found h1 {
+    font-size: 80px;
+  }
+}

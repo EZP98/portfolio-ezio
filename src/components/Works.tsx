@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom';
 import ScrollReveal from './ScrollReveal';
 import './Works.css';
 
 interface Project {
   id: string;
+  slug: string;
   title: string;
   category: string;
   description: string;
@@ -14,6 +16,7 @@ const Works: React.FC = () => {
   const projects: Project[] = [
     {
       id: '1',
+      slug: 'cocktail-ai',
       title: 'Cocktail AI',
       category: 'AI Product',
       description: 'AI-powered cocktail discovery con Claude',
@@ -22,6 +25,7 @@ const Works: React.FC = () => {
     },
     {
       id: '2',
+      slug: 'adele-lo-feudo',
       title: 'Adele Lo Feudo',
       category: 'Client Work',
       description: 'Portfolio pittrice contemporanea italiana',
@@ -30,6 +34,7 @@ const Works: React.FC = () => {
     },
     {
       id: '3',
+      slug: 'gusto',
       title: 'Gusto',
       category: 'AI Product',
       description: 'AI recipe assistant con Claude',
@@ -38,6 +43,7 @@ const Works: React.FC = () => {
     },
     {
       id: '4',
+      slug: 'brickgen',
       title: 'Brickgen',
       category: 'AI Product',
       description: 'AI LEGO model generator con parti reali',
@@ -46,6 +52,7 @@ const Works: React.FC = () => {
     },
     {
       id: '5',
+      slug: 'objects',
       title: 'Objects',
       category: 'Dev Tool',
       description: 'Visual Editor per React projects',
@@ -54,6 +61,7 @@ const Works: React.FC = () => {
     },
     {
       id: '6',
+      slug: 'ritorno',
       title: 'Ritorno',
       category: 'Client Work',
       description: 'Mostra d\'arte di Adele Lo Feudo',
@@ -65,6 +73,7 @@ const Works: React.FC = () => {
   const templates: Project[] = [
     {
       id: 't1',
+      slug: 'slate',
       title: 'Slate',
       category: 'Portfolio',
       description: 'Minimal agency template',
@@ -73,6 +82,7 @@ const Works: React.FC = () => {
     },
     {
       id: 't2',
+      slug: 'orbit',
       title: 'Orbit',
       category: 'Portfolio',
       description: 'Portfolio con globe 3D interattivo',
@@ -81,6 +91,7 @@ const Works: React.FC = () => {
     },
     {
       id: 't3',
+      slug: 'nova',
       title: 'Nova',
       category: 'Portfolio',
       description: 'Creative modern portfolio',
@@ -89,6 +100,7 @@ const Works: React.FC = () => {
     },
     {
       id: 't4',
+      slug: 'ferrero-rocher',
       title: 'Ferrero Rocher',
       category: 'Portfolio',
       description: 'Luxury style portfolio',
@@ -97,6 +109,7 @@ const Works: React.FC = () => {
     },
     {
       id: 't5',
+      slug: 'obsidian',
       title: 'Obsidian',
       category: 'Portfolio',
       description: 'Dark minimal template',
@@ -105,6 +118,7 @@ const Works: React.FC = () => {
     },
     {
       id: 't6',
+      slug: 'aurora',
       title: 'Aurora',
       category: 'Landing',
       description: 'Modern responsive landing',
@@ -125,11 +139,9 @@ const Works: React.FC = () => {
         <div className="works-grid">
           {projects.map((project, index) => (
             <ScrollReveal key={project.id} delay={index * 100}>
-              <a
-                href={project.link}
+              <Link
+                to={`/projects/${project.slug}`}
                 className="work-card"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 <div className="work-image-wrapper">
                   <img
@@ -157,7 +169,7 @@ const Works: React.FC = () => {
                   <span className="work-name">{project.title}</span>
                   <p className="work-description">{project.description}</p>
                 </div>
-              </a>
+              </Link>
             </ScrollReveal>
           ))}
         </div>

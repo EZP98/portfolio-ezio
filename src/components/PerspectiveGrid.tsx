@@ -47,10 +47,28 @@ const PerspectiveGrid: React.FC<PerspectiveGridProps> = ({
   dark = false,
 }) => {
   const [scrollY, setScrollY] = useState(0);
+  const [scale, setScale] = useState(1);
   const timeRef = useRef(0);
   const animationRef = useRef<number | null>(null);
 
-  const setHeight = calculateSetHeight(baseHeights[0]);
+  // Responsive scale factor
+  useEffect(() => {
+    const updateScale = () => {
+      const width = window.innerWidth;
+      if (width <= 480) {
+        setScale(0.4);
+      } else if (width <= 768) {
+        setScale(0.5);
+      } else {
+        setScale(1);
+      }
+    };
+    updateScale();
+    window.addEventListener('resize', updateScale);
+    return () => window.removeEventListener('resize', updateScale);
+  }, []);
+
+  const setHeight = calculateSetHeight(baseHeights[0]) * scale;
   const bgColor = dark ? 'rgb(8, 8, 8)' : 'rgb(255, 255, 255)';
 
   useEffect(() => {
@@ -93,9 +111,10 @@ const PerspectiveGrid: React.FC<PerspectiveGridProps> = ({
         {columnHeights.map((heights, colIndex) => (
           <div key={colIndex} className="perspective-column">
             {heights.map((height, itemIndex) => {
-              const zDepth = (itemIndex % 14) * 10;
-              const shadowBase = 4 + (itemIndex % 14) * 2;
-              const waveY = getWaveOffset(colIndex, itemIndex);
+              const scaledHeight = height * scale;
+              const zDepth = (itemIndex % 14) * 10 * scale;
+              const shadowBase = (4 + (itemIndex % 14) * 2) * scale;
+              const waveY = getWaveOffset(colIndex, itemIndex) * scale;
               const imgIndex = (colIndex * 4 + itemIndex) % images.length;
 
               return (
@@ -103,7 +122,7 @@ const PerspectiveGrid: React.FC<PerspectiveGridProps> = ({
                   key={itemIndex}
                   className="perspective-item"
                   style={{
-                    height: `${height}px`,
+                    height: `${scaledHeight}px`,
                     boxShadow: `rgba(0, 0, 0, 0.1) 0px ${shadowBase}px ${shadowBase * 3}px`,
                     transform: `translateZ(${zDepth}px) translateY(${waveY}px)`,
                   }}

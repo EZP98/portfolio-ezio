@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './LogoParticles.css';
 
 interface Particle {
@@ -25,12 +25,37 @@ interface LogoParticlesProps {
 }
 
 const LogoParticles: React.FC<LogoParticlesProps> = ({
-  size = 400,
+  size: propSize = 400,
   letter = 'E',
   particleColor = 'rgba(255, 255, 255, 0.9)',
   backgroundColor = '#000000',
-  mouseRadius = 80,
+  mouseRadius: propMouseRadius = 80,
 }) => {
+  // Responsive size
+  const [responsiveSize, setResponsiveSize] = useState(propSize);
+  const [responsiveMouseRadius, setResponsiveMouseRadius] = useState(propMouseRadius);
+
+  useEffect(() => {
+    const updateSize = () => {
+      const vw = window.innerWidth;
+      if (vw <= 480) {
+        setResponsiveSize(Math.min(propSize, 200));
+        setResponsiveMouseRadius(Math.min(propMouseRadius, 50));
+      } else if (vw <= 768) {
+        setResponsiveSize(Math.min(propSize, 280));
+        setResponsiveMouseRadius(Math.min(propMouseRadius, 60));
+      } else {
+        setResponsiveSize(propSize);
+        setResponsiveMouseRadius(propMouseRadius);
+      }
+    };
+    updateSize();
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, [propSize, propMouseRadius]);
+
+  const size = responsiveSize;
+  const mouseRadius = responsiveMouseRadius;
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
   const mouseRef = useRef({ x: -1000, y: -1000, radius: mouseRadius });

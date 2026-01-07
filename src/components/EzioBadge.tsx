@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import './EzioBadge.css';
 
@@ -18,9 +18,29 @@ const EzioBadge: React.FC<EzioBadgeProps> = ({
   role = 'VIBE CODER',
   date = 'NOV 6 2026',
   footer = 'PORTFOLIO EZIO',
-  width = 500,
-  height = 600,
+  width: propWidth = 500,
+  height: propHeight = 600,
 }) => {
+  // Responsive dimensions
+  const [dimensions, setDimensions] = useState({ width: propWidth, height: propHeight });
+
+  useEffect(() => {
+    const updateDimensions = () => {
+      const vw = window.innerWidth;
+      if (vw <= 480) {
+        setDimensions({ width: Math.min(propWidth, 220), height: Math.min(propHeight, 280) });
+      } else if (vw <= 768) {
+        setDimensions({ width: Math.min(propWidth, 280), height: Math.min(propHeight, 350) });
+      } else {
+        setDimensions({ width: propWidth, height: propHeight });
+      }
+    };
+    updateDimensions();
+    window.addEventListener('resize', updateDimensions);
+    return () => window.removeEventListener('resize', updateDimensions);
+  }, [propWidth, propHeight]);
+
+  const { width, height } = dimensions;
   const containerRef = useRef<HTMLDivElement>(null);
   const initialized = useRef(false);
 

@@ -84,3 +84,54 @@
   transition: transform 0.2s ease-out;
   opacity: 1;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .shiny-badge-container {
+    width: 340px;
+    height: 80px;
+  }
+
+  .shiny-badge-content {
+    padding: 0 16px;
+    gap: 12px;
+  }
+
+  .shiny-badge-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .shiny-badge-title {
+    font-size: 12px;
+  }
+
+  .shiny-badge-subtitle {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .shiny-badge-container {
+    width: 280px;
+    height: 70px;
+  }
+
+  .shiny-badge-content {
+    padding: 0 12px;
+    gap: 10px;
+  }
+
+  .shiny-badge-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .shiny-badge-title {
+    font-size: 10px;
+  }
+
+  .shiny-badge-subtitle {
+    font-size: 16px;
+  }
+}

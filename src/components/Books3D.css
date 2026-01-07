@@ -102,3 +102,60 @@
     4px 0 16px rgba(0, 0, 0, 0.2),
     0 8px 24px rgba(0, 0, 0, 0.15);
 }
+
+/* Responsive - Tablet */
+@media (max-width: 768px) {
+  .books3d-grid {
+    gap: 24px;
+    padding: 16px 30px;
+  }
+
+  .books3d-inner {
+    width: 100px;
+    height: 150px;
+  }
+
+  .books3d-title {
+    font-size: 12px;
+  }
+
+  .books3d-author {
+    font-size: 8px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+  .books3d-grid {
+    gap: 16px;
+    padding: 12px 20px;
+  }
+
+  .books3d-inner {
+    width: 100px;
+    height: 150px;
+  }
+
+  .books3d-book {
+    perspective: 800px;
+  }
+
+  /* Hide first and third books, show only central one */
+  .books3d-book:nth-child(1),
+  .books3d-book:nth-child(3) {
+    display: none;
+  }
+
+  .books3d-title {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .books3d-author {
+    font-size: 8px;
+  }
+
+  .books3d-pages {
+    padding: 10px 8px;
+  }
+}

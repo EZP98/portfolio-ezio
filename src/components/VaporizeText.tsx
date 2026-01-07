@@ -22,9 +22,9 @@ interface VaporizeTextProps {
 
 const VaporizeText: React.FC<VaporizeTextProps> = ({
   texts = ['Your Text', 'Components', 'Creative', 'Amazing'],
-  width = 700,
-  height = 300,
-  fontSize = 90,
+  width: propWidth = 700,
+  height: propHeight = 300,
+  fontSize: propFontSize = 90,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | null>(null);
@@ -34,6 +34,27 @@ const VaporizeText: React.FC<VaporizeTextProps> = ({
     phaseTimer: 0,
     waveX: 0,
   });
+
+  // Responsive dimensions
+  const [dimensions, setDimensions] = React.useState({ width: propWidth, height: propHeight, fontSize: propFontSize });
+
+  React.useEffect(() => {
+    const updateDimensions = () => {
+      const vw = window.innerWidth;
+      if (vw <= 480) {
+        setDimensions({ width: 280, height: 120, fontSize: 36 });
+      } else if (vw <= 768) {
+        setDimensions({ width: 350, height: 150, fontSize: 48 });
+      } else {
+        setDimensions({ width: propWidth, height: propHeight, fontSize: propFontSize });
+      }
+    };
+    updateDimensions();
+    window.addEventListener('resize', updateDimensions);
+    return () => window.removeEventListener('resize', updateDimensions);
+  }, [propWidth, propHeight, propFontSize]);
+
+  const { width, height, fontSize } = dimensions;
 
   useEffect(() => {
     const canvas = canvasRef.current;

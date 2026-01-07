@@ -66,3 +66,35 @@
   mix-blend-mode: overlay;
   pointer-events: none;
 }
+
+/* Responsive - Tablet */
+@media (max-width: 768px) {
+  .carousel3d-container {
+    perspective: 900px;
+  }
+
+  .carousel3d-item {
+    width: 60px;
+    height: 86px;
+    margin-left: -30px;
+    margin-top: -43px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+  .carousel3d-container {
+    perspective: 700px;
+  }
+
+  .carousel3d-item {
+    width: 50px;
+    height: 71px;
+    margin-left: -25px;
+    margin-top: -35px;
+  }
+
+  .carousel3d-card {
+    border-radius: 4px;
+  }
+}

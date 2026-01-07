@@ -27,7 +27,25 @@ const ImageMarquee: React.FC<ImageMarqueeProps> = ({
   const [isPaused, setIsPaused] = useState(false);
   const animationRef = useRef<number | undefined>(undefined);
 
-  const itemWidth = 216; // 200px card + 16px gap
+  // Responsive item width (card width + gap) - must match CSS
+  const [itemWidth, setItemWidth] = useState(216); // 200px card + 16px gap
+
+  useEffect(() => {
+    const updateItemWidth = () => {
+      const vw = window.innerWidth;
+      if (vw <= 480) {
+        setItemWidth(140); // 130px card + 10px gap
+      } else if (vw <= 768) {
+        setItemWidth(172); // 160px card + 12px gap
+      } else {
+        setItemWidth(216); // 200px card + 16px gap
+      }
+    };
+    updateItemWidth();
+    window.addEventListener('resize', updateItemWidth);
+    return () => window.removeEventListener('resize', updateItemWidth);
+  }, []);
+
   const totalWidth = itemWidth * images.length;
 
   useEffect(() => {

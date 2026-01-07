@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './ElectricCard.css';
 
 interface ElectricCardProps {
@@ -11,9 +11,29 @@ interface ElectricCardProps {
 const ElectricCard: React.FC<ElectricCardProps> = ({
   children,
   color = 'rgb(5, 118, 255)',
-  width = 300,
-  height = 400,
+  width: propWidth = 300,
+  height: propHeight = 400,
 }) => {
+  // Responsive dimensions
+  const [dimensions, setDimensions] = useState({ width: propWidth, height: propHeight });
+
+  useEffect(() => {
+    const updateDimensions = () => {
+      const vw = window.innerWidth;
+      if (vw <= 480) {
+        setDimensions({ width: Math.min(propWidth, 200), height: Math.min(propHeight, 280) });
+      } else if (vw <= 768) {
+        setDimensions({ width: Math.min(propWidth, 240), height: Math.min(propHeight, 320) });
+      } else {
+        setDimensions({ width: propWidth, height: propHeight });
+      }
+    };
+    updateDimensions();
+    window.addEventListener('resize', updateDimensions);
+    return () => window.removeEventListener('resize', updateDimensions);
+  }, [propWidth, propHeight]);
+
+  const { width, height } = dimensions;
   const filterId = `turbulent-displace-${Math.random().toString(36).substr(2, 9)}`;
 
   return (

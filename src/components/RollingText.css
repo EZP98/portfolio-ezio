@@ -37,6 +37,11 @@ button:hover .rolling-text-letter {
   transform: translateY(-100%);
 }
 
+/* Auto-rolling active state */
+.rolling-text-active .rolling-text-letter {
+  transform: translateY(-100%);
+}
+
 /* Staggered animation delays - extended for longer words */
 .rolling-text-letter:nth-child(1) { transition-delay: 0s; }
 .rolling-text-letter:nth-child(2) { transition-delay: 0.02s; }
@@ -50,8 +55,16 @@ button:hover .rolling-text-letter {
 .rolling-text-letter:nth-child(10) { transition-delay: 0.18s; }
 .rolling-text-letter:nth-child(11) { transition-delay: 0.2s; }
 .rolling-text-letter:nth-child(12) { transition-delay: 0.22s; }
+.rolling-text-letter:nth-child(13) { transition-delay: 0.24s; }
+.rolling-text-letter:nth-child(14) { transition-delay: 0.26s; }
+.rolling-text-letter:nth-child(15) { transition-delay: 0.28s; }
+.rolling-text-letter:nth-child(16) { transition-delay: 0.30s; }
+.rolling-text-letter:nth-child(17) { transition-delay: 0.32s; }
+.rolling-text-letter:nth-child(18) { transition-delay: 0.34s; }
+.rolling-text-letter:nth-child(19) { transition-delay: 0.36s; }
+.rolling-text-letter:nth-child(20) { transition-delay: 0.38s; }
 
 /* Reset delay on hover out for smoother reverse animation */
-.rolling-text:not(:hover) .rolling-text-letter {
+.rolling-text:not(:hover):not(.rolling-text-active) .rolling-text-letter {
   transition-delay: 0s !important;
 }

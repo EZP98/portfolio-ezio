@@ -40,6 +40,25 @@ const Carousel3D: React.FC<Carousel3DProps> = ({
   const lastPos = useRef({ x: 0, y: 0 });
   const animationRef = useRef<number | null>(null);
 
+  // Responsive scale and translateZ
+  const [translateZ, setTranslateZ] = useState({ z1: 148, z2: 82, scale: 0.8 });
+
+  useEffect(() => {
+    const updateTranslateZ = () => {
+      const vw = window.innerWidth;
+      if (vw <= 480) {
+        setTranslateZ({ z1: 90, z2: 50, scale: 0.6 });
+      } else if (vw <= 768) {
+        setTranslateZ({ z1: 110, z2: 60, scale: 0.7 });
+      } else {
+        setTranslateZ({ z1: 148, z2: 82, scale: 0.8 });
+      }
+    };
+    updateTranslateZ();
+    window.addEventListener('resize', updateTranslateZ);
+    return () => window.removeEventListener('resize', updateTranslateZ);
+  }, []);
+
   useEffect(() => {
     const animate = () => {
       if (!isDragging) {
@@ -88,7 +107,7 @@ const Carousel3D: React.FC<Carousel3DProps> = ({
         key={i}
         className="carousel3d-item"
         style={{
-          transform: `rotateY(${angle}deg) translateZ(148px) rotateX(0deg) translateZ(82px) rotateY(90deg) scale(0.8)`,
+          transform: `rotateY(${angle}deg) translateZ(${translateZ.z1}px) rotateX(0deg) translateZ(${translateZ.z2}px) rotateY(90deg) scale(${translateZ.scale})`,
         }}
       >
         <div className="carousel3d-card">
