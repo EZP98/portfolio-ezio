@@ -171,19 +171,25 @@ const ComponentsPage: React.FC = () => {
                 {language === 'it' ? 'Scorri verso il basso' : 'Scroll down'}
               </div>
               <ScrollReveal>
-                <div className="reveal-demo-box">Element 1</div>
+                <p className="reveal-demo-text">
+                  {language === 'it'
+                    ? 'Sono un designer e sviluppatore creativo con passione per le esperienze digitali uniche.'
+                    : 'I am a creative designer and developer with a passion for unique digital experiences.'}
+                </p>
               </ScrollReveal>
               <ScrollReveal delay={100}>
-                <div className="reveal-demo-box">Element 2</div>
+                <p className="reveal-demo-text">
+                  {language === 'it'
+                    ? 'Creo interfacce intuitive che combinano estetica e funzionalita.'
+                    : 'I create intuitive interfaces that combine aesthetics and functionality.'}
+                </p>
               </ScrollReveal>
               <ScrollReveal delay={200}>
-                <div className="reveal-demo-box">Element 3</div>
-              </ScrollReveal>
-              <ScrollReveal variant="up">
-                <div className="reveal-demo-box reveal-up">Slide Up</div>
-              </ScrollReveal>
-              <ScrollReveal variant="fade">
-                <div className="reveal-demo-box reveal-fade">Fade In</div>
+                <p className="reveal-demo-text">
+                  {language === 'it'
+                    ? 'Ogni progetto e un\'opportunita per esplorare nuove idee e tecnologie.'
+                    : 'Every project is an opportunity to explore new ideas and technologies.'}
+                </p>
               </ScrollReveal>
             </div>
           </div>

@@ -25,7 +25,7 @@
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
-  margin-bottom: 32px;
+  margin-bottom: 48px;
 }
 
 .project-back:hover {
@@ -38,15 +38,36 @@
   height: 16px;
 }
 
+/* Two Column Layout */
+.project-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  margin-bottom: 80px;
+}
+
+/* Left - Text Content */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Right - Visual */
+.project-visual {
+  position: sticky;
+  top: 120px;
+}
+
 /* Hero Image */
 .project-hero {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   border-radius: 20px;
   overflow: hidden;
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  margin-bottom: 48px;
 }
 
 .project-hero img {
@@ -267,14 +288,23 @@
   margin: 0 0 32px;
 }
 
+/* Gallery Section - Full Width */
+.project-gallery-section {
+  margin-top: 0;
+}
+
 /* Responsive - Tablet */
 @media (max-width: 1024px) {
   .project-main {
     padding: 90px 32px 60px;
   }
 
+  .project-layout {
+    gap: 40px;
+  }
+
   .project-title {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 
@@ -284,17 +314,24 @@
     padding: 80px 20px 60px;
   }
 
-  .project-hero {
-    border-radius: 16px;
-    margin-bottom: 32px;
+  .project-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 
-  .project-header {
-    margin-bottom: 32px;
+  .project-visual {
+    position: relative;
+    top: 0;
+    order: -1;
+  }
+
+  .project-hero {
+    border-radius: 16px;
+    aspect-ratio: 16 / 10;
   }
 
   .project-title {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .project-description {
@@ -338,11 +375,10 @@
 
   .project-hero {
     border-radius: 12px;
-    margin-bottom: 24px;
   }
 
   .project-title {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .project-description {
