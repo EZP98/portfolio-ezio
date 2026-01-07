@@ -19,12 +19,12 @@ export const projects: ProjectDetail[] = [
     slug: 'cocktail-ai',
     title: 'Cocktail AI',
     category: 'AI Product',
-    description: 'AI-powered cocktail discovery con Claude',
-    longDescription: `Cocktail AI e' un assistente intelligente per la mixology, alimentato da Claude.
+    description: 'Assistente AI per bartender e appassionati di mixology',
+    longDescription: `Un assistente conversazionale progettato per il mondo della mixology professionale.
 
-Il sistema utilizza RAG (Retrieval-Augmented Generation) per fornire ricette accurate basate su una knowledge base di oltre 1000 cocktail classici e moderni. Include gestione inventario bar, calcolo costi, e suggerimenti basati sugli ingredienti disponibili.
+Il cuore del sistema è un motore RAG che attinge da una knowledge base di oltre 1000 ricette - dai classici IBA alle creazioni contemporanee. Ma Cocktail AI va oltre le semplici ricette: gestisce l'inventario del bar, calcola i costi per drink, e suggerisce cocktail realizzabili con gli ingredienti disponibili.
 
-L'interfaccia conversazionale permette di chiedere ricette, alternative agli ingredienti, e consigli di abbinamento in linguaggio naturale.`,
+L'interazione avviene in linguaggio naturale. Puoi chiedere varianti di un cocktail, sostituzioni per ingredienti mancanti, o abbinamenti per un menu specifico.`,
     link: 'https://cocktail-ai.pages.dev',
     image: 'https://api.microlink.io/?url=https://cocktail-ai.pages.dev&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=2000',
     gallery: [],
@@ -37,12 +37,12 @@ L'interfaccia conversazionale permette di chiedere ricette, alternative agli ing
     slug: 'adele-lo-feudo',
     title: 'Adele Lo Feudo',
     category: 'Client Work',
-    description: 'Portfolio pittrice contemporanea italiana',
-    longDescription: `Sito portfolio per Adele Lo Feudo, pittrice contemporanea italiana.
+    description: 'Portfolio per artista contemporanea',
+    longDescription: `Portfolio digitale per Adele Lo Feudo, pittrice contemporanea siciliana.
 
-Il design minimalista mette in risalto le opere dell'artista con transizioni fluide e una galleria immersiva. L'architettura del sito e' ottimizzata per showcasing di opere d'arte con attenzione ai colori e alla fedeltà cromatica.
+Il progetto nasce dalla necessità di creare uno spazio digitale che rispettasse l'intensità cromatica e la matericità delle opere. Il design è volutamente minimale: fondi neutri, tipografia essenziale, e transizioni fluide che non distraggono dall'arte.
 
-Include sezioni biografia, mostre, e contatti con form integrato.`,
+La galleria è costruita per garantire fedeltà cromatica su diversi dispositivi. Include sezioni dedicate alla biografia dell'artista, alle mostre passate e future, e un sistema di contatto diretto.`,
     link: 'https://adelelofeudo.com',
     image: 'https://api.microlink.io/?url=https://adelelofeudo.com&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=1000',
     gallery: [],
@@ -55,12 +55,12 @@ Include sezioni biografia, mostre, e contatti con form integrato.`,
     slug: 'gusto',
     title: 'Gusto',
     category: 'AI Product',
-    description: 'AI recipe assistant con Claude',
-    longDescription: `Gusto e' un assistente culinario AI che aiuta a scoprire e creare ricette personalizzate.
+    description: 'Assistente culinario AI per ricette personalizzate',
+    longDescription: `Un compagno di cucina che comprende le tue esigenze alimentari.
 
-Utilizza Claude per comprendere le preferenze alimentari, restrizioni dietetiche, e ingredienti disponibili per suggerire ricette su misura. Il sistema include una knowledge base di ricette italiane tradizionali e internazionali.
+Gusto utilizza Claude per interpretare richieste complesse: "cosa posso cucinare con quello che ho in frigo?", "una cena veloce senza glutine", "qualcosa di simile alla carbonara ma vegetariano". Il sistema considera preferenze, restrizioni dietetiche e ingredienti disponibili.
 
-L'interfaccia chat-based rende l'esperienza naturale e conversazionale.`,
+La knowledge base spazia dalla tradizione italiana alle cucine internazionali. Ogni ricetta include tempi, difficoltà, e suggerimenti per varianti.`,
     link: 'https://gusto-8cx.pages.dev',
     image: 'https://api.microlink.io/?url=https://gusto-8cx.pages.dev&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=2000',
     gallery: [],
@@ -73,12 +73,12 @@ L'interfaccia chat-based rende l'esperienza naturale e conversazionale.`,
     slug: 'brickgen',
     title: 'Brickgen',
     category: 'AI Product',
-    description: 'AI LEGO model generator con parti reali',
-    longDescription: `Brickgen genera modelli LEGO buildable a partire da descrizioni testuali o immagini.
+    description: 'Genera modelli LEGO costruibili da testo o immagini',
+    longDescription: `Trasforma idee in modelli LEGO che puoi davvero costruire.
 
-Il sistema utilizza Claude per analizzare l'input e un pipeline multi-agente per generare istruzioni di costruzione step-by-step utilizzando solo pezzi LEGO reali dal database Rebrickable. Include visualizzazione 3D interattiva del modello.
+A differenza di altri generatori, Brickgen utilizza esclusivamente pezzi reali dal database Rebrickable. Descrivi quello che vuoi costruire - o carica un'immagine - e il sistema genera istruzioni step-by-step con pezzi acquistabili.
 
-Ogni modello generato e' effettivamente costruibile con pezzi acquistabili.`,
+Il motore è una pipeline multi-agente: analisi dell'input, progettazione strutturale, ottimizzazione dei pezzi, e generazione delle istruzioni. Il risultato è visualizzabile in 3D interattivo prima di procedere all'acquisto.`,
     link: 'https://brickgen.pages.dev',
     image: 'https://api.microlink.io/?url=https://brickgen.pages.dev&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=2000',
     gallery: [],
@@ -91,12 +91,12 @@ Ogni modello generato e' effettivamente costruibile con pezzi acquistabili.`,
     slug: 'objects',
     title: 'Objects',
     category: 'Dev Tool',
-    description: 'Visual Editor per React projects',
-    longDescription: `Objects e' un visual editor che permette di creare e modificare componenti React in modo visuale.
+    description: 'Editor visuale per progetti React',
+    longDescription: `Un ponte tra design e sviluppo.
 
-Basato su Polotno, offre un'interfaccia drag-and-drop per costruire layout, gestire assets, e esportare codice React pulito. Include libreria di componenti predefiniti e supporto per custom components.
+Objects permette di costruire interfacce React in modo visuale, senza sacrificare la qualità del codice generato. Drag-and-drop per posizionare elementi, pannelli per gestire props e stili, export in codice React pulito e manutenibile.
 
-Pensato per designers che vogliono prototipare rapidamente senza scrivere codice.`,
+Costruito su Polotno, include una libreria di componenti pronti all'uso e supporta l'importazione di componenti custom. Pensato per designer che vogliono prototipare rapidamente e sviluppatori che preferiscono un approccio visuale.`,
     link: 'https://objects-ef4.pages.dev',
     image: 'https://api.microlink.io/?url=https://objects-ef4.pages.dev&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=2000',
     gallery: [],
@@ -109,12 +109,12 @@ Pensato per designers che vogliono prototipare rapidamente senza scrivere codice
     slug: 'ritorno',
     title: 'Ritorno',
     category: 'Client Work',
-    description: "Mostra d'arte di Adele Lo Feudo",
+    description: 'Esperienza digitale per mostra d\'arte',
     longDescription: `Sito dedicato alla mostra "Ritorno" di Adele Lo Feudo.
 
-Landing page immersiva con animazioni GSAP che accompagnano il visitatore attraverso le opere esposte. Design cinematografico con transizioni fluide e storytelling visivo.
+Un'esperienza immersiva che accompagna il visitatore attraverso le opere esposte. Le animazioni GSAP scandiscono il racconto visivo: ogni scroll rivela un nuovo capitolo della mostra, ogni transizione è calibrata per mantenere l'attenzione sull'arte.
 
-Include informazioni sulla mostra, galleria opere, e dettagli logistici.`,
+Il design cinematografico si ispira ai cataloghi d'arte contemporanea, con ampio uso di spazi bianchi e tipografia editoriale. Include informazioni pratiche sulla mostra e una galleria navigabile delle opere.`,
     link: 'https://ritorno.adelelofeudo.com',
     image: 'https://api.microlink.io/?url=https://ritorno.adelelofeudo.com&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=2000',
     gallery: [],
