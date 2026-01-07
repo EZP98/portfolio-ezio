@@ -19,16 +19,16 @@ export const projects: ProjectDetail[] = [
     slug: 'cocktail-ai',
     title: 'Cocktail AI',
     category: 'AI Product',
-    description: 'Assistente AI per bartender e appassionati di mixology',
-    longDescription: `Un assistente conversazionale progettato per il mondo della mixology professionale.
+    description: 'Assistente AI per bartender con RAG su 1000+ ricette e gestione completa del bar',
+    longDescription: `Un ecosistema completo per la mixology professionale, costruito su un motore RAG che attinge da fonti autorevoli: Miscelare di Mastellari e Ceccarelli, Imbibe di Wondrich, il Jerry Thomas 1862 e Cocktail Codex di Death & Co.
 
-Il cuore del sistema è un motore RAG che attinge da una knowledge base di oltre 1000 ricette - dai classici IBA alle creazioni contemporanee. Ma Cocktail AI va oltre le semplici ricette: gestisce l'inventario del bar, calcola i costi per drink, e suggerisce cocktail realizzabili con gli ingredienti disponibili.
+Il sistema va oltre le ricette. Gestisce l'inventario del bar con tracking dei costi, si integra con 9 provider POS (SumUp, Worldline, Nexi, Square) per analisi vendite in tempo reale, e genera menu con calcolo automatico del food cost.
 
-L'interazione avviene in linguaggio naturale. Puoi chiedere varianti di un cocktail, sostituzioni per ingredienti mancanti, o abbinamenti per un menu specifico.`,
+L'assistente supporta 4 modalità specializzate: Beverage Assistant per consigli cocktail, Price Analyzer per strategie di margine, Master Distiller per educazione sugli spiriti, e Food Pairing per abbinamenti. Vision AI per identificare bottiglie da foto.`,
     link: 'https://cocktail-ai.pages.dev',
     image: 'https://api.microlink.io/?url=https://cocktail-ai.pages.dev&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=2000',
     gallery: [],
-    techStack: ['Claude AI', 'React', 'TypeScript', 'Supabase', 'Cloudflare Workers'],
+    techStack: ['Claude AI', 'RAG', 'React', 'TypeScript', 'Supabase', 'Cloudflare Workers', 'Stripe'],
     status: 'live',
     year: '2024'
   },
@@ -37,16 +37,16 @@ L'interazione avviene in linguaggio naturale. Puoi chiedere varianti di un cockt
     slug: 'adele-lo-feudo',
     title: 'Adele Lo Feudo',
     category: 'Client Work',
-    description: 'Portfolio per artista contemporanea',
-    longDescription: `Portfolio digitale per Adele Lo Feudo, pittrice contemporanea siciliana.
+    description: 'Portfolio d\'arte contemporanea con CMS, 7 lingue e commerce integrato',
+    longDescription: `Piattaforma professionale per artista contemporanea, progettata per gestire collezioni, mostre e vendite in autonomia.
 
-Il progetto nasce dalla necessità di creare uno spazio digitale che rispettasse l'intensità cromatica e la matericità delle opere. Il design è volutamente minimale: fondi neutri, tipografia essenziale, e transizioni fluide che non distraggono dall'arte.
+Il backend include un CMS completo: gestione di 7 collezioni tematiche, archivio di 26 mostre dal 2010, sistema di quotazioni e ordini. Supporta 7 lingue (IT, EN, ES, FR, JA, ZH, ZH-TW) con traduzioni gestite da backoffice.
 
-La galleria è costruita per garantire fedeltà cromatica su diversi dispositivi. Include sezioni dedicate alla biografia dell'artista, alle mostre passate e future, e un sistema di contatto diretto.`,
+Il frontend combina GSAP ScrollTrigger per effetti parallax, Framer Motion per transizioni fluide, e Lenis per smooth scrolling premium. Design minimalista su fondo nero con accent rosa, tipografia Montserrat, cursore custom. Analytics con Meta Pixel, Google Analytics e Clarity.`,
     link: 'https://adelelofeudo.com',
     image: 'https://api.microlink.io/?url=https://adelelofeudo.com&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=1000',
     gallery: [],
-    techStack: ['React', 'Framer Motion', 'GSAP', 'Cloudflare Pages'],
+    techStack: ['React', 'TypeScript', 'GSAP', 'Framer Motion', 'Supabase', 'Cloudflare', 'Stripe'],
     status: 'live',
     year: '2024'
   },
@@ -55,16 +55,16 @@ La galleria è costruita per garantire fedeltà cromatica su diversi dispositivi
     slug: 'gusto',
     title: 'Gusto',
     category: 'AI Product',
-    description: 'Assistente culinario AI per ricette personalizzate',
-    longDescription: `Un compagno di cucina che comprende le tue esigenze alimentari.
+    description: 'Assistente culinario AI con knowledge base gastronomica e analisi visiva della dispensa',
+    longDescription: `Un compagno di cucina intelligente che combina enciclopedia gastronomica e intuizione moderna.
 
-Gusto utilizza Claude per interpretare richieste complesse: "cosa posso cucinare con quello che ho in frigo?", "una cena veloce senza glutine", "qualcosa di simile alla carbonara ma vegetariano". Il sistema considera preferenze, restrizioni dietetiche e ingredienti disponibili.
+La knowledge base include il Larousse Gastronomique, ricette dalla Scuola ALMA, piatti di chef stellati Michelin, e una guida completa al food pairing. Il sistema RAG con BM25 e fallback su Perplexity garantisce risposte accurate e aggiornate.
 
-La knowledge base spazia dalla tradizione italiana alle cucine internazionali. Ogni ricetta include tempi, difficoltà, e suggerimenti per varianti.`,
+Tre modalità distintive: Stellato per tecniche professionali (sous-vide, sferificazione, plating), Recupero per minimizzare sprechi e riusare ingredienti, Menu per generare pranzi completi con abbinamenti vini. La Vision AI analizza foto del frigorifero e suggerisce piatti realizzabili.`,
     link: 'https://gusto-8cx.pages.dev',
     image: 'https://api.microlink.io/?url=https://gusto-8cx.pages.dev&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=2000',
     gallery: [],
-    techStack: ['Claude AI', 'React', 'TypeScript', 'Supabase'],
+    techStack: ['Claude AI', 'Perplexity', 'RAG', 'React', 'TypeScript', 'Cloudflare D1'],
     status: 'live',
     year: '2024'
   },
@@ -73,16 +73,16 @@ La knowledge base spazia dalla tradizione italiana alle cucine internazionali. O
     slug: 'brickgen',
     title: 'Brickgen',
     category: 'AI Product',
-    description: 'Genera modelli LEGO costruibili da testo o immagini',
-    longDescription: `Trasforma idee in modelli LEGO che puoi davvero costruire.
+    description: 'Generatore LEGO con pipeline AI a 4 agenti e istruzioni professionali stampabili',
+    longDescription: `Una pipeline che trasforma descrizioni testuali o immagini in modelli LEGO costruibili con pezzi reali.
 
-A differenza di altri generatori, Brickgen utilizza esclusivamente pezzi reali dal database Rebrickable. Descrivi quello che vuoi costruire - o carica un'immagine - e il sistema genera istruzioni step-by-step con pezzi acquistabili.
+L'architettura multi-agente procede in 4 stadi: Analyst classifica il soggetto e stima complessità, Architect crea il blueprint strutturale diviso in sezioni modulari, Shaper genera griglie voxel 3D con i 31 colori LEGO ufficiali, Brickifier converte i voxel in placement reali con pezzi dal database Rebrickable.
 
-Il motore è una pipeline multi-agente: analisi dell'input, progettazione strutturale, ottimizzazione dei pezzi, e generazione delle istruzioni. Il risultato è visualizzabile in 3D interattivo prima di procedere all'acquisto.`,
+Il risultato è visualizzabile in 3D interattivo con Three.js. Le istruzioni generate seguono lo standard LEGO: 200-300 step, 5-15 pezzi per step, organizzazione in buste numerate. Export in PDF stampabile con lista parti e link per acquisto su BrickLink.`,
     link: 'https://brickgen.pages.dev',
     image: 'https://api.microlink.io/?url=https://brickgen.pages.dev&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=2000',
     gallery: [],
-    techStack: ['Claude AI', 'Three.js', 'React', 'Cloudflare Workers', 'D1 Database'],
+    techStack: ['Claude AI', 'Multi-Agent', 'Three.js', 'React', 'Cloudflare Workers', 'D1', 'Rebrickable'],
     status: 'development',
     year: '2024'
   },
@@ -91,16 +91,16 @@ Il motore è una pipeline multi-agente: analisi dell'input, progettazione strutt
     slug: 'objects',
     title: 'Objects',
     category: 'Dev Tool',
-    description: 'Editor visuale per progetti React',
-    longDescription: `Un ponte tra design e sviluppo.
+    description: 'Editor visuale AI che genera codice React in tempo reale con preview live',
+    longDescription: `Un ponte tra design e sviluppo che esegue Node.js direttamente nel browser.
 
-Objects permette di costruire interfacce React in modo visuale, senza sacrificare la qualità del codice generato. Drag-and-drop per posizionare elementi, pannelli per gestire props e stili, export in codice React pulito e manutenibile.
+L'editor combina un canvas tipo Figma con generazione AI: modifichi visualmente padding, colori, layout, e Claude genera il codice React/TypeScript corrispondente. WebContainers monta un filesystem virtuale completo, esegue npm install e Vite, e mostra il risultato in un iframe con hot reload automatico.
 
-Costruito su Polotno, include una libreria di componenti pronti all'uso e supporta l'importazione di componenti custom. Pensato per designer che vogliono prototipare rapidamente e sviluppatori che preferiscono un approccio visuale.`,
+Il flusso è bidirezionale: clicchi un elemento nel preview, il pannello stili si popola con le sue proprietà, modifichi un valore, l'AI riscrive il componente, Vite rileva il cambio, il preview si aggiorna. Design system integrato con tokens, preset (Framer Dark, Linear, Stripe), e libreria componenti.`,
     link: 'https://objects-ef4.pages.dev',
     image: 'https://api.microlink.io/?url=https://objects-ef4.pages.dev&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=2000',
     gallery: [],
-    techStack: ['React', 'Polotno', 'TypeScript', 'Supabase'],
+    techStack: ['Claude AI', 'WebContainers', 'React', 'TypeScript', 'Vite', 'Tailwind', 'Supabase'],
     status: 'development',
     year: '2024'
   },
@@ -109,16 +109,16 @@ Costruito su Polotno, include una libreria di componenti pronti all'uso e suppor
     slug: 'ritorno',
     title: 'Ritorno',
     category: 'Client Work',
-    description: 'Esperienza digitale per mostra d\'arte',
-    longDescription: `Sito dedicato alla mostra "Ritorno" di Adele Lo Feudo.
+    description: 'Esperienza immersiva per mostra d\'arte con 49 opere interattive',
+    longDescription: `Sito dedicato alla mostra "Ritorno" di Adele Lo Feudo al Museo a Cielo Aperto di Camo: 49 foglie dipinte, ognuna un volto significativo nel percorso dell'artista.
 
-Un'esperienza immersiva che accompagna il visitatore attraverso le opere esposte. Le animazioni GSAP scandiscono il racconto visivo: ogni scroll rivela un nuovo capitolo della mostra, ogni transizione è calibrata per mantenere l'attenzione sull'arte.
+L'esperienza è costruita interamente in vanilla JavaScript e CSS3, senza framework. Le foglie oscillano con animazione continua che simula il vento, il lightbox permette di navigare tra le opere con scroll verticale e girarle con scroll orizzontale per vedere fronte e retro.
 
-Il design cinematografico si ispira ai cataloghi d'arte contemporanea, con ampio uso di spazi bianchi e tipografia editoriale. Include informazioni pratiche sulla mostra e una galleria navigabile delle opere.`,
+Audio ambientale loopato, effetto parallax sull'hero con dissolvenza allo scroll, sezione critica con tre testi espandibili in modal glassmorphism. Design cinematografico che mette l'arte al centro, responsive con gesture touch per mobile.`,
     link: 'https://ritorno.adelelofeudo.com',
     image: 'https://api.microlink.io/?url=https://ritorno.adelelofeudo.com&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=2000',
     gallery: [],
-    techStack: ['React', 'GSAP', 'Framer Motion', 'Cloudflare Pages'],
+    techStack: ['HTML5', 'CSS3', 'JavaScript', 'Cloudflare Pages'],
     status: 'live',
     year: '2024'
   }
