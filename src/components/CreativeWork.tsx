@@ -16,7 +16,7 @@ const CreativeWork: React.FC = () => {
       <ScrollReveal delay={50}>
         <div className="creative-work-grid">
           {/* AI Images - with Coin and Particles */}
-          <Link to="/gallery/ai" className="creative-card creative-card-ai">
+          <Link to="/ai-images" className="creative-card creative-card-ai">
             <div className="coin-preview">
               <img src="/coin.png" alt="3D Coin" className="coin-image" />
               {/* Particles - same style as hero button */}
@@ -69,7 +69,7 @@ const CreativeWork: React.FC = () => {
           </Link>
 
           {/* Photography - full width */}
-          <Link to="/gallery/photos" className="creative-card creative-card-photos">
+          <Link to="/photography" className="creative-card creative-card-photos">
             <div className="photos-preview">
               <div className="photo-placeholder photo-left">
                 <img src="/DSCF6177.webp" alt="Photo 1" className="photo-image" />
