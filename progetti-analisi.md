@@ -1199,14 +1199,1004 @@ Italia, Francia, Giappone, Messico, India, Thailandia, Grecia, Spagna, Marocco, 
 ---
 
 # 4. BRICKGEN
-(Da completare)
+
+## OVERVIEW
+Generatore AI di modelli LEGO costruibili. Da descrizione testuale a modello 3D completo con istruzioni, BOM e integrazione acquisti.
+
+**URL**: https://brickgen.pages.dev
+**Stack**: React 19, Three.js, Cloudflare Workers/D1, Claude AI
+
+---
+
+## ANALISI TECNICA
+
+### Cos'è
+Brickgen è un sistema AI multi-agente che trasforma descrizioni testuali in modelli LEGO completi e costruibili. Pipeline a 4 stadi: Analyst → Architect → Shaper → Brickifier.
+
+### ARCHITETTURA
+
+**Frontend:**
+- React 19 + Vite 7
+- Three.js + React Three Fiber (rendering 3D)
+- @react-three/drei (OrbitControls, Environment)
+- Tailwind CSS 4
+- html2canvas + jsPDF (export)
+
+**Backend:**
+- Cloudflare Workers (edge functions)
+- Cloudflare D1 (SQLite - 23,643 parti LEGO)
+- Claude AI (Sonnet 4, Haiku 4.5)
+
+### PIPELINE AI A 4 STADI
+
+**Stage 1: ANALYST AGENT**
+```
+Input: "Taipei 101, 30cm tall"
+Output: {
+  type: "building",
+  complexity: 0.75,
+  suggested_tier: "LARGE",
+  colors: [{name: "dark_azure", lego_id: 321, percentage: 60}],
+  estimates: {parts: 3000-6000, cost_eur: 200-400}
+}
+```
+
+**Stage 2: ARCHITECT AGENT**
+- Crea blueprint modulare con sezioni
+- Definisce proporzioni in studs LEGO
+- Pattern: solid_plate, windowed_box, arched_wall, tapered
+- Scaling per tier (MINI/MEDIUM/LARGE/GIANT)
+
+**Stage 3: SHAPER AGENT**
+- Converte sections → voxel grids 3D
+- Applica pattern architettonici
+- Mappatura colori LEGO (LDraw IDs)
+
+**Stage 4: BRICKIFIER AGENT**
+- Greedy fill algorithm (largest parts first)
+- Converte voxel → brick reali (500+ tipologie)
+- Interlocking pattern per stabilità
+- Genera BOM con prezzi BrickLink
+
+### DATABASE LEGO (D1)
+
+**Tabelle:**
+```
+colors       - 200+ colori LEGO con RGB, hex
+parts        - 23,643 parti ufficiali LEGO
+elements     - Mapping parte+colore (Rebrickable IDs)
+part_categories - Categorie (bricks, plates, slopes, etc.)
+```
+
+**Parts Database:**
+- Bricks: 3001 (2x4), 3003 (2x2), 3005 (1x1)
+- Plates: 3811 (16x16), 3020 (2x4)
+- Slopes: 3040 (1x2 45°)
+- Arches, Round, Tiles
+
+### API ENDPOINTS
+
+- `POST /api/analyze` - Analyst agent
+- `POST /api/architect` - Blueprint generation
+- `POST /api/generate-smart` - Full pipeline
+- `POST /api/generate-model` - Brickify + BOM
+- `POST /api/generate-steps` - Step-by-step instructions
+- `GET /api/parts` - Search parts database
+- `GET /api/colors` - LEGO colors
+- `POST /api/validate-parts` - Rebrickable validation
+- `POST /api/suggest-palette` - AI color suggestion
+
+### RENDERING 3D
+
+**Three.js Setup:**
+```jsx
+<Canvas>
+  <OrbitControls />
+  <Environment preset="studio" />
+  <ContactShadows />
+  <Grid />
+  {parts.map(p => <BrickMesh {...p} />)}
+</Canvas>
+```
+
+**BrickMesh:**
+- Box geometry per corpo brick
+- Cylinder geometry per studs
+- MeshStandardMaterial con colori LEGO
+- Selection wireframe
+
+### INTEGRAZIONI
+
+- **Rebrickable API** - Validazione parti reali
+- **BrickLink** - Prezzi medi EUR per parte
+- **LEGO Pick-a-Brick** - CSV export per acquisto diretto
+- **Tripo 3D** - Generazione modello 3D da immagine (stub)
+
+### EXPORT FORMATS
+
+- **PDF** - Istruzioni stile LEGO ufficiale
+- **BrickLink XML** - Import diretto cart
+- **CSV** - Lista parti per acquisti
+- **LDraw** - Compatibile con Studio 2.0
+
+---
+
+## BUSINESS CASE / PITCH
+
+### IL PROBLEMA
+
+**Pain Point:**
+Trasformare un'idea in un modello LEGO costruibile richiede:
+- 40-200 ore di design manuale
+- Competenze CAD e conoscenza 23,643 parti
+- Software complessi (Studio 2.0, LDD)
+
+**Mercato:**
+- 100M+ LEGO builder globali
+- 10M premium (spendono €100+/anno)
+- TAM: €500M-1B/anno
+
+### LA SOLUZIONE
+
+**Value Proposition:**
+"Da descrizione a modello LEGO in 5 minuti invece di 40 ore"
+
+**Meccanica:**
+```
+"Taipei 101, 30cm, budget €100"
+↓ 5 minuti
+✓ 3,847 bricks
+✓ 42 parti uniche
+✓ €156 costo stimato
+✓ Istruzioni PDF
+✓ BrickLink cart ready
+```
+
+### TARGET MARKET
+
+**Segment 1: Serious Builders (40-50%)**
+- 500K builder seri globali
+- Spendono €500-5K/anno
+- WTP: €10-50/modello
+
+**Segment 2: Content Creators (15-20%)**
+- 50K creator LEGO-focused
+- Necessitano contenuti settimanali
+- WTP: €500-2K/mese
+
+**Segment 3: Brand & Agencies (10-15%)**
+- 5K agenzie/brand interessate
+- LEGO custom per marketing
+- WTP: €10K-50K/progetto
+
+**Segment 4: Educational (15-20%)**
+- 50K scuole/enti STEM
+- Lezioni architettura, engineering
+- WTP: €500-5K/anno
+
+### MODELLO DI BUSINESS
+
+| Piano | Prezzo | Features |
+|-------|--------|----------|
+| Free | €0 | 3 gen/mese, 2D preview |
+| Pro | €9.99/mese | Illimitato, 3D, PDF |
+| Studio | €49/mese | API, batch, priority |
+| Enterprise | Custom | White-label, on-premise |
+
+**Unit Economics:**
+- CAC: €20-50
+- LTV: €800-2K (3-5 anni)
+- LTV:CAC: 16-40x
+
+### VANTAGGI COMPETITIVI
+
+**vs CAD Tools (Studio 2.0, LDD):**
+- Tempo: 5 min vs 40 ore
+- Skill: Zero vs CAD expertise
+- AI: Sì vs No
+
+**vs Generic AI (ChatGPT):**
+- Database: 23,643 parti reali vs generico
+- Output: Modello costruibile vs testo
+- BOM: Prezzi reali vs niente
+
+### PARTNERSHIP POTENZIALI
+
+**Tier 1: LEGO Group**
+- API integration ufficiale
+- Pick-a-Brick white-label
+- Revenue share 20-30%
+
+**Tier 2: BrickLink (LEGO-owned)**
+- Deeper API integration
+- Affiliate revenue 5-10%
+
+**Tier 3: Rebrickable**
+- Set library hosting
+- Revenue share
+
+---
+
+## UX / DESIGN ANALYSIS
+
+### DESIGN SYSTEM
+
+**Palette Scura:**
+- Background: `#0f0f23` (navy scuro)
+- Secondary: `#1a1a2e`
+- Accent: `#f7d117` (giallo LEGO)
+- Text: `#eee` / `#888`
+
+**Action Colors:**
+- Place: giallo
+- Move: arancione
+- Rotate: blu
+- Delete: rosso
+- Copy: turchese
+
+**Typography:**
+- System fonts (-apple-system, Segoe UI)
+- Heading: 2rem
+- Body: 0.9-1rem
+- Labels: 0.7-0.85rem
+
+### USER FLOW
+
+**AI Builder:**
+```
+Input Query → Progress (7 steps animati)
+→ Result Tabs (Preview/Parts/Instructions/Export)
+→ Download PDF / BrickLink XML
+```
+
+**Manual Builder:**
+```
+Parts Browser (search 23,643 parti)
+→ Drag & Drop su Canvas 3D
+→ Snap-to-grid + Collision detection
+→ Save / Export
+```
+
+### COMPONENTI UI
+
+**Canvas 3D:**
+- OrbitControls (rotate/zoom)
+- Grid floor con snap
+- Real-time collision detection
+- Selection wireframe
+
+**Parts Browser:**
+- Grid auto-fill (140px cards)
+- Search con debounce 300ms
+- Category filter
+- Load more pagination
+
+**Color Picker:**
+- Quick access (9 colori)
+- Expandable (200+ colori)
+- Search by name
+- Category tabs
+
+**Toolbar (bottom-center):**
+- Selected part info
+- Action buttons colorati
+- History (Undo/Redo)
+- File operations
+
+### ANIMAZIONI
+
+**CSS:**
+- Transitions: 0.15s (rapide)
+- Sidebar toggle: 0.3s ease
+- Loading spinner: spin 1s
+- Collision pulse: 0.5s infinite
+
+**Three.js:**
+- Auto-rotate preview
+- Selection highlight
+- Hover states 3D
+
+### RESPONSIVE
+
+**Breakpoint 768px:**
+- Sidebar: 320px → 280px
+- Toolbar padding ridotto
+- Color picker riposizionato
+- Grid colonne: 10 → 8
+
+### PROGRESS VISUALIZATION
+
+**7 Steps con emoji:**
+1. Analisi riferimenti architettonici
+2. Calcolo proporzioni e scala
+3. Selezione pezzi dal catalogo
+4. Verifica disponibilità colori
+5. Ottimizzazione strutturale
+6. Generazione istruzioni
+7. Calcolo costi e venditori
+
+**Progress bar:** +3% ogni 100ms, max 95% durante fetch
 
 ---
 
 # 5. OBJECTS
-(Da completare)
+
+## OVERVIEW
+Editor visuale per React che genera codice production-ready. Design su canvas → esporta componenti React + Tailwind. AI integration per generazione e modifica.
+
+**URL**: https://objects-ef4.pages.dev
+**Stack**: React 19, TypeScript, Vite, WebContainers, Claude AI, Supabase
+
+---
+
+## ANALISI TECNICA
+
+### Cos'è
+Objects è un editor visuale WYSIWYG (stile Figma) che genera codice React reale. Combina:
+- **Canvas visuale** - Design drag-drop
+- **Code generation** - JSX + Tailwind in tempo reale
+- **Live preview** - WebContainers eseguono Node.js nel browser
+- **AI assistant** - Claude per generazione e modifica codice
+
+### ARCHITETTURA
+
+**Frontend:**
+- React 19 + TypeScript 5.8
+- Vite 7 (build tool)
+- Zustand 5 (state management)
+- Framer Motion 12 (animazioni)
+- Tailwind CSS
+
+**Code Generation:**
+- Babel (AST parsing/generation)
+- Prettier (formatting)
+- Custom artifact parser (4 formati supportati)
+
+**Live Preview:**
+- WebContainers API (Node.js nel browser)
+- Vite HMR (hot module replacement)
+- postMessage bridge (editor ↔ iframe)
+
+**Backend:**
+- Supabase (PostgreSQL + Auth)
+- IndexedDB (cache locale)
+- Cloudflare Pages (hosting)
+
+### SISTEMA DI GENERAZIONE CODICE
+
+**Artifact Parser** - 4 formati supportati:
+1. **bolt.diy** (primario):
+```xml
+<boltArtifact>
+  <boltAction type="file" filePath="src/Hero.tsx">
+    export function Hero() {...}
+  </boltAction>
+</boltArtifact>
+```
+2. **lovable**: `<file path="...">`
+3. **Cursor/Claude**: ` ```tsx:src/App.tsx `
+4. **Markdown**: `// filepath: src/App.tsx`
+
+**Code Generator:**
+```
+Canvas JSON → AST → React JSX + CSS → File system
+```
+
+### WEBCONTAINER FLOW
+
+```
+1. Boot WebContainer (singleton)
+2. Mount virtual filesystem
+3. npm install (Vite, React, Tailwind)
+4. Avvia dev server
+5. Preview in iframe
+6. File change → HMR → instant update
+```
+
+### DATABASE SCHEMA
+
+**Supabase:**
+```
+design_projects {
+  id, user_id, name, description
+  canvas_data: JSON  // Stato canvas completo
+  thumbnail_url, is_public, is_template
+}
+
+design_templates {
+  id, name, type, json_structure
+  preview_url, is_public
+}
+```
+
+**IndexedDB:**
+- chats (history conversazioni AI)
+- snapshots (versioni file per rollback)
+
+### AI INTEGRATION
+
+**Claude API via Vercel AI SDK:**
+- Streaming responses (SSE)
+- Tool calling per file generation
+- Artifact parsing automatico
+
+**Flow:**
+```
+User prompt → Claude → <boltArtifact> → Parser → WebContainer → Preview
+```
+
+### DESIGN SYSTEM TOKENS
+
+**8 Palette Colori:**
+- Noir (dark, gold accent)
+- Paper (minimal light)
+- Candy (warm, playful)
+- Aurora (purple gradient)
+- Trust (corporate blue)
+- Earth (natural tones)
+- Cyber (neon tech)
+- Luxury (premium gold)
+
+**4 Typography Scales:**
+- Impact (bold, powerful)
+- Elegant (refined, luxury)
+- Modern (clean, balanced)
+- Playful (fun, friendly)
+
+---
+
+## BUSINESS CASE / PITCH
+
+### IL PROBLEMA
+
+**Gap Design-Development:**
+- Designer crea in Figma
+- Developer traduce manualmente in React
+- Perdita di fedeltà, tempi 3-5x più lunghi
+- Feedback loop di giorni invece che ore
+
+**Pain Points:**
+- Figma export genera HTML generico, non React
+- Framer è proprietario, non esporta codice reale
+- v0.dev è solo AI, no editor visuale
+
+### LA SOLUZIONE
+
+**Value Proposition:**
+"Editor visuale dove il codice React è il canvas"
+
+**Meccanica:**
+```
+Designer disegna componente
+↓
+Codice React generato in tempo reale
+↓
+Developer modifica codice
+↓
+Preview visuale si aggiorna istantaneamente
+```
+
+### TARGET MARKET
+
+**Segment 1: Design Teams in Tech (40%)**
+- 50K+ team globali
+- CAC: €1,500-5K
+- LTV: €50K-200K/anno
+
+**Segment 2: Freelance Designer+Developer (25%)**
+- 100K+ freelance
+- CAC: €20-50 (viral)
+- LTV: €500-2K/anno
+
+**Segment 3: Enterprise Design Systems (20%)**
+- 5K+ enterprises
+- CAC: €10K-50K
+- LTV: €500K-2M/anno
+
+### MODELLO DI BUSINESS
+
+| Piano | Prezzo | Features |
+|-------|--------|----------|
+| Starter | €0 | 1 progetto, 5 componenti |
+| Creator | €39/mese | 5 progetti, Figma sync |
+| Team | €199/mese | Illimitato, 5 users, collab |
+| Enterprise | €999+/mese | SSO, on-premise, API |
+
+### VANTAGGI COMPETITIVI
+
+**vs Figma → Code:**
+- Output: HTML generico vs React production-ready
+- Props: No vs Full state management
+- Animations: No vs Framer Motion built-in
+
+**vs Framer:**
+- Export: Proprietario vs React open
+- Developer UX: Difficile vs Eccellente
+- Existing projects: No vs Import React projects
+
+**vs v0.dev:**
+- UI: Solo AI vs Visual builder
+- Iteration: Lenta (ripromp) vs Veloce (visual edit)
+- Collaboration: No vs Team multiplayer
+
+---
+
+## UX / DESIGN ANALYSIS
+
+### LAYOUT EDITOR
+
+```
+┌─────────────────────────────────────────────────┐
+│                    HEADER                        │
+│  [Logo] [Undo/Redo] [Export] [Share] [Auth]     │
+├──────────────┬─────────────────┬────────────────┤
+│   SIDEBAR    │     CANVAS      │  RIGHT PANEL   │
+│              │   (draggable)   │                │
+│ - Pages      │  [Preview/Code] │ - Style        │
+│ - Layers     │    [iframe]     │ - States       │
+│ - AI Chat    │                 │ - Animate      │
+│              │                 │ - Presets      │
+├──────────────┴─────────────────┴────────────────┤
+│         RESPONSIVE TOOLBAR                       │
+│  [Desktop] [Tablet] [Mobile] | Tools | Zoom     │
+└─────────────────────────────────────────────────┘
+```
+
+### DESIGN SYSTEM
+
+**Glassmorphism:**
+```css
+backdrop-filter: blur(20px);
+background: rgba(20, 20, 20, 0.98);
+border: 1px solid rgba(255, 255, 255, 0.08);
+```
+
+**Accent Color:** Burgundy `#8B1E2B` / `#A83248`
+
+### USER FLOW
+
+**Fase 1: Setup**
+- Scegli template (7 preset)
+- Seleziona formato canvas (Web/Social/Print)
+
+**Fase 2: Design**
+- Drag-drop elementi da toolbar
+- Modifica stili nel pannello destro
+- Aggiungi animazioni e stati
+
+**Fase 3: Responsive**
+- Configura per 3 breakpoint (Desktop/Tablet/Mobile)
+- Override stili per breakpoint
+
+**Fase 4: Export**
+- Download .zip con src/
+- Copia negli appunti
+- Push su GitHub
+
+### COMPONENTI UI
+
+**Canvas:**
+- Multi-page view (zoom + pan)
+- Selection overlay con 8 handles
+- Snap-to-grid, guides
+
+**Right Sidebar (4 tabs):**
+1. Style - CSS properties editor
+2. States - Hover, active, focus
+3. Animate - Keyframe animations
+4. Presets - Saved styles
+
+**Toolbar:**
+- Primitives: Frame, Text, Button, Image
+- Layout: Section, Container, Stack, Grid
+- Blocks: Navbar, Hero, Features, Pricing, Footer
+
+### ANIMAZIONI
+
+**14 Preset:**
+- Fade In/Out
+- Slide Up/Down/Left/Right
+- Scale Up, Bounce, Pulse, Shake, Rotate, Float
+
+**Trigger Types:**
+- mount, hover, click, scroll, inView
+
+**15+ Easing Curves:**
+- Linear, ease variants
+- Quad, Cubic, Quart, Back, Elastic
+
+### RESPONSIVE
+
+**Breakpoints:**
+- Desktop: 1440px (base)
+- Tablet: 768px
+- Mobile: 375px
+
+**18 Device Presets:**
+- iPhone 15 Pro, iPad Pro, MacBook, Pixel, Galaxy
+
+### PERFORMANCE
+
+- Direct DOM manipulation per drag (60fps)
+- Lazy animation keyframes
+- Ref-based state (no stale closures)
+- WebContainers per preview autentico
 
 ---
 
 # 6. RITORNO
-(Da completare)
+
+**URL:** https://ritorno.adelelofeudo.com
+**Tipo:** Client Work - Sito per mostra d'arte
+**Stack:** JavaScript Vanilla, CSS3, Cloudflare Pages
+**Repository:** GitHub (EZP98/ritorno)
+
+---
+
+## ANALISI TECNICA
+
+### ARCHITETTURA
+
+**Struttura File:**
+```
+ritorno/
+├── sito-produzione/
+│   ├── index.html           # Single Page Application
+│   ├── style.css            # 1065 righe
+│   ├── opera-data.json      # Manifesto 49 foglie
+│   ├── images/
+│   │   ├── sky.png          # Background parallax (8.3 MB)
+│   │   └── foglie/          # 98 file (49 fronte + 49 retro)
+│   ├── audio.mp3            # Soundtrack (1.9 MB)
+│   ├── ritorno.mp4          # Video promo (12.1 MB)
+│   └── _headers             # Config Cloudflare
+└── assets-originali/
+```
+
+**Scelte tecniche:**
+- Vanilla JavaScript puro (niente framework)
+- SPA con caricamento JSON dinamico
+- ~700 righe JS inline nell'HTML
+- Peso totale: 525 MB (dominato da immagini)
+
+### ANIMAZIONI
+
+**Oscillazione Foglie (leafSway):**
+```css
+@keyframes leafSway {
+    0%, 100% { transform: rotate(0deg) translateY(0px); }
+    25% { transform: rotate(0.5deg) translateY(-1px); }
+    75% { transform: rotate(-0.5deg) translateY(1px); }
+}
+```
+- Rotazione: ±0.5 gradi
+- Traslazione: ±1px
+- Durata: 4-5s con stagger per effetto organico
+- Mobile: 3x più pronunciato (±1.5°, ±3px)
+
+**Flip Fronte/Retro:**
+- Cross-fade senza 3D transform (massima compatibilità)
+- Timing: 850ms con cubic-bezier
+- Flag `isFlipping` per evitare spam
+- Force reflow per transizioni smooth
+
+### GESTURE HANDLING
+
+**Touch (Mobile):**
+- Swipe orizzontale: naviga tra opere (threshold 50px)
+- Tap: flip immagine (rilevato se <10px movimento in 300ms)
+
+**Wheel (Desktop):**
+- Scroll verticale: navigazione
+- Scroll orizzontale: flip
+
+**Keyboard:**
+- Frecce: navigazione
+- Spazio/Invio: flip
+- Esc: chiudi lightbox
+
+### ASSET MANAGEMENT
+
+**JSON struttura:**
+```json
+{
+  "id": 1,
+  "numero": "01",
+  "titolo": "adele",
+  "fronte": "images/foglie/adele.png",
+  "retro": "images/foglie/adele-retro.png"
+}
+```
+
+- 49 oggetti = 49 foglie
+- Lazy loading: `loading="lazy"`
+- Error handling con console logging
+
+### HOSTING
+
+- Cloudflare Pages (Git-based deploy)
+- Zero build process (static serving)
+- Headers custom per iframe embedding
+- CDN globale + SSL automatico
+
+### PERFORMANCE
+
+- Lazy loading immagini
+- Intersection Observer per animazioni
+- State flags per evitare race conditions
+- Force reflow controllato
+- Audio: pausa su tab nascosto
+- Cache busting con query params
+
+### RESPONSIVE
+
+**Desktop (>768px):**
+- Grid orizzontale scrollabile
+- Height: 600px
+- Gap: 50px tra foglie
+- Oscillazione delicata
+
+**Mobile (≤768px):**
+- Stack verticale full-width
+- Height: 350px per foglia
+- Oscillazione 3x più visibile
+- Menu hamburger
+- Video: download diretto invece di modal
+
+---
+
+## BUSINESS CASE
+
+### PROBLEMA
+
+**Limitazioni mostra fisica:**
+- Temporalità: chiude dopo settimane
+- Geolocalizzazione: solo visitatori in loco
+- Documentazione passiva: foto/PDF non trasmettono esperienza
+- Narrazione incompleta: pochi leggono i testi critici
+
+**Bisogno specifico:**
+- Artista che torna nel luogo d'origine dopo 9 anni (il "nostos")
+- Opera concettuale: ogni foglia ha fronte e retro
+- Raggiungere collezionisti/galleristi a distanza
+
+### SOLUZIONE
+
+**Portfolio tradizionale vs RITORNO:**
+
+| Portfolio Standard | RITORNO |
+|-------------------|---------|
+| Griglia statica | Foglie che oscillano |
+| Click per ingrandire | Gesture naturali |
+| Silenzio | Soundscape immersivo |
+| Visualizzazione frontale | Interazione fronte/retro |
+
+**Funzionalità distintive:**
+- Navigazione fisica tradotta in digitale
+- Scroll verticale = camminare nella mostra
+- Scroll orizzontale = girare la foglia in mano
+- Audio ambientale che un portfolio non offre
+
+### TARGET
+
+**Primario:**
+1. Visitatori mostra fisica (rivivono, approfondiscono)
+2. Collezionisti/galleristi (valutano da remoto)
+3. Curatori/critici (accesso testi critici)
+
+**Secondario:**
+4. Comunità locale (orgoglio, condivisione)
+5. Portfolio visitors (primo touchpoint)
+
+### VALORE AGGIUNTO
+
+**Traduzione fedele del concept:**
+- Il flip replica il gesto di girare una foglia
+- L'utente "scopre" il retro, non lo vede passivamente
+
+**Estensioni impossibili nel fisico:**
+- Esplorazione a proprio ritmo
+- 3 testi critici completi a portata di click
+- Accesso 24/7 globale
+- Audio curato
+
+**Permanenza:**
+- La mostra chiude, il sito resta
+- Archivio dell'opera
+- Materiale per future mostre
+
+### MODELLO DI BUSINESS
+
+**Per freelance:**
+- Progetto fisso: 3.000 - 6.000 EUR
+- Include: design, sviluppo, ottimizzazione, caricamento opere
+
+**ROI per artista:**
+- Un collezionista da remoto può ripagare l'investimento
+- Credibilità professionale
+- Il sito lavora per anni
+- Press kit digitale immediato
+
+### PORTFOLIO VALUE
+
+**Dimostra:**
+- Interaction design avanzato
+- Performance con 49 immagini HD
+- Gestione audio web
+- Responsive non solo layout ma paradigma interattivo
+- Sensibilità artistica oltre la tecnica
+
+**Differenziazione:**
+- Pochi sviluppatori lavorano con artisti visivi
+- Attrae altri artisti come clienti
+- Si distingue da landing page e e-commerce
+
+### DIFFERENZIAZIONE
+
+**Siti mostre tradizionali:**
+- Statici: galleria, testo, contatti
+- Informativi: date, orari, location
+- Documentativi: foto post-evento
+
+**RITORNO:**
+- "Vivi la mostra" invece di "guarda le foto"
+- Metafora interattiva coerente (flip = cuore dell'opera)
+- Multisensorialità: visivo + audio + tattile
+- Progettato per sopravvivere alla mostra
+
+---
+
+## ANALISI UX/DESIGN
+
+### CONCEPT
+
+**Metafora nel design:**
+- Background cielo: continuità con "Museo a Cielo Aperto di Camo"
+- Palette: bianco/trasparente + #F64128 (arancione-rosso) per accenti
+- Navigazione circolare riflette il "ritorno" (nostos greco)
+
+**Tipografia:**
+- Palanquin (artistico, leggero): titoli
+- Lato (moderno, leggibile): corpo testi
+- Dualità: artistico + accessibile
+
+**Atmosfera:**
+- Fondo cielo fixed: contemplazione, eternità
+- Colore #F64128: passione, calore artistico
+- Blur nei modali: isolamento, focus
+- Audio in loop: ritualità, immersione
+
+### INTERAZIONI
+
+**Desktop:**
+- Scroll ↕: naviga tra opere
+- Scroll ↔: gira foglia
+- Frecce tastiera: navigazione
+- Spazio/Invio: flip
+- Esc: chiudi
+
+**Mobile:**
+- Swipe ↔: naviga
+- Tap: flip
+- Indicatore dinamico istruzioni
+
+### ANIMAZIONI
+
+**Oscillazione (leafSway):**
+- Rotazione minima (±0.5°): brezza leggera
+- Sfasamento temporale: 4.5s vs 5s + delay diversi
+- Movimento organico non sincronizzato
+
+**Flip:**
+- Cross-fade 0.8s con cubic-bezier
+- Flag `isFlipping` previene spam
+- Force reflow per smooth animation
+
+**Altre:**
+- fadeInUp (hero): 1s ease-out con cascata
+- parallax hero on scroll
+- modalFadeIn: 0.4s ease-out
+- pulse: audio hint
+
+### NAVIGAZIONE
+
+**Struttura:**
+```
+HERO → OPERE (grid/stack) → CRITICA (3 cards) → FOOTER
+         ↓
+    LIGHTBOX (spa secondaria)
+    - Swipe/Scroll naviga
+    - Tap/Scroll-X flip
+    - Esc chiude
+```
+
+**Lightbox immersivo:**
+- Lock scroll body
+- Cross-fade 0.8s tra opere
+- Reset sempre a fronte
+- Indicatore istruzioni (4s poi fade)
+
+### VISUAL DESIGN
+
+**Palette:**
+- #ffffff: testo principale
+- #131313: testo modale dark
+- #F64128: CTA, accenti
+- rgba(): glassmorphism
+- sky.png: background fixed
+
+**Glassmorphism:**
+```css
+background: rgba(255, 255, 255, 0.05-0.95);
+backdrop-filter: blur(10-20px);
+border: 1px solid rgba(255, 255, 255, 0.1-0.9);
+border-radius: 16px;
+```
+
+### RESPONSIVE
+
+**Desktop (>768px):**
+- Grid orizzontale scrollabile
+- Height: 600px
+- Gap: 50px
+- 3 colonne cards
+
+**Mobile (≤768px):**
+- Stack verticale
+- Full width
+- Hamburger menu
+- Safe area inset per notch
+
+**Device detection:**
+- User agent + viewport check
+- Video: modal su desktop, download su mobile
+
+### MICRO-INTERAZIONI
+
+**Feedback visivo:**
+- Hover nav: color #F64128 (0.3s)
+- Hover card: border-color accent
+- Hover close: rotate(90deg)
+- Image flip: cross-fade 0.8s
+
+**Indicatori:**
+- Swipe indicator: appare 4s poi fade
+- Audio hint: pulse animation
+- Intersection Observer per sezioni
+
+### ACCESSIBILITA'
+
+**Implementato:**
+- Keyboard navigation completa
+- Link anchor semantici
+- Modali con role="dialog"
+- Button elements corretti
+- Lazy loading
+
+**Migliorabile:**
+- aria-label sui button
+- aria-live per indicatori dinamici
+- prefers-reduced-motion non implementato
+- Contrasto alcuni elementi su sfondo variabile
+
+---
+
+## SINTESI
+
+**RITORNO** non è un sito web, è la mostra stessa in forma digitale.
+
+**Design Philosophy:**
+1. Oscillazione foglie = ritmo biologico
+2. #F64128 = calore artistico in palette fredda
+3. Flip cross-fade = eleganza senza rischi 3D
+4. Mobile-first gestures = inclusione device-agnostic
+5. Lightbox immersivo = parallelo alla white-wall gallery
+6. Audio looped = contemplazione rituale
+7. Glassmorphism = modernità + sofferenza visuale
+
+**Scelte deliberate:**
+- Vanilla JS per semplicità e controllo
+- Niente 3D transform per compatibilità
+- Cross-fade invece di rotazione
+- Gestures diverse per device diversi
+- Background cielo come estensione del museo fisico

@@ -12,20 +12,84 @@ interface AIImage {
   height: 'short' | 'medium' | 'tall';
 }
 
-// All images in a single masonry grid
 const images: AIImage[] = [
-  { id: '1', src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80', alt: 'AI Portrait', prompt: 'Ethereal portrait with soft lighting, dreamy atmosphere', height: 'tall' },
-  { id: '2', src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80', alt: 'AI Landscape', prompt: 'Surreal mountain landscape at golden hour', height: 'medium' },
-  { id: '3', src: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&q=80', alt: 'AI Abstract', prompt: 'Fluid abstract forms, vibrant colors flowing', height: 'short' },
-  { id: '4', src: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80', alt: 'AI Surreal', prompt: 'Floating objects in cosmic void', height: 'medium' },
-  { id: '5', src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80', alt: 'AI Portrait', prompt: 'Cinematic portrait with dramatic shadows', height: 'tall' },
-  { id: '6', src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80', alt: 'AI Nature', prompt: 'Mystical forest with ethereal fog', height: 'medium' },
-  { id: '7', src: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=800&q=80', alt: 'AI Abstract', prompt: 'Geometric patterns in perpetual motion', height: 'short' },
-  { id: '8', src: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&q=80', alt: 'AI Cosmic', prompt: 'Cosmic dreamscape with nebula colors', height: 'tall' },
-  { id: '9', src: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80', alt: 'AI Fashion', prompt: 'Fashion portrait with neon accents', height: 'medium' },
-  { id: '10', src: 'https://images.unsplash.com/photo-1549490349-8643362247b5?w=800&q=80', alt: 'AI Color', prompt: 'Color explosion, paint splash effect', height: 'short' },
-  { id: '11', src: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80', alt: 'AI Lake', prompt: 'Dreamlike lake with mirror reflection', height: 'medium' },
-  { id: '12', src: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80', alt: 'AI Space', prompt: 'Space and time distortion visualization', height: 'tall' },
+  {
+    id: '1',
+    src: '/ai-images/computer-hill.png',
+    alt: 'Vintage computer on flower hill',
+    prompt: 'Retro Macintosh computer on a blooming flower hill, butterflies flying, dreamy spring atmosphere',
+    height: 'medium'
+  },
+  {
+    id: '2',
+    src: '/ai-images/seahorse.png',
+    alt: 'Iridescent seahorse',
+    prompt: 'Holographic iridescent seahorse, glass-like translucent material, soft studio lighting',
+    height: 'tall'
+  },
+  {
+    id: '3',
+    src: '/ai-images/keyboard.png',
+    alt: 'Retro keyboard with plants',
+    prompt: 'Vintage beige keyboard console with moss and flowers growing, cottagecore aesthetic, 3D render',
+    height: 'short'
+  },
+  {
+    id: '4',
+    src: '/ai-images/octopus-bag.png',
+    alt: 'Octopus in vacuum bag',
+    prompt: 'Fresh octopus tentacles in transparent vacuum sealed bag, studio photography, dark background',
+    height: 'tall'
+  },
+  {
+    id: '5',
+    src: '/ai-images/flower-hill.png',
+    alt: 'Flower hill with butterflies',
+    prompt: 'Dreamy hill covered in wildflowers, butterflies dancing, blue sky, peaceful spring day',
+    height: 'medium'
+  },
+  {
+    id: '6',
+    src: '/ai-images/coin.png',
+    alt: 'Dark lightning app icon',
+    prompt: 'Minimalist dark app icon with embossed lightning bolt, matte black metallic texture, 3D render',
+    height: 'short'
+  },
+  {
+    id: '7',
+    src: '/ai-images/computer-hill-2.png',
+    alt: 'Vintage computer on meadow',
+    prompt: 'Old Macintosh on flowering meadow hill, golden hour lighting, butterflies, nostalgic tech meets nature',
+    height: 'medium'
+  },
+  {
+    id: '8',
+    src: '/ai-images/moss-heart.png',
+    alt: 'Heart made of moss and flowers',
+    prompt: 'Floating heart shape made of green moss and colorful wildflowers, white background, love nature concept',
+    height: 'short'
+  },
+  {
+    id: '9',
+    src: '/ai-images/computer-forest.png',
+    alt: 'Computer in forest clearing',
+    prompt: 'Abandoned vintage computer in sunny forest clearing, butterflies, overgrown with nature, cinematic',
+    height: 'tall'
+  },
+  {
+    id: '10',
+    src: '/ai-images/rock-butterflies.png',
+    alt: 'Mossy rock with butterflies',
+    prompt: 'Mossy rock formation with monarch butterflies, mountain landscape, ethereal atmosphere',
+    height: 'medium'
+  },
+  {
+    id: '11',
+    src: '/ai-images/vinyl1.png',
+    alt: 'Red and black vinyl record',
+    prompt: 'Custom vinyl record design, red and black marbled pattern, brutalist typography, album art concept',
+    height: 'short'
+  },
 ];
 
 const AIImagesPage: React.FC = () => {
