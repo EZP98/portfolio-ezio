@@ -22,8 +22,8 @@ const Header: React.FC = () => {
   const navItems = [
     { href: '#works', label: t('works') },
     { href: '#about', label: 'About' },
-    { href: '/ai-images', label: 'AI Images' },
-    { href: '/photography', label: language === 'it' ? 'Foto' : 'Photos' },
+    { href: '/gallery/ai', label: 'AI Images' },
+    { href: '/gallery/photos', label: language === 'it' ? 'Foto' : 'Photos' },
     { href: '#contact', label: t('contact') },
   ];
 
