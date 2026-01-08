@@ -19,10 +19,14 @@ export const projects: ProjectDetail[] = [
     slug: 'cocktail-ai',
     title: 'Cocktail AI',
     category: 'AI Product',
-    description: 'Assistente AI per bar e mixology',
-    longDescription: `I bartender perdono tempo a cercare ricette, calcolare costi, gestire inventario. Ho costruito un assistente che fa tutto questo in chat.
+    description: 'AI per imparare mixology o gestire un bar',
+    longDescription: `Volevo un bartender esperto disponibile sempre. Ho indicizzato 15 libri di mixology, 3000 schede spirit, le ricette dei migliori bar al mondo. L'AI risponde come se avesse letto tutto.
 
-Conosce migliaia di ricette, si collega al POS per tracciare le vendite, e gestisce lo stock. Un unico punto di accesso per tutto quello che serve dietro al bancone.`,
+Poi ho pensato ai bar. I gestionali costano 300€/mese e sono complessi. Ho costruito un layer dove colleghi stock e POS, e l'AI diventa il tuo gestionale.
+
+La stessa domanda ha risposte diverse. "Come si fa un Margarita?" per un appassionato: ricetta, storia, variazioni. Per un barista: "con la tua tequila costa €2.20, margine 82% a €12, lo aggiungo al menu?".
+
+Gestisci il bar parlando. "Aggiungi 3 gin", "cosa devo ordinare", "crea un menu estivo". L'AI capisce ed esegue.`,
     link: 'https://cocktail-ai.pages.dev',
     image: 'https://api.microlink.io/?url=https://cocktail-ai.pages.dev&screenshot=true&meta=false&embed=screenshot.url&viewport.width=1440&viewport.height=900&waitFor=2000',
     gallery: [],
